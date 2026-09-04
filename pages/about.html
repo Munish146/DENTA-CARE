@@ -235,47 +235,31 @@
                   text-[#111A3A] dark:text-white
                   hover:text-[#E83E8C]
                   transition cursor-pointer">
-
           Login
-
         </a>
-
 
         <!-- APPOINTMENT -->
         <a href="appointment.html"
-           class="px-5 py-3 rounded-xl
-                  bg-gradient-to-r from-[#E83E8C] to-[#7C3AED]
-                  text-white text-sm font-bold
-                  shadow-lg shadow-purple-500/20
-                  hover:-translate-y-1
-                  hover:shadow-xl
-                  transition-all duration-300
-                  cursor-pointer">
-
+           class="btn-book-rounded !py-2.5 !px-5 !text-sm">
           Book Appointment
-
         </a>
 
       </div>
-
 
       <!-- MOBILE BUTTON -->
       <button
         id="mobileMenuBtn"
         type="button"
         onclick="toggleMobileMenu()"
-        class="lg:hidden w-11 h-11 rounded-xl
+        class="lg:hidden w-11 h-11 rounded-full
                bg-gradient-to-r from-[#E83E8C] to-[#7C3AED]
                text-white cursor-pointer">
-
         <i class="fa-solid fa-bars"></i>
-
       </button>
 
     </nav>
 
   </div>
-
 
   <!-- MOBILE MENU -->
   <div id="mobileMenu"
@@ -287,7 +271,6 @@
 
       <!-- MOBILE HOME -->
       <div>
-
         <button
           onclick="toggleMobileHome()"
           type="button"
@@ -297,35 +280,27 @@
                  hover:bg-pink-50
                  dark:hover:bg-white/10
                  transition cursor-pointer">
-
           Home
-
           <i id="mobileHomeIcon"
              class="fa-solid fa-chevron-down text-xs"></i>
-
         </button>
 
         <div id="mobileHomeMenu"
              class="hidden pl-5">
-
           <a href="index.html"
              class="block px-4 py-2 rounded-lg
                     hover:text-[#E83E8C]
                     transition">
             Home 1
           </a>
-
           <a href="home2.html"
              class="block px-4 py-2 rounded-lg
                     hover:text-[#E83E8C]
                     transition">
             Home 2
           </a>
-
         </div>
-
       </div>
-
 
       <a href="about.html"
          class="block px-4 py-3 rounded-lg
@@ -333,7 +308,6 @@
                 text-[#E83E8C] font-semibold">
         About
       </a>
-
 
       <a href="services.html"
          class="block px-4 py-3 rounded-lg
@@ -343,7 +317,6 @@
         Services
       </a>
 
-
       <a href="doctors.html"
          class="block px-4 py-3 rounded-lg
                 hover:bg-pink-50 dark:hover:bg-white/10
@@ -351,7 +324,6 @@
                 transition">
         Doctors
       </a>
-
 
       <a href="gallery.html"
          class="block px-4 py-3 rounded-lg
@@ -361,7 +333,6 @@
         Gallery
       </a>
 
-
       <a href="pricing.html"
          class="block px-4 py-3 rounded-lg
                 hover:bg-pink-50 dark:hover:bg-white/10
@@ -369,7 +340,6 @@
                 transition">
         Pricing
       </a>
-
 
       <a href="contact.html"
          class="block px-4 py-3 rounded-lg
@@ -379,21 +349,24 @@
         Contact
       </a>
 
+      <a href="login.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50 dark:hover:bg-white/10
+                hover:text-[#E83E8C] font-medium
+                transition">
+        Login
+      </a>
 
       <div class="flex gap-3 pt-3">
-
         <button
           onclick="toggleTheme()"
           type="button"
           class="flex-1 py-3 rounded-xl
                  border border-slate-200 dark:border-slate-600
                  cursor-pointer">
-
           <i class="fa-solid fa-moon mr-2"></i>
           Theme
-
         </button>
-
 
         <button
           onclick="toggleDirection()"
@@ -401,22 +374,13 @@
           class="px-5 py-3 rounded-xl
                  border border-slate-200 dark:border-slate-600
                  cursor-pointer">
-
           RTL
-
         </button>
-
       </div>
 
-
       <a href="appointment.html"
-         class="block text-center mt-3 py-3 rounded-xl
-                bg-gradient-to-r from-[#E83E8C] to-[#7C3AED]
-                text-white font-bold
-                cursor-pointer">
-
+         class="btn-book-rounded !py-3 w-full text-center block mt-3">
         Book Appointment
-
       </a>
 
     </div>
@@ -430,7 +394,7 @@
      1. ABOUT HERO (Centered Dark Background & Custom Buttons)
 ========================================================= -->
 
-<section class="hero-adaptive relative min-h-[580px] lg:min-h-[660px] flex items-center justify-center overflow-hidden py-24 lg:py-32">
+<section class="hero-adaptive relative min-h-[500px] lg:min-h-[580px] flex items-center justify-center overflow-hidden py-14 lg:py-20">
 
   <img src="../assets/images/about-hero-clinic.jpg"
        alt="DentaCare Clinic Center Team"
@@ -442,7 +406,7 @@
 
     <div class="hero-badge-adaptive mb-6 shadow-sm">
       <i class="fa-solid fa-hospital-user text-pink dark:text-cyan-400"></i>
-      <span>🏥 ABOUT DENTACARE CLINIC • ESTD. 2010</span>
+      <span> ABOUT DENTACARE CLINIC • ESTD. 2010</span>
     </div>
 
     <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-slate-900 dark:text-white font-heading max-w-4xl mb-6">
@@ -457,14 +421,14 @@
     </p>
 
     <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
-      <a href="#story"
-         class="px-8 py-4 rounded-xl font-bold text-white shadow-xl shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
+      <a href="./about.html"
+         class="px-8 py-4 rounded-full font-bold text-white shadow-xl shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
         <i class="fa-solid fa-book-open-reader"></i>
         <span>Read Our Clinic Story</span>
       </a>
 
       <a href="doctors.html"
-         class="glass-btn-adaptive px-8 py-4 rounded-xl font-bold hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
+         class="glass-btn-adaptive px-8 py-4 rounded-full font-bold hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
         <i class="fa-solid fa-user-doctor text-pink dark:text-cyan-400"></i>
         <span>Meet Our Medical Team</span>
       </a>
@@ -479,7 +443,7 @@
      2. WHO WE ARE
 ========================================================= -->
 
-<section class="py-20 lg:py-24 bg-white
+<section class="py-12 lg:py-16 bg-white
                 dark:bg-[#0b1026]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -639,7 +603,7 @@
      3. OUR MISSION
 ========================================================= -->
 
-<section class="py-20 lg:py-24 bg-slate-50 dark:bg-[#101633]">
+<section class="py-12 lg:py-16 bg-slate-50 dark:bg-[#101633]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -786,7 +750,7 @@
      4. WHY CHOOSE US
 ========================================================= -->
 
-<section class="py-20 lg:py-24 bg-white
+<section class="py-12 lg:py-16 bg-white
                 dark:bg-[#0b1026]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -898,7 +862,7 @@
      5. OUR VALUES
 ========================================================= -->
 
-<section class="py-20 lg:py-24
+<section class="py-12 lg:py-16
                 bg-slate-50 dark:bg-[#101633]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1031,7 +995,7 @@
      6. OUR EXPERT TEAM
 ========================================================= -->
 
-<section class="py-20 lg:py-24 bg-white
+<section class="py-12 lg:py-16 bg-white
                 dark:bg-[#0b1026]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1060,7 +1024,7 @@
 
       <a href="doctors.html"
          class="inline-flex items-center gap-2
-                px-5 py-3 rounded-xl
+                px-5 py-3 rounded-full
                 bg-gradient-to-r from-pink to-purple
                 text-white font-bold text-sm
                 hover:-translate-y-1 hover:shadow-xl
@@ -1220,7 +1184,7 @@
      7. OUR APPROACH
 ========================================================= -->
 
-<section class="py-20 lg:py-24
+<section class="py-12 lg:py-16
                 bg-slate-50 dark:bg-[#101633]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1347,7 +1311,7 @@
      8. TECHNOLOGY & FACILITIES
 ========================================================= -->
 
-<section class="py-20 lg:py-24 bg-white
+<section class="py-12 lg:py-16 bg-white
                 dark:bg-[#0b1026]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1456,7 +1420,7 @@
 
         <a href="gallery.html"
            class="inline-flex items-center gap-2
-                  mt-8 px-6 py-3.5 rounded-xl
+                  mt-8 px-6 py-3.5 rounded-full
                   bg-gradient-to-r from-pink to-purple
                   text-white font-bold
                   hover:-translate-y-1 hover:shadow-xl
@@ -1481,7 +1445,7 @@
      9. PATIENT PROMISE
 ========================================================= -->
 
-<section class="py-20 lg:py-24
+<section class="py-12 lg:py-16
                 bg-gradient-to-br from-navy
                 via-[#171f49] to-purple
                 text-white">
@@ -1561,7 +1525,7 @@
      10. FINAL CTA
 ========================================================= -->
 
-<section class="py-20 lg:py-24 bg-white
+<section class="py-12 lg:py-16 bg-white
                 dark:bg-[#0b1026]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1614,191 +1578,281 @@
 
 
 <!-- =========================================================
-     FOOTER
+     10. CERTIFIED CLINICAL EXCELLENCE & STERILIZATION
 ========================================================= -->
+<section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-900/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-pink uppercase text-xs font-bold tracking-[.18em]">
+        Accreditations & Hygiene
+      </span>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mt-3 font-heading">
+        Certified Clinical <span class="gradient-text">Excellence & Sterilization</span>
+      </h2>
+      <p class="text-slate-600 dark:text-slate-300 mt-4 text-sm sm:text-base leading-relaxed">
+        We adhere to strict hospital-grade bio-safety guidelines that surpass standard dental clinic requirements, giving you absolute peace of mind.
+      </p>
+    </div>
 
-<footer class="footer-adaptive">
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
-              py-14">
-
-    <div class="grid sm:grid-cols-2
-                lg:grid-cols-4 gap-10">
-
-      <!-- BRAND -->
-      <div>
-
-        <div class="flex items-center gap-3 mb-5">
-
-          <div class="w-11 h-11 rounded-xl
-                      bg-gradient-to-br from-pink to-purple
-                      flex items-center justify-center">
-
-            <i class="fa-solid fa-tooth"></i>
-
-          </div>
-
-          <div>
-
-            <div class="text-2xl font-extrabold">
-              Denta<span class="text-pink">Care</span>
-            </div>
-
-            <p class="text-xs text-slate-400">
-              PREMIUM DENTAL CARE
-            </p>
-
-          </div>
-
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-pink/10 text-pink flex items-center justify-center text-2xl mb-6">
+          <i class="fa-solid fa-certificate"></i>
         </div>
-
-
-        <p class="text-slate-300 leading-7 text-sm">
-          Premium dental care powered by expertise,
-          technology and compassionate service.
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">NABH & ISO Compliance</h3>
+        <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+          Our clinic operates in strict adherence to international healthcare quality management standards, audited annually for clinical precision and patient safety.
         </p>
-
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-pink flex items-center gap-2">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Verified Quality Management</span>
+        </div>
       </div>
 
+      <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-purple/10 text-purple flex items-center justify-center text-2xl mb-6">
+          <i class="fa-solid fa-pump-medical"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">6-Tier Bio-Safety Protocol</h3>
+        <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+          From ultrasonic bath scrubbing to vacuum autoclaving and sterile blister-packaging opened right in front of you, contamination risks are reduced to absolute zero.
+        </p>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-purple flex items-center gap-2">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>100% Autoclaved Handpieces</span>
+        </div>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-2xl mb-6">
+          <i class="fa-solid fa-wind"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">Hospital Air Filtration</h3>
+        <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+          Advanced medical HEPA filters cycle the clinic operatory air 12 times per hour, trapping aerosols and microscopic allergens for clean, fresh breathing.
+        </p>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-emerald-500 flex items-center gap-2">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Continuous HEPA 14 Air Exchange</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     11. COMMUNITY OUTREACH & SATISFACTION STATISTICS
+========================================================= -->
+<section class="py-12 lg:py-16 bg-white dark:bg-[#0b1026]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-pink uppercase text-xs font-bold tracking-[.18em]">
+          Giving Back
+        </span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mt-3 font-heading">
+          Community Dental Outreach & <span class="gradient-text">Patient Impact</span>
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 mt-4 text-sm sm:text-base leading-relaxed">
+          Dentistry is our medical calling. Beyond our private operatory suites, DentaCare organizes regular oral health screening camps across Ramanathapuram schools and rural communities.
+        </p>
+
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+            <div class="text-3xl font-black text-pink font-heading">15,000+</div>
+            <div class="text-sm font-semibold text-slate-800 dark:text-white mt-1">Healthy Smiles Treated</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Across 14 years of dedicated clinical practice.</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+            <div class="text-3xl font-black text-purple font-heading">99.4%</div>
+            <div class="text-sm font-semibold text-slate-800 dark:text-white mt-1">Patient Satisfaction</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Consistently rated 5-stars for painless procedures.</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+            <div class="text-3xl font-black text-pink font-heading">45+</div>
+            <div class="text-sm font-semibold text-slate-800 dark:text-white mt-1">Free School Camps</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Preventive fluoride applications for children.</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+            <div class="text-3xl font-black text-purple font-heading">24/7</div>
+            <div class="text-sm font-semibold text-slate-800 dark:text-white mt-1">Emergency On-Call</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Immediate dental triage for trauma & acute pain.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-white/10">
+          <img src="../assets/images/clinic-exterior.jpg"
+               alt="DentaCare Community Facility"
+               class="w-full h-[460px] object-cover">
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white dark:bg-[#111A3A] p-6 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10 max-w-xs hidden sm:block">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-lg">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 dark:text-white text-sm">Community First</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">Oral Cancer Screenings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     12. FINAL CALL TO ACTION
+========================================================= -->
+<section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-900/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl bg-[#111A3A] px-7 py-14 lg:px-16 text-center relative overflow-hidden shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-pink/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-purple/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <span class="text-pink uppercase text-xs font-bold tracking-[.18em]">
+          Start Your Smile Journey
+        </span>
+
+        <h2 class="text-3xl lg:text-5xl font-bold text-white mt-4 font-heading leading-tight">
+          Ready For A Healthier, <span class="gradient-text">More Confident Smile?</span>
+        </h2>
+
+        <p class="text-white/80 max-w-2xl mx-auto mt-5 text-base sm:text-lg leading-relaxed">
+          Join thousands of delighted patients in Ramanathapuram. Schedule your comprehensive consultation with our dental team today.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a href="appointment.html" class="btn-book-rounded !py-4 !px-8 !text-base shadow-xl">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Book Your Appointment</span>
+          </a>
+
+          <a href="tel:+919876543210" class="px-7 py-3.5 rounded-full font-bold bg-white text-navy hover:bg-slate-100 transition inline-flex items-center gap-2 text-sm shadow-md">
+            <i class="fa-solid fa-phone text-pink"></i>
+            <span>Call Desk: +91 98765 43210</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER (Standardized with GitHub & LinkedIn)
+========================================================= -->
+<footer class="footer-adaptive">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- LEFT: BRAND & GITHUB / LINKEDIN -->
+      <div>
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#E83E8C] to-[#7C3AED] text-white flex items-center justify-center shadow-md">
+            <i class="fa-solid fa-tooth text-xl"></i>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-slate-900 dark:text-white">
+              Denta<span class="text-[#E83E8C]">Care</span>
+            </div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 tracking-wide">
+              Premium Dental & Oral Care
+            </div>
+          </div>
+        </a>
+
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mt-4 text-sm max-w-sm">
+          World-class oral healthcare combining painless precision, 3D diagnostics, and comfortable modern suites in Ramanathapuram.
+        </p>
+
+        <!-- GITHUB & LINKEDIN PROFILES (LEFT COLUMN) -->
+        <div class="flex items-center gap-3 mt-6">
+          <a href="https://github.com/Munish146"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn"
+             title="Munish on GitHub"
+             aria-label="GitHub Profile">
+            <i class="fa-brands fa-github text-lg"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/munishu2004"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn"
+             title="Munish on LinkedIn"
+             aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin-in text-lg"></i>
+          </a>
+        </div>
+      </div>
 
       <!-- QUICK LINKS -->
       <div>
-
-        <h3 class="font-bold text-lg mb-5">
-          Quick Links
-        </h3>
-
-        <div class="space-y-3 text-sm">
-
-          <a href="index.html"
-             class="block text-slate-300 hover:text-pink transition">
-            Home
-          </a>
-
-          <a href="about.html"
-             class="block text-slate-300 hover:text-pink transition">
-            About
-          </a>
-
-          <a href="services.html"
-             class="block text-slate-300 hover:text-pink transition">
-            Services
-          </a>
-
-          <a href="doctors.html"
-             class="block text-slate-300 hover:text-pink transition">
-            Doctors
-          </a>
-
+        <h3 class="font-bold text-base text-slate-900 dark:text-white font-heading">Quick Links</h3>
+        <div class="space-y-2.5 mt-4 text-sm text-slate-600 dark:text-slate-400">
+          <a href="index.html" class="block hover:text-pink transition">Home 1</a>
+          <a href="home2.html" class="block hover:text-pink transition">Home 2</a>
+          <a href="about.html" class="block hover:text-pink transition">About Us</a>
+          <a href="services.html" class="block hover:text-pink transition">Services & Treatments</a>
+          <a href="doctors.html" class="block hover:text-pink transition">Our Specialist Doctors</a>
+          <a href="gallery.html" class="block hover:text-pink transition">Smile Gallery</a>
         </div>
-
       </div>
-
 
       <!-- SERVICES -->
       <div>
-
-        <h3 class="font-bold text-lg mb-5">
-          Services
-        </h3>
-
-        <div class="space-y-3 text-sm">
-
-          <p class="text-slate-300">
-            General Dentistry
-          </p>
-
-          <p class="text-slate-300">
-            Cosmetic Dentistry
-          </p>
-
-          <p class="text-slate-300">
-            Dental Implants
-          </p>
-
-          <p class="text-slate-300">
-            Orthodontics
-          </p>
-
+        <h3 class="font-bold text-base text-slate-900 dark:text-white font-heading">Services</h3>
+        <div class="space-y-2.5 mt-4 text-sm text-slate-600 dark:text-slate-400">
+          <a href="services.html" class="block hover:text-pink transition">General Dentistry</a>
+          <a href="services.html" class="block hover:text-pink transition">Cosmetic Dentistry</a>
+          <a href="services.html" class="block hover:text-pink transition">Dental Implants & 3D Restorations</a>
+          <a href="services.html" class="block hover:text-pink transition">Orthodontics & Clear Aligners</a>
+          <a href="services.html" class="block hover:text-pink transition">Painless Root Canal Therapy</a>
         </div>
-
       </div>
-
 
       <!-- CONTACT -->
       <div>
-
-        <h3 class="font-bold text-lg mb-5">
-          Contact
-        </h3>
-
-        <div class="space-y-4 text-sm">
-
-          <div class="flex gap-3">
-
-            <i class="fa-solid fa-location-dot text-pink mt-1"></i>
-
-            <span class="text-slate-300">
-              Premium Dental Care Center
-            </span>
-
+        <h3 class="font-bold text-base text-slate-900 dark:text-white font-heading">Contact Information</h3>
+        <div class="space-y-3 mt-4 text-sm text-slate-600 dark:text-slate-400">
+          <p class="flex items-start gap-3">
+            <i class="fa-solid fa-location-dot text-pink mt-1 shrink-0"></i>
+            <span>Main Clinic Rd, Ramanathapuram, Tamil Nadu 623501</span>
+          </p>
+          <p class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-pink shrink-0"></i>
+            <a href="tel:+919876543210" class="hover:text-pink transition">+91 98765 43210</a>
+          </p>
+          <p class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope text-pink shrink-0"></i>
+            <a href="mailto:hello@dentacare.com" class="hover:text-pink transition">hello@dentacare.com</a>
+          </p>
+          <div class="pt-2">
+            <a href="appointment.html" class="btn-book-rounded !py-2 !px-4 !text-xs">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Book Priority Visit</span>
+            </a>
           </div>
-
-
-          <div class="flex gap-3">
-
-            <i class="fa-solid fa-phone text-pink mt-1"></i>
-
-            <span class="text-slate-300">
-              +91 98765 43210
-            </span>
-
-          </div>
-
-
-          <div class="flex gap-3">
-
-            <i class="fa-solid fa-envelope text-pink mt-1"></i>
-
-            <span class="text-slate-300">
-              hello@dentacare.com
-            </span>
-
-          </div>
-
         </div>
-
       </div>
 
     </div>
 
-
-    <div class="border-t border-white/10
-                mt-10 pt-6
-                flex flex-col md:flex-row
-                justify-between gap-3
-                text-sm text-slate-400">
-
-      <p>
-        © 2026 DentaCare. All rights reserved.
+    <div class="border-t border-slate-200 dark:border-white/10 pt-6 mt-10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+      <p>© 2026 DentaCare Clinic. All rights reserved.</p>
+      <p class="flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved text-purple"></i>
+        <span>256-Bit HIPAA Encrypted Medical Portal Access</span>
       </p>
-
-      <div class="flex gap-5">
-
-        <a href="#" class="hover:text-pink transition">
-          Privacy Policy
-        </a>
-
-        <a href="#" class="hover:text-pink transition">
-          Terms
-        </a>
-
-      </div>
-
     </div>
-
   </div>
-
 </footer>
 
 

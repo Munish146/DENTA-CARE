@@ -244,17 +244,15 @@
     }
 
     // 5.7 Bind Mobile Home Dropdown
-    const mobileHomeBtn = document.getElementById("mobileHomeBtn");
-    const mobileHomeDropdown = document.getElementById("mobileHomeDropdown");
-    if (mobileHomeBtn && mobileHomeDropdown) {
-      mobileHomeBtn.removeAttribute("onclick");
-      mobileHomeBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        mobileHomeDropdown.classList.toggle("hidden");
-        const arrow = mobileHomeBtn.querySelector(".home-arrow, i");
-        if (arrow) {
-          arrow.classList.toggle("rotate-180");
-        }
+    const mobileHomeButtons = document.querySelectorAll('#mobileHomeBtn, [onclick*="toggleMobileHome"]');
+    const mobileHomeMenu = document.getElementById("mobileHomeMenu") || document.getElementById("mobileHomeDropdown");
+    if (mobileHomeMenu) {
+      mobileHomeButtons.forEach((btn) => {
+        btn.removeAttribute("onclick");
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          toggleMobileHome();
+        });
       });
     }
 
@@ -309,15 +307,39 @@
     });
 
     // 5.11 Active Navigation Highlighting
-    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    let currentPath = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
+    if (!currentPath || currentPath === "") currentPath = "index.html";
+
     const navLinks = document.querySelectorAll("nav a[href], #mobileMenu a[href]");
+    const isHome = currentPath === "index.html" || currentPath === "home2.html";
+
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
       if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
       const linkFile = href.split("/").pop().split("?")[0].split("#")[0];
 
-      if (linkFile === currentPath || (currentPath === "" && linkFile === "index.html")) {
+      // Remove any spurious hardcoded active classes from inactive links
+      if (linkFile !== currentPath) {
+        link.classList.remove("text-pink", "text-[#E83E8C]", "font-bold");
+        if (link.closest("#mobileMenu")) {
+          link.classList.remove("bg-pink-50", "dark:bg-white/10");
+        }
+      } else {
+        // Exact match for current page
         link.classList.add("text-pink", "font-bold");
+        if (link.closest("#mobileMenu")) {
+          link.classList.add("bg-pink-50", "dark:bg-white/10");
+        }
+      }
+    });
+
+    // For Home 1 and Home 2, highlight the parent Home button
+    const homeButtons = document.querySelectorAll("#desktopHomeBtn, .group > button.nav-link, #mobileHomeBtn");
+    homeButtons.forEach((btn) => {
+      if (isHome) {
+        btn.classList.add("text-pink", "font-bold");
+      } else {
+        btn.classList.remove("text-pink", "text-[#E83E8C]", "font-bold");
       }
     });
 
@@ -354,4 +376,32 @@
       el.textContent = new Date().getFullYear();
     });
   });
+
+  /* =========================================================
+     6. GLOBAL PORTAL & UI HELPERS
+     ========================================================= */
+  window.togglePasswordVisibility = function (id, btn) {
+    const input = document.getElementById(id);
+    if (!input) return;
+    const icon = btn.querySelector("i");
+    if (input.type === "password") {
+      input.type = "text";
+      if (icon) icon.className = "fa-regular fa-eye-slash";
+    } else {
+      input.type = "password";
+      if (icon) icon.className = "fa-regular fa-eye";
+    }
+  };
+
+  window.showPortalAlert = function (elemId, msg, isSuccess) {
+    const box = document.getElementById(elemId);
+    if (!box) return;
+    box.classList.remove("hidden", "bg-emerald-950/80", "text-emerald-300", "border-emerald-600/50", "bg-rose-950/80", "text-rose-300", "border-rose-600/50");
+    if (isSuccess) {
+      box.classList.add("bg-emerald-950/80", "text-emerald-300", "border", "border-emerald-600/50");
+    } else {
+      box.classList.add("bg-rose-950/80", "text-rose-300", "border", "border-rose-600/50");
+    }
+    box.innerText = msg;
+  };
 })();

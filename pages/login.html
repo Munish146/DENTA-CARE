@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patient Portal | DentaCare</title>
+
+  <title>DentaCare | Patient Portal Login</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,12 +17,9 @@
       theme: {
         extend: {
           colors: {
-            navy: "#070B19",
-            darkCard: "#0E152E",
-            darkBorder: "#1E294B",
+            navy: "#111A3A",
             pink: "#E83E8C",
-            purple: "#7C3AED",
-            cyan: "#06B6D4"
+            purple: "#7C3AED"
           }
         }
       }
@@ -29,352 +27,239 @@
   </script>
 </head>
 
-<body class="bg-[#070B19] text-white min-h-screen flex flex-col justify-between selection:bg-pink selection:text-white font-['Plus_Jakarta_Sans',sans-serif]">
+<body class="bg-white text-slate-800 dark:bg-[#0b1026] dark:text-white transition-colors duration-300">
 
-  <!-- TOP BAR (Screenshot 1 Match) -->
-  <header class="w-full px-5 lg:px-10 py-5 flex items-center justify-between z-20">
-    <a href="index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition duration-200">
-      <i class="fa-solid fa-arrow-left text-xs"></i>
-      <span>Back to Home</span>
-    </a>
+<!-- =========================================================
+     AUTH HEADER: Back to Home, RTL, Light/Dark Mode Only
+========================================================= -->
+<header class="w-full px-5 lg:px-10 py-4 flex items-center justify-between z-20 border-b border-slate-100 dark:border-slate-800 bg-white/95 dark:bg-[#111A3A]/95 backdrop-blur-md sticky top-0">
+  <a href="index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-pink transition duration-200">
+    <i class="fa-solid fa-arrow-left text-xs text-pink"></i>
+    <span>Back to Home</span>
+  </a>
 
-    <div class="flex items-center gap-3">
-      <!-- RTL Toggle -->
-      <button id="rtlToggle" onclick="toggleDirection()" class="px-3 py-1.5 rounded-lg border border-slate-700/80 bg-slate-800/40 hover:bg-slate-700/60 text-xs font-bold text-slate-200 hover:text-white transition flex items-center gap-1.5 cursor-pointer">
-        <i class="fa-solid fa-right-left text-[10px]"></i>
-        <span>RTL</span>
-      </button>
+  <div class="flex items-center gap-3">
+    <!-- RTL Toggle -->
+    <button id="rtlToggle" onclick="toggleDirection()" class="px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 hover:border-pink text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-pink transition flex items-center gap-1.5 cursor-pointer">
+      <i class="fa-solid fa-right-left text-[10px]"></i>
+      <span id="rtlText">RTL</span>
+    </button>
 
-      <!-- Settings Icon / Theme -->
-      <button id="themeToggle" onclick="toggleTheme()" class="w-8 h-8 rounded-lg border border-slate-700/80 bg-slate-800/40 hover:bg-slate-700/60 text-slate-300 hover:text-white flex items-center justify-center text-xs transition cursor-pointer" title="Settings & Theme">
-        <i class="fa-solid fa-gear"></i>
-      </button>
-    </div>
-  </header>
+    <!-- Theme Toggle -->
+    <button id="themeToggle" onclick="toggleTheme()" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 hover:border-pink text-slate-700 dark:text-slate-200 hover:text-pink flex items-center justify-center text-xs transition cursor-pointer" title="Toggle Theme">
+      <i id="themeIcon" class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
 
-  <!-- MAIN CENTERED AUTH WRAPPER -->
-  <main class="w-full max-w-lg mx-auto px-4 py-4 flex-1 flex flex-col justify-center items-center relative z-10">
 
-    <!-- AMBIENT BACKGROUND GLOWS -->
-    <div class="absolute -top-24 -left-24 w-72 h-72 bg-purple/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-pink/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- =========================================================
+     2. INTERACTIVE PORTAL SIGN-IN CARD
+========================================================= -->
+<section class="py-12 lg:py-16 bg-slate-50 dark:bg-[#070B19]/60 relative">
+  <div class="max-w-xl mx-auto px-4 sm:px-6">
 
-    <!-- LOGO & BRANDING (Screenshot 1 Match) -->
-    <div class="text-center mb-6">
-      <div class="inline-flex items-center justify-center gap-3 mb-3">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#E83E8C] flex items-center justify-center shadow-lg shadow-purple-500/30">
-          <i class="fa-solid fa-tooth text-2xl text-white"></i>
-        </div>
-        <div class="text-left">
-          <h1 class="text-2xl font-extrabold tracking-tight text-white leading-tight font-heading">
-            Denta<span class="text-pink">Care</span>
-          </h1>
-          <p class="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">
-            DENTAL CLINIC • NEXT-GEN
-          </p>
-        </div>
+    <!-- ALERT NOTIFICATION BOX -->
+    <div id="authAlert" class="hidden w-full mb-6 p-4 rounded-2xl text-sm font-medium text-center transition shadow-lg"></div>
+
+    <!-- MAIN SIGN IN CARD -->
+    <div class="auth-card rounded-3xl p-6 sm:p-10 relative">
+
+      <!-- AMBIENT GLOW -->
+      <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink/15 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-purple/15 rounded-full blur-2xl pointer-events-none"></div>
+
+      <!-- DENTACARE LOGO & BRANDING INSIDE CARD -->
+      <div class="text-center mb-7 relative z-10">
+        <a href="index.html" class="inline-flex items-center justify-center gap-3 mb-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#E83E8C] to-[#7C3AED] flex items-center justify-center shadow-lg shadow-pink/30 text-white group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-tooth text-2xl"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight font-heading">
+              Denta<span class="text-pink">Care</span>
+            </div>
+            <div class="text-[10px] font-bold tracking-[0.2em] text-slate-500 dark:text-slate-400 uppercase">
+              PREMIUM DENTAL CLINIC
+            </div>
+          </div>
+        </a>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-heading">
+          Sign In to Your Account
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-sm mx-auto">
+          Enter your registered email or DentaCare Patient ID to proceed.
+        </p>
       </div>
 
-      <h2 id="authHeading" class="text-2xl lg:text-3xl font-extrabold text-white tracking-tight mt-2 font-heading">
-        Patient Portal Sign In
-      </h2>
-      <p id="authSubheading" class="text-sm text-slate-400 mt-1 max-w-sm mx-auto">
-        Access your 3D digital records and appointments.
-      </p>
-    </div>
+      <!-- FORM -->
+      <form id="portalLoginForm" class="space-y-5 relative z-10">
+        <!-- EMAIL / PATIENT ID -->
+        <div>
+          <label for="loginEmail" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+            Email Address or Patient ID
+          </label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+              <i class="fa-regular fa-envelope"></i>
+            </span>
+            <input type="text" id="loginEmail" required placeholder="name@example.com or DC-2026-88"
+                   class="auth-input w-full pl-11 pr-4 py-3.5 rounded-xl text-sm transition focus:outline-none">
+          </div>
+        </div>
 
-    <!-- NOTIFICATION BOX -->
-    <div id="authAlert" class="hidden w-full mb-4 p-3.5 rounded-xl text-sm font-medium text-center transition"></div>
-
-    <!-- CARD CONTAINER (Screenshot 1 Match) -->
-    <div class="w-full bg-[#0D1326]/90 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/60 relative">
-
-      <!-- ================= 1. LOGIN FORM ================= -->
-      <div id="loginSection" class="transition-all duration-300">
-        <form id="loginForm" class="space-y-4">
-          <!-- Email / Patient ID -->
-          <div>
-            <label for="loginEmail" class="block text-xs font-semibold text-slate-300 mb-1.5">
-              Email Address / Patient ID
+        <!-- PASSWORD -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <label for="loginPassword" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+              Password
             </label>
-            <div class="relative">
-              <input type="text" id="loginEmail" required placeholder="patient@example.com"
-                class="w-full px-4 py-3 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink focus:ring-1 focus:ring-pink transition">
-            </div>
+            <button type="button" onclick="handleForgotPassword()" class="text-xs font-semibold text-[#E83E8C] hover:underline cursor-pointer">
+              Forgot password?
+            </button>
           </div>
-
-          <!-- Password with Forgot Link -->
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <label for="loginPassword" class="text-xs font-semibold text-slate-300">
-                Password
-              </label>
-              <a href="javascript:void(0)" onclick="alert('Password reset instructions have been sent to your registered email.')" class="text-xs font-medium text-pink hover:text-pink/80 transition">
-                Forgot password?
-              </a>
-            </div>
-            <div class="relative">
-              <input type="password" id="loginPassword" required placeholder="••••••••"
-                class="w-full px-4 py-3 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink focus:ring-1 focus:ring-pink transition pr-10">
-              <button type="button" onclick="togglePasswordVisibility('loginPassword', this)" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-sm">
-                <i class="fa-regular fa-eye"></i>
-              </button>
-            </div>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+              <i class="fa-solid fa-lock text-xs"></i>
+            </span>
+            <input type="password" id="loginPassword" required placeholder="••••••••"
+                   class="auth-input w-full pl-11 pr-12 py-3.5 rounded-xl text-sm transition focus:outline-none">
+            <button type="button" onclick="togglePasswordVisibility('loginPassword', this)" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-white text-sm cursor-pointer" title="Show/Hide Password">
+              <i class="fa-regular fa-eye"></i>
+            </button>
           </div>
-
-          <!-- Sign In Button -->
-          <button type="submit"
-            class="w-full py-3.5 px-6 rounded-xl font-bold text-white text-sm tracking-wide bg-gradient-to-r from-[#6366F1] via-[#A855F7] to-[#EC4899] hover:from-[#4F46E5] hover:via-[#9333EA] hover:to-[#DB2777] shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer">
-            Sign In to Portal
-          </button>
-        </form>
-
-        <!-- DIVIDER -->
-        <div class="relative my-5 flex items-center justify-center">
-          <div class="border-t border-slate-800 w-full"></div>
-          <span class="bg-[#0D1326] px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider absolute">
-            OR CONTINUE WITH
-          </span>
         </div>
 
-        <!-- SOCIAL LOGIN BUTTONS (Screenshot 1 Match) -->
-        <div class="space-y-2.5">
-          <!-- Google -->
-          <button type="button" onclick="mockSocialAuth('Google')"
-            class="w-full py-2.5 px-4 bg-[#141C38] hover:bg-[#1A254B] border border-slate-700/70 rounded-xl text-sm font-semibold text-slate-200 hover:text-white flex items-center justify-center gap-3 transition cursor-pointer">
-            <svg class="w-4 h-4" viewBox="0 0 24 24">
-              <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.3 8.9 5 12 5z"/>
-              <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/>
-              <path fill="#FBBC05" d="M5.3 14.7c-.2-.7-.4-1.5-.4-2.4s.2-1.6.4-2.4L1.6 7c-.8 1.6-1.3 3.4-1.3 5.3s.5 3.7 1.3 5.3l3.7-2.9z"/>
-              <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.3-6.7-5.3L1.6 16C3.5 19.8 7.4 23 12 23z"/>
-            </svg>
-            <span>Continue with Google</span>
-          </button>
-
-          <!-- Apple -->
-          <button type="button" onclick="mockSocialAuth('Apple')"
-            class="w-full py-2.5 px-4 bg-black hover:bg-slate-900 border border-slate-800 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-3 transition cursor-pointer">
-            <i class="fa-brands fa-apple text-base"></i>
-            <span>Continue with Apple</span>
-          </button>
+        <!-- REMEMBER ME CHECKBOX -->
+        <div class="flex items-center justify-between text-xs pt-1">
+          <label class="flex items-center gap-2 cursor-pointer text-slate-600 dark:text-slate-400">
+            <input type="checkbox" class="w-4 h-4 rounded text-pink focus:ring-pink border-slate-300 dark:border-slate-600">
+            <span>Remember this device for 30 days</span>
+          </label>
         </div>
 
-        <!-- CREATE ACCOUNT FOOTER LINK -->
-        <div class="mt-6 text-center text-xs text-slate-400">
-          <span>New patient? </span>
-          <button type="button" onclick="showRegisterForm()" class="text-pink font-semibold hover:underline cursor-pointer">
-            Create an account
-          </button>
-        </div>
+        <!-- SIGN IN BUTTON -->
+        <button type="submit" class="w-full py-4 px-6 rounded-full font-bold text-white text-sm tracking-wide bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:from-[#d63384] hover:to-[#6d28d9] shadow-lg shadow-pink/30 hover:shadow-pink/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2">
+          <i class="fa-solid fa-right-to-bracket text-sm"></i>
+          <span>Sign In to Portal</span>
+        </button>
+      </form>
+
+      <!-- SOCIAL AUTH SEPARATOR -->
+      <div class="relative my-6 flex items-center justify-center z-10">
+        <div class="border-t border-slate-200 dark:border-slate-700 w-full"></div>
+        <span class="bg-white dark:bg-[#0D1326] px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider absolute">
+          OR CONTINUE WITH
+        </span>
       </div>
 
-      <!-- ================= 2. COMPLETE REGISTRATION FORM ================= -->
-      <div id="registerSection" class="hidden transition-all duration-300">
-        <form id="registrationForm" class="space-y-3.5">
-          <!-- Name Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">First Name *</label>
-              <input type="text" id="regFirstName" required placeholder="Dr. / Jane"
-                class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Last Name *</label>
-              <input type="text" id="regLastName" required placeholder="Doe"
-                class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
-            </div>
-          </div>
+      <!-- SOCIAL BUTTONS -->
+      <div class="space-y-3 z-10 relative">
+        <button type="button" onclick="mockSocialAuth('Google')"
+                class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold text-xs text-slate-700 dark:text-slate-200 flex items-center justify-center gap-3 transition cursor-pointer">
+          <svg class="w-4 h-4" viewBox="0 0 24 24">
+            <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.3 8.9 5 12 5z"/>
+            <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/>
+            <path fill="#FBBC05" d="M5.3 14.7c-.2-.7-.4-1.5-.4-2.4s.2-1.6.4-2.4L1.6 7c-.8 1.6-1.3 3.4-1.3 5.3s.5 3.7 1.3 5.3l3.7-2.9z"/>
+            <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.3-6.7-5.3L1.6 16C3.5 19.8 7.4 23 12 23z"/>
+          </svg>
+          <span>Continue with Google Health</span>
+        </button>
 
-          <!-- Email & Phone Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
-              <input type="email" id="regEmail" required placeholder="jane.doe@example.com"
-                class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number *</label>
-              <input type="tel" id="regPhone" required placeholder="+91 98765 43210"
-                class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
-            </div>
-          </div>
-
-          <!-- DOB & Gender Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Date of Birth</label>
-              <input type="date" id="regDOB"
-                class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Gender</label>
-              <select id="regGender" class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-                <option value="nonbinary">Non-Binary / Other</option>
-                <option value="prefer_not">Prefer not to say</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Dental Concern -->
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Primary Dental Need</label>
-            <select id="regConcern" class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
-              <option value="cleaning">Routine Cleaning & Dental Checkup</option>
-              <option value="whitening">Cosmetic Teeth Whitening</option>
-              <option value="braces">Orthodontics & Clear Aligners</option>
-              <option value="implants">Dental Implants & Restoration</option>
-              <option value="rootcanal">Painless Root Canal Therapy</option>
-              <option value="emergency">Emergency Toothache Relief</option>
-            </select>
-          </div>
-
-          <!-- Password Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Password *</label>
-              <input type="password" id="regPassword" required placeholder="••••••••"
-                class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Confirm Password *</label>
-              <input type="password" id="regConfirmPassword" required placeholder="••••••••"
-                class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
-            </div>
-          </div>
-
-          <!-- Terms Checkbox -->
-          <div class="flex items-start gap-2 pt-1">
-            <input type="checkbox" id="regTerms" required class="mt-0.5 rounded bg-slate-800 border-slate-700 text-pink focus:ring-pink">
-            <label for="regTerms" class="text-[11px] text-slate-400 leading-tight">
-              I agree to the <a href="javascript:void(0)" class="text-pink underline">Terms of Service</a> and acknowledge the <a href="javascript:void(0)" class="text-pink underline">HIPAA Privacy Notice</a>.
-            </label>
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit"
-            class="w-full py-3 px-6 rounded-xl font-bold text-white text-xs tracking-wide bg-gradient-to-r from-[#6366F1] via-[#A855F7] to-[#EC4899] hover:from-[#4F46E5] hover:via-[#9333EA] hover:to-[#DB2777] shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-200 cursor-pointer mt-2">
-            Complete Registration & Access Portal
-          </button>
-        </form>
-
-        <!-- SWITCH BACK TO LOGIN -->
-        <div class="mt-4 text-center text-xs text-slate-400">
-          <span>Already have an account? </span>
-          <button type="button" onclick="showLoginForm()" class="text-pink font-semibold hover:underline cursor-pointer">
-            Sign In to Portal
-          </button>
-        </div>
+        <button type="button" onclick="mockSocialAuth('Apple')"
+                class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold text-xs text-slate-700 dark:text-slate-200 flex items-center justify-center gap-3 transition cursor-pointer">
+          <i class="fa-brands fa-apple text-base"></i>
+          <span>Continue with Apple Health</span>
+        </button>
       </div>
 
+      <!-- CREATE ACCOUNT LINK -->
+      <div class="mt-8 text-center text-xs text-slate-600 dark:text-slate-400 z-10 relative">
+        <span>New to DentaCare? </span>
+        <a href="register.html" class="text-pink font-bold hover:underline">
+          Create a Patient Account
+        </a>
+      </div>
+
+      <!-- SECURITY BADGE -->
+      <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-700/60 flex items-center justify-center gap-2 text-xs text-slate-500 font-medium">
+        <i class="fa-solid fa-shield-halved text-purple"></i>
+        <span>256-Bit HIPAA Compliant Cloud Medical Records</span>
+      </div>
     </div>
 
-    <!-- SECURITY BADGE (Screenshot 1 Match) -->
-    <div class="mt-5 flex items-center justify-center gap-2 text-xs text-slate-500 font-medium">
-      <i class="fa-solid fa-lock text-purple text-xs"></i>
-      <span>256-Bit HIPAA Encrypted Portal Access</span>
-    </div>
+  </div>
+</section>
 
-  </main>
 
-  <!-- MINIMAL CLEAN FOOTER -->
-  <footer class="w-full py-4 px-5 text-center text-xs text-slate-600">
-    <span>© 2026 DentaCare Clinic. All rights reserved.</span>
-  </footer>
-
-  <!-- AUTH SCRIPTS & TOGGLE LOGIC -->
-  <script src="../js/main.js"></script>
-  <script>
-    function togglePasswordVisibility(id, btn) {
-      const input = document.getElementById(id);
-      const icon = btn.querySelector('i');
-      if (input.type === 'password') {
-        input.type = 'text';
-        icon.className = 'fa-regular fa-eye-slash';
-      } else {
-        input.type = 'password';
-        icon.className = 'fa-regular fa-eye';
-      }
+<!-- =========================================================
+     SCRIPTS & FUNCTIONALITY
+========================================================= -->
+<script src="../js/main.js"></script>
+<script>
+  function togglePasswordVisibility(id, btn) {
+    const input = document.getElementById(id);
+    const icon = btn.querySelector('i');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.className = 'fa-regular fa-eye-slash';
+    } else {
+      input.type = 'password';
+      icon.className = 'fa-regular fa-eye';
     }
+  }
 
-    function showRegisterForm() {
-      document.getElementById('loginSection').classList.add('hidden');
-      document.getElementById('registerSection').classList.remove('hidden');
-      document.getElementById('authHeading').innerText = 'Complete Patient Registration';
-      document.getElementById('authSubheading').innerText = 'Create your account for digital health records & appointments.';
-      hideAlert();
+  function showAlert(msg, isSuccess = true) {
+    const alertBox = document.getElementById('authAlert');
+    if (!alertBox) return;
+    alertBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'border-emerald-300', 'bg-rose-100', 'text-rose-800', 'border-rose-300', 'dark:bg-emerald-950/80', 'dark:text-emerald-300', 'dark:border-emerald-600/50', 'dark:bg-rose-950/80', 'dark:text-rose-300', 'dark:border-rose-600/50');
+    if (isSuccess) {
+      alertBox.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-300', 'dark:bg-emerald-950/80', 'dark:text-emerald-300', 'dark:border-emerald-600/50');
+    } else {
+      alertBox.classList.add('bg-rose-100', 'text-rose-800', 'border', 'border-rose-300', 'dark:bg-rose-950/80', 'dark:text-rose-300', 'dark:border-rose-600/50');
     }
+    alertBox.innerText = msg;
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 
-    function showLoginForm() {
-      document.getElementById('registerSection').classList.add('hidden');
-      document.getElementById('loginSection').classList.remove('hidden');
-      document.getElementById('authHeading').innerText = 'Patient Portal Sign In';
-      document.getElementById('authSubheading').innerText = 'Access your 3D digital records and appointments.';
-      hideAlert();
-    }
+  function handleForgotPassword() {
+    showAlert('Password reset instructions and a verification PIN have been sent to your registered email.', true);
+  }
 
-    function showAlert(msg, isSuccess = true) {
-      const alertBox = document.getElementById('authAlert');
-      alertBox.classList.remove('hidden', 'bg-emerald-950/80', 'text-emerald-300', 'border-emerald-600/50', 'bg-rose-950/80', 'text-rose-300', 'border-rose-600/50');
-      if (isSuccess) {
-        alertBox.classList.add('bg-emerald-950/80', 'text-emerald-300', 'border', 'border-emerald-600/50');
-      } else {
-        alertBox.classList.add('bg-rose-950/80', 'text-rose-300', 'border', 'border-rose-600/50');
-      }
-      alertBox.innerText = msg;
-    }
-
-    function hideAlert() {
-      document.getElementById('authAlert').classList.add('hidden');
-    }
-
-    function mockSocialAuth(provider) {
-      showAlert(`Connecting securely with ${provider} Authentication...`, true);
+  function mockSocialAuth(provider) {
+    showAlert(`Connecting securely with ${provider} Authentication...`, true);
+    setTimeout(() => {
+      showAlert(`Welcome to DentaCare Portal via ${provider}! Redirecting to your appointment dashboard...`, true);
       setTimeout(() => {
-        showAlert(`Welcome to DentaCare Portal via ${provider}! Redirecting to your dashboard...`, true);
-        setTimeout(() => {
-          window.location.href = "appointment.html";
-        }, 1200);
-      }, 800);
-    }
+        window.location.href = "appointment.html";
+      }, 1200);
+    }, 800);
+  }
 
-    // Handle Login Submit
-    document.getElementById('loginForm')?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('loginEmail').value;
-      showAlert('Authenticating patient credentials...', true);
+  // Handle Login Submit
+  document.getElementById('portalLoginForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    showAlert('Authenticating patient credentials...', true);
+    setTimeout(() => {
+      showAlert('Sign-in successful! Loading your 3D patient records...', true);
       setTimeout(() => {
-        showAlert('Sign-in successful! Loading your 3D patient records...', true);
-        setTimeout(() => {
-          window.location.href = "appointment.html";
-        }, 1200);
-      }, 800);
-    });
+        window.location.href = "appointment.html";
+      }, 1200);
+    }, 800);
+  });
 
-    // Handle Registration Submit
-    document.getElementById('registrationForm')?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const pass = document.getElementById('regPassword').value;
-      const confirmPass = document.getElementById('regConfirmPassword').value;
-      if (pass !== confirmPass) {
-        showAlert('Passwords do not match! Please check and try again.', false);
-        return;
-      }
-      const fname = document.getElementById('regFirstName').value;
-      showAlert(`Creating patient account for ${fname}...`, true);
-      setTimeout(() => {
-        showAlert('Registration complete! Welcome to DentaCare Portal. Redirecting...', true);
-        setTimeout(() => {
-          window.location.href = "appointment.html";
-        }, 1400);
-      }, 1000);
-    });
-
-    // Check URL Hash for direct registration view
-    if (window.location.hash === '#register') {
-      showRegisterForm();
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('i');
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      icon.classList.remove('rotate-180');
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>

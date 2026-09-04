@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patient Registration | DentaCare</title>
+
+  <title>DentaCare | Patient Registration</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,12 +17,9 @@
       theme: {
         extend: {
           colors: {
-            navy: "#070B19",
-            darkCard: "#0E152E",
-            darkBorder: "#1E294B",
+            navy: "#111A3A",
             pink: "#E83E8C",
-            purple: "#7C3AED",
-            cyan: "#06B6D4"
+            purple: "#7C3AED"
           }
         }
       }
@@ -29,191 +27,271 @@
   </script>
 </head>
 
-<body class="bg-[#070B19] text-white min-h-screen flex flex-col justify-between selection:bg-pink selection:text-white font-['Plus_Jakarta_Sans',sans-serif]">
+<body class="bg-white text-slate-800 dark:bg-[#0b1026] dark:text-white transition-colors duration-300">
 
-  <!-- TOP BAR -->
-  <header class="w-full px-5 lg:px-10 py-5 flex items-center justify-between z-20">
-    <a href="login.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition duration-200">
-      <i class="fa-solid fa-arrow-left text-xs"></i>
-      <span>Back to Sign In</span>
-    </a>
+<!-- =========================================================
+     AUTH HEADER: Back to Home, RTL, Light/Dark Mode Only
+========================================================= -->
+<header class="w-full px-5 lg:px-10 py-4 flex items-center justify-between z-20 border-b border-slate-100 dark:border-slate-800 bg-white/95 dark:bg-[#111A3A]/95 backdrop-blur-md sticky top-0">
+  <a href="index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-pink transition duration-200">
+    <i class="fa-solid fa-arrow-left text-xs text-pink"></i>
+    <span>Back to Home</span>
+  </a>
 
-    <div class="flex items-center gap-3">
-      <a href="index.html" class="text-xs font-semibold text-slate-400 hover:text-white transition">
-        Home
-      </a>
-      <button id="rtlToggle" onclick="toggleDirection()" class="px-3 py-1.5 rounded-lg border border-slate-700/80 bg-slate-800/40 hover:bg-slate-700/60 text-xs font-bold text-slate-200 hover:text-white transition flex items-center gap-1.5 cursor-pointer">
-        <i class="fa-solid fa-right-left text-[10px]"></i>
-        <span>RTL</span>
-      </button>
-      <button id="themeToggle" onclick="toggleTheme()" class="w-8 h-8 rounded-lg border border-slate-700/80 bg-slate-800/40 hover:bg-slate-700/60 text-slate-300 hover:text-white flex items-center justify-center text-xs transition cursor-pointer" title="Settings">
-        <i class="fa-solid fa-gear"></i>
-      </button>
-    </div>
-  </header>
+  <div class="flex items-center gap-3">
+    <!-- RTL Toggle -->
+    <button id="rtlToggle" onclick="toggleDirection()" class="px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 hover:border-pink text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-pink transition flex items-center gap-1.5 cursor-pointer">
+      <i class="fa-solid fa-right-left text-[10px]"></i>
+      <span id="rtlText">RTL</span>
+    </button>
 
-  <!-- MAIN WRAPPER -->
-  <main class="w-full max-w-xl mx-auto px-4 py-4 flex-1 flex flex-col justify-center items-center relative z-10">
+    <!-- Theme Toggle -->
+    <button id="themeToggle" onclick="toggleTheme()" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 hover:border-pink text-slate-700 dark:text-slate-200 hover:text-pink flex items-center justify-center text-xs transition cursor-pointer" title="Toggle Theme">
+      <i id="themeIcon" class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
 
-    <div class="absolute -top-24 -left-24 w-72 h-72 bg-purple/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-pink/20 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- LOGO & BRANDING -->
-    <div class="text-center mb-5">
-      <div class="inline-flex items-center justify-center gap-3 mb-2">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#E83E8C] flex items-center justify-center shadow-lg shadow-purple-500/30">
-          <i class="fa-solid fa-tooth text-2xl text-white"></i>
-        </div>
-        <div class="text-left">
-          <h1 class="text-2xl font-extrabold tracking-tight text-white leading-tight font-heading">
-            Denta<span class="text-pink">Care</span>
-          </h1>
-          <p class="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">
-            DENTAL CLINIC • NEXT-GEN
-          </p>
-        </div>
+
+<!-- =========================================================
+     2. INTERACTIVE REGISTRATION CARD
+========================================================= -->
+<section class="py-12 lg:py-16 bg-slate-50 dark:bg-[#070B19]/60 relative">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+
+    <!-- ALERT NOTIFICATION BOX -->
+    <div id="regAlert" class="hidden w-full mb-6 p-4 rounded-2xl text-sm font-medium text-center transition shadow-lg"></div>
+
+    <!-- MAIN REGISTRATION CARD -->
+    <div class="auth-card rounded-3xl p-6 sm:p-10 relative">
+
+      <!-- AMBIENT GLOW -->
+      <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink/15 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-purple/15 rounded-full blur-2xl pointer-events-none"></div>
+
+      <!-- DENTACARE LOGO & BRANDING INSIDE CARD -->
+      <div class="text-center mb-7 relative z-10">
+        <a href="index.html" class="inline-flex items-center justify-center gap-3 mb-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#E83E8C] to-[#7C3AED] flex items-center justify-center shadow-lg shadow-pink/30 text-white group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-tooth text-2xl"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight font-heading">
+              Denta<span class="text-pink">Care</span>
+            </div>
+            <div class="text-[10px] font-bold tracking-[0.2em] text-slate-500 dark:text-slate-400 uppercase">
+              PREMIUM DENTAL CLINIC
+            </div>
+          </div>
+        </a>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-heading">
+          Create Your Patient Account
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-sm mx-auto">
+          Fill in your basic details to set up your encrypted clinical profile.
+        </p>
       </div>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-white tracking-tight mt-1 font-heading">
-        Complete Patient Registration
-      </h2>
-      <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-md mx-auto">
-        Create your digital medical record profile & schedule painless treatments.
-      </p>
-    </div>
+      <!-- FORM -->
+      <form id="fullRegistrationForm" class="space-y-4 relative z-10">
 
-    <!-- ALERT -->
-    <div id="regAlert" class="hidden w-full mb-4 p-3.5 rounded-xl text-sm font-medium text-center transition"></div>
-
-    <!-- FORM CARD -->
-    <div class="w-full bg-[#0D1326]/90 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/60 relative">
-      <form id="patientRegistrationForm" class="space-y-4">
-        <!-- Name Fields -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <!-- NAME ROW -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">First Name *</label>
-            <input type="text" id="pFirstName" required placeholder="e.g. Sarah"
-              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+            <label for="pFirstName" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              First Name *
+            </label>
+            <input type="text" id="pFirstName" required placeholder="e.g. Priya"
+                   class="auth-input w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Last Name *</label>
-            <input type="text" id="pLastName" required placeholder="e.g. Jenkins"
-              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+            <label for="pLastName" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Last Name *
+            </label>
+            <input type="text" id="pLastName" required placeholder="e.g. Sharma"
+                   class="auth-input w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none">
           </div>
         </div>
 
-        <!-- Contact Fields -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <!-- CONTACT ROW -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
-            <input type="email" id="pEmail" required placeholder="sarah@example.com"
-              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+            <label for="pEmail" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Email Address *
+            </label>
+            <input type="email" id="pEmail" required placeholder="priya@example.com"
+                   class="auth-input w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number *</label>
+            <label for="pPhone" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Phone Number *
+            </label>
             <input type="tel" id="pPhone" required placeholder="+91 98765 43210"
-              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+                   class="auth-input w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none">
           </div>
         </div>
 
-        <!-- DOB & Gender -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <!-- DOB & GENDER ROW -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Date of Birth</label>
+            <label for="pDOB" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Date of Birth
+            </label>
             <input type="date" id="pDOB"
-              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
+                   class="auth-input w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Gender</label>
-            <select id="pGender" class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
+            <label for="pGender" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Gender
+            </label>
+            <select id="pGender" class="auth-input w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none">
               <option value="female">Female</option>
               <option value="male">Male</option>
-              <option value="nonbinary">Non-Binary / Other</option>
+              <option value="other">Non-Binary / Other</option>
               <option value="prefer_not">Prefer not to say</option>
             </select>
           </div>
         </div>
 
-        <!-- Primary Concern -->
+        <!-- PRIMARY CONCERN -->
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Primary Dental Need / Specialty</label>
-          <select id="pConcern" class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
-            <option value="cleaning">Routine Dental Cleaning & Checkup</option>
-            <option value="whitening">Cosmetic Teeth Whitening</option>
+          <label for="pConcern" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+            Primary Dental Need or Specialty
+          </label>
+          <select id="pConcern" class="auth-input w-full px-4 py-3 rounded-xl text-sm transition focus:outline-none">
+            <option value="cleaning">Routine Dental Cleaning & Comprehensive Checkup</option>
+            <option value="whitening">Cosmetic Teeth Whitening & Veneers</option>
             <option value="braces">Orthodontics & Clear Aligners</option>
-            <option value="implants">Dental Implants & Restoration</option>
+            <option value="implants">Dental Implants & 3D Restorations</option>
             <option value="rootcanal">Painless Root Canal Treatment</option>
-            <option value="emergency">Emergency Dental Pain</option>
+            <option value="emergency">Immediate Emergency Pain Relief</option>
           </select>
         </div>
 
-        <!-- Password -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <!-- PASSWORD ROW -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Create Password *</label>
-            <input type="password" id="pPass" required placeholder="••••••••"
-              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+            <label for="pPassword" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Create Password *
+            </label>
+            <div class="relative">
+              <input type="password" id="pPassword" required placeholder="••••••••"
+                     class="auth-input w-full px-4 py-3 pr-10 rounded-xl text-sm transition focus:outline-none">
+              <button type="button" onclick="togglePassVisibility('pPassword', this)" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-white text-xs cursor-pointer">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Confirm Password *</label>
-            <input type="password" id="pConfirmPass" required placeholder="••••••••"
-              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+            <label for="pConfirmPassword" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              Confirm Password *
+            </label>
+            <div class="relative">
+              <input type="password" id="pConfirmPassword" required placeholder="••••••••"
+                     class="auth-input w-full px-4 py-3 pr-10 rounded-xl text-sm transition focus:outline-none">
+              <button type="button" onclick="togglePassVisibility('pConfirmPassword', this)" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-white text-xs cursor-pointer">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- Agreement -->
-        <div class="flex items-start gap-2 pt-1">
-          <input type="checkbox" id="pTerms" required class="mt-0.5 rounded bg-slate-800 border-slate-700 text-pink focus:ring-pink">
-          <label for="pTerms" class="text-[11px] text-slate-400 leading-tight">
-            I agree to DentaCare <a href="javascript:void(0)" class="text-pink underline">Terms of Service</a> and HIPAA <a href="javascript:void(0)" class="text-pink underline">Privacy Protection Policy</a>.
+        <!-- TERMS CHECKBOX -->
+        <div class="flex items-start gap-2 pt-2">
+          <input type="checkbox" id="pTerms" required class="mt-1 w-4 h-4 rounded text-pink focus:ring-pink border-slate-300 dark:border-slate-600">
+          <label for="pTerms" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            I agree to DentaCare's <a href="contact.html" class="text-pink font-semibold hover:underline">Terms of Service</a> and confirm adherence to the <a href="contact.html" class="text-pink font-semibold hover:underline">HIPAA Healthcare Privacy Standard</a>.
           </label>
         </div>
 
-        <!-- Submit Button -->
+        <!-- SUBMIT BUTTON -->
         <button type="submit"
-          class="w-full py-3.5 px-6 rounded-xl font-bold text-white text-xs sm:text-sm tracking-wide bg-gradient-to-r from-[#6366F1] via-[#A855F7] to-[#EC4899] hover:from-[#4F46E5] hover:via-[#9333EA] hover:to-[#DB2777] shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-200 cursor-pointer mt-3">
-          Complete Registration & Access Portal
+                class="w-full py-4 px-6 rounded-full font-bold text-white text-sm tracking-wide bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:from-[#d63384] hover:to-[#6d28d9] shadow-lg shadow-pink/30 hover:shadow-pink/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 mt-4">
+          <i class="fa-solid fa-user-check text-sm"></i>
+          <span>Complete Registration & Access Portal</span>
         </button>
       </form>
 
-      <!-- SWITCH TO LOGIN -->
-      <div class="mt-5 text-center text-xs text-slate-400">
+      <!-- SWITCH TO LOGIN LINK -->
+      <div class="mt-6 text-center text-xs text-slate-600 dark:text-slate-400 z-10 relative">
         <span>Already have an account? </span>
-        <a href="login.html" class="text-pink font-semibold hover:underline">
+        <a href="login.html" class="text-pink font-bold hover:underline">
           Sign In to Portal
         </a>
       </div>
+
+      <!-- SECURITY BADGE -->
+      <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-700/60 flex items-center justify-center gap-2 text-xs text-slate-500 font-medium">
+        <i class="fa-solid fa-shield-halved text-purple"></i>
+        <span>256-Bit HIPAA Encrypted Health Record Profile</span>
+      </div>
     </div>
 
-    <div class="mt-5 flex items-center justify-center gap-2 text-xs text-slate-500 font-medium">
-      <i class="fa-solid fa-lock text-purple text-xs"></i>
-      <span>256-Bit HIPAA Encrypted Portal Access</span>
-    </div>
+  </div>
+</section>
 
-  </main>
+<!-- =========================================================
+     SCRIPTS & FUNCTIONALITY
+========================================================= -->
+<script src="../js/main.js"></script>
+<script>
+  function togglePassVisibility(id, btn) {
+    const input = document.getElementById(id);
+    const icon = btn.querySelector('i');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.className = 'fa-regular fa-eye-slash';
+    } else {
+      input.type = 'password';
+      icon.className = 'fa-regular fa-eye';
+    }
+  }
 
-  <footer class="w-full py-4 px-5 text-center text-xs text-slate-600">
-    <span>© 2026 DentaCare Clinic. All rights reserved.</span>
-  </footer>
+  function showRegAlert(msg, isSuccess = true) {
+    const alertBox = document.getElementById('regAlert');
+    if (!alertBox) return;
+    alertBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'border-emerald-300', 'bg-rose-100', 'text-rose-800', 'border-rose-300', 'dark:bg-emerald-950/80', 'dark:text-emerald-300', 'dark:border-emerald-600/50', 'dark:bg-rose-950/80', 'dark:text-rose-300', 'dark:border-rose-600/50');
+    if (isSuccess) {
+      alertBox.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-300', 'dark:bg-emerald-950/80', 'dark:text-emerald-300', 'dark:border-emerald-600/50');
+    } else {
+      alertBox.classList.add('bg-rose-100', 'text-rose-800', 'border', 'border-rose-300', 'dark:bg-rose-950/80', 'dark:text-rose-300', 'dark:border-rose-600/50');
+    }
+    alertBox.innerText = msg;
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 
-  <script src="../js/main.js"></script>
-  <script>
-    document.getElementById('patientRegistrationForm')?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const p1 = document.getElementById('pPass').value;
-      const p2 = document.getElementById('pConfirmPass').value;
-      const alertBox = document.getElementById('regAlert');
-      if (p1 !== p2) {
-        alertBox.className = 'w-full mb-4 p-3.5 rounded-xl text-xs font-medium text-center bg-rose-950/80 text-rose-300 border border-rose-600/50';
-        alertBox.innerText = 'Passwords do not match! Please check and try again.';
-        return;
-      }
-      alertBox.className = 'w-full mb-4 p-3.5 rounded-xl text-xs font-medium text-center bg-emerald-950/80 text-emerald-300 border border-emerald-600/50';
-      alertBox.innerText = 'Registration successful! Creating your 3D patient portal account...';
+  // Handle Registration Submit
+  document.getElementById('fullRegistrationForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const p1 = document.getElementById('pPassword').value;
+    const p2 = document.getElementById('pConfirmPassword').value;
+    if (p1 !== p2) {
+      showRegAlert('Passwords do not match! Please verify your password entry.', false);
+      return;
+    }
+    const fname = document.getElementById('pFirstName').value;
+    showRegAlert(`Creating encrypted patient profile for ${fname}...`, true);
+    setTimeout(() => {
+      showRegAlert('Account created successfully! Welcome to DentaCare. Redirecting to your dashboard...', true);
       setTimeout(() => {
         window.location.href = "appointment.html";
-      }, 1400);
-    });
-  </script>
+      }, 1200);
+    }, 900);
+  });
+
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('i');
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      icon.classList.remove('rotate-180');
+    }
+  }
+</script>
+
 </body>
 </html>
