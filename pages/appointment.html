@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Book Appointment | DentaCare</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            navy: "#111A3A",
+            pink: "#E83E8C",
+            purple: "#7C3AED"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-white text-slate-800
+             dark:bg-[#0b1026] dark:text-white
+             transition-colors duration-300">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="bg-[#111A3A] text-white text-sm">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5
+              flex flex-wrap items-center justify-between gap-3">
+
+    <div class="flex flex-wrap items-center gap-5">
+
+      <span>
+        <i class="fa-solid fa-location-dot text-pink mr-2"></i>
+        Ramanathapuram
+      </span>
+
+      <span>
+        <i class="fa-regular fa-clock text-pink mr-2"></i>
+        Mon - Sat: 9:00 AM - 8:00 PM
+      </span>
+
+    </div>
+
+    <a href="tel:+919876543210" class="hover:text-pink transition">
+      <i class="fa-solid fa-phone text-pink mr-2"></i>
+      +91 98765 43210
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="sticky top-0 z-50
+               bg-white/95 dark:bg-[#111A3A]/95
+               backdrop-blur-md shadow-sm">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <nav class="flex items-center justify-between min-h-[78px]">
+
+
+      <!-- LOGO -->
+
+      <a href="index.html"
+         class="flex items-center gap-3 shrink-0">
+
+        <div class="w-11 h-11 rounded-xl
+                    bg-gradient-to-br from-[#E83E8C] to-[#7C3AED]
+                    text-white
+                    flex items-center justify-center
+                    shadow-lg">
+
+          <i class="fa-solid fa-tooth text-xl"></i>
+
+        </div>
+
+        <div>
+
+          <div class="text-xl font-bold
+                      text-[#111A3A] dark:text-white">
+
+            Denta<span class="text-[#E83E8C]">Care</span>
+
+          </div>
+
+          <div class="text-[10px]
+                      text-slate-500 dark:text-slate-300
+                      tracking-wide">
+
+            Premium Dental & Oral Care
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- DESKTOP NAV -->
+
+      <div class="hidden lg:flex items-center gap-6">
+
+
+        <!-- HOME DROPDOWN -->
+
+        <div class="relative group">
+
+          <button
+            type="button"
+            class="flex items-center gap-2 py-7
+                   text-sm font-semibold
+                   text-[#111A3A] dark:text-white
+                   hover:text-[#E83E8C]
+                   transition cursor-pointer">
+
+            Home
+
+            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+
+          </button>
+
+
+          <div class="absolute left-0 top-full w-48
+                      bg-white dark:bg-[#111A3A]
+                      rounded-xl shadow-xl
+                      border border-slate-100
+                      dark:border-slate-700
+                      opacity-0 invisible
+                      translate-y-2
+                      group-hover:opacity-100
+                      group-hover:visible
+                      group-hover:translate-y-0
+                      transition-all duration-300">
+
+            <a href="index.html"
+               class="block px-5 py-3 text-sm
+                      hover:bg-pink-50
+                      dark:hover:bg-white/10
+                      hover:text-[#E83E8C]
+                      rounded-t-xl transition">
+
+              Home 1
+
+            </a>
+
+            <a href="home2.html"
+               class="block px-5 py-3 text-sm
+                      hover:bg-pink-50
+                      dark:hover:bg-white/10
+                      hover:text-[#E83E8C]
+                      rounded-b-xl transition">
+
+              Home 2
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <a href="about.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          About
+
+        </a>
+
+
+        <a href="services.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Services
+
+        </a>
+
+
+        <a href="doctors.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Doctors
+
+        </a>
+
+
+        <a href="gallery.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Gallery
+
+        </a>
+
+
+        <a href="pricing.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Pricing
+
+        </a>
+
+
+        <a href="contact.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Contact
+
+        </a>
+
+      </div>
+
+
+      <!-- ACTIONS -->
+
+      <div class="hidden lg:flex items-center gap-3">
+
+        <button id="themeToggle"
+          type="button"
+          onclick="toggleTheme()"
+          class="w-10 h-10 rounded-full
+                 hover:bg-pink-50 dark:hover:bg-white/10
+                 text-[#111A3A] dark:text-white
+                 hover:text-[#E83E8C]
+                 transition cursor-pointer">
+
+          <i id="themeIcon" class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+        <button
+          type="button"
+          onclick="toggleDirection()"
+          class="px-3 py-2 rounded-full
+                 border border-slate-200
+                 dark:border-slate-600
+                 text-xs font-bold
+                 hover:border-[#E83E8C]
+                 hover:text-[#E83E8C]
+                 transition cursor-pointer">
+
+          RTL
+
+        </button>
+
+
+        <a href="login.html"
+           class="px-4 py-2 text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Login
+
+        </a>
+
+
+        <a href="appointment.html"
+           class="px-5 py-3 rounded-xl
+                  bg-gradient-to-r from-[#E83E8C] to-[#7C3AED]
+                  text-white text-sm font-bold
+                  shadow-lg shadow-purple-500/20
+                  hover:-translate-y-1
+                  hover:shadow-xl
+                  transition-all duration-300">
+
+          Book Appointment
+
+        </a>
+
+      </div>
+
+
+      <!-- MOBILE MENU BUTTON -->
+
+      <button id="mobileMenuBtn"
+        type="button"
+        onclick="toggleMobileMenu()"
+        class="lg:hidden w-11 h-11 rounded-xl
+               bg-gradient-to-r from-[#E83E8C] to-[#7C3AED]
+               text-white">
+
+        <i class="fa-solid fa-bars text-xl"></i>
+
+      </button>
+
+    </nav>
+
+
+    <!-- MOBILE MENU -->
+
+    <div id="mobileMenu"
+         class="hidden lg:hidden
+                border-t border-slate-200
+                dark:border-slate-700
+                bg-white dark:bg-[#111A3A]">
+
+      <div class="container mx-auto px-5 py-5 space-y-1">
+
+
+        <button
+          type="button"
+          onclick="toggleMobileHome()"
+          class="w-full flex justify-between items-center
+                 px-4 py-3 rounded-lg
+                 font-semibold
+                 hover:bg-pink-50 dark:hover:bg-white/10
+                 transition cursor-pointer">
+
+          Home
+
+          <i id="mobileHomeIcon" class="fa-solid fa-chevron-down text-xs"></i>
+
+        </button>
+
+
+        <div id="mobileHomeMenu"
+             class="hidden pl-5">
+
+          <a href="index.html"
+             class="block px-4 py-2 rounded-lg
+                    hover:text-[#E83E8C]">
+
+            Home 1
+
+          </a>
+
+          <a href="home2.html"
+             class="block px-4 py-2 rounded-lg
+                    hover:text-[#E83E8C]">
+
+            Home 2
+
+          </a>
+
+        </div>
+
+
+        <a href="about.html"
+           class="block px-4 py-3 rounded-lg
+                  hover:bg-pink-50 dark:hover:bg-white/10
+                  hover:text-[#E83E8C]">
+
+          About
+
+        </a>
+
+
+        <a href="services.html"
+           class="block px-4 py-3 rounded-lg
+                  hover:bg-pink-50 dark:hover:bg-white/10
+                  hover:text-[#E83E8C]">
+
+          Services
+
+        </a>
+
+
+        <a href="doctors.html"
+           class="block px-4 py-3 rounded-lg
+                  hover:bg-pink-50 dark:hover:bg-white/10
+                  hover:text-[#E83E8C]">
+
+          Doctors
+
+        </a>
+
+
+        <a href="gallery.html"
+           class="block px-4 py-3 rounded-lg
+                  hover:bg-pink-50 dark:hover:bg-white/10
+                  hover:text-[#E83E8C]">
+
+          Gallery
+
+        </a>
+
+
+        <a href="pricing.html"
+           class="block px-4 py-3 rounded-lg
+                  hover:bg-pink-50 dark:hover:bg-white/10
+                  hover:text-[#E83E8C]">
+
+          Pricing
+
+        </a>
+
+
+        <a href="contact.html"
+           class="block px-4 py-3 rounded-lg
+                  hover:bg-pink-50 dark:hover:bg-white/10
+                  hover:text-[#E83E8C]">
+
+          Contact
+
+        </a>
+
+
+        <div class="flex gap-3 pt-3">
+
+          <button
+            type="button"
+            onclick="toggleTheme()"
+            class="flex-1 py-3 rounded-xl
+                   border border-slate-200
+                   dark:border-slate-600">
+
+            <i class="fa-solid fa-moon mr-2"></i>
+            Theme
+
+          </button>
+
+
+          <button
+            type="button"
+            onclick="toggleDirection()"
+            class="px-5 py-3 rounded-xl
+                   border border-slate-200
+                   dark:border-slate-600">
+
+            RTL
+
+          </button>
+
+        </div>
+
+
+        <a href="appointment.html"
+           class="block text-center mt-3 py-3 rounded-xl
+                  bg-gradient-to-r from-[#E83E8C] to-[#7C3AED]
+                  text-white font-bold">
+
+          Book Appointment
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO (Adaptive Hero Background & Custom Buttons)
+===================================================== -->
+
+<section class="hero-adaptive py-24 lg:py-32">
+
+  <img src="../assets/images/appointment-hero-booking.jpg"
+       alt="DentaCare Online Reservation"
+       class="hero-img-adaptive">
+
+  <div class="hero-overlay-adaptive"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+
+    <div class="hero-badge mb-6 shadow-lg shadow-cyan-500/10">
+      <i class="fa-solid fa-calendar-check text-cyan-400"></i>
+      <span>⚡ INSTANT ONLINE RESERVATION</span>
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-white font-heading max-w-4xl mb-6">
+      Reserve Your Dental
+      <span class="block gradient-text mt-1">
+        Consultation Online
+      </span>
+    </h1>
+
+    <p class="text-base sm:text-lg lg:text-xl text-white/90 mt-2 max-w-3xl leading-relaxed mx-auto mb-8">
+      Select your preferred doctor, time slot, and treatment specialty in under 60 seconds with instant digital confirmation.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+      <a href="#appointmentForm"
+         class="px-8 py-4 rounded-xl font-bold text-white shadow-xl shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
+        <i class="fa-solid fa-clipboard-list"></i>
+        <span>Proceed to Booking Form</span>
+      </a>
+
+      <a href="tel:+919876543210"
+         class="glass-btn px-8 py-4 rounded-xl font-bold hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
+        <i class="fa-solid fa-phone-volume text-cyan-400"></i>
+        <span>Call Care Desk: +91 98765 43210</span>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     APPOINTMENT CONTENT
+===================================================== -->
+
+<section class="py-20 lg:py-24">
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+
+
+    <div class="grid lg:grid-cols-[1fr_380px]
+                gap-10 items-start">
+
+
+      <!-- =================================================
+           APPOINTMENT FORM
+      ================================================== -->
+
+      <div class="bg-white dark:bg-slate-900
+                  rounded-3xl
+                  border border-slate-200
+                  dark:border-slate-800
+                  shadow-xl p-7 sm:p-10">
+
+
+        <div class="mb-8">
+
+          <span class="text-pink font-bold
+                       uppercase tracking-widest text-sm">
+
+            Appointment Details
+
+          </span>
+
+
+          <h2 class="text-3xl font-extrabold
+                     text-navy dark:text-white mt-2">
+
+            Schedule Your Visit
+
+          </h2>
+
+
+          <p class="mt-3
+                    text-slate-500
+                    dark:text-slate-400">
+
+            Please fill in the details below to request
+            your dental appointment.
+
+          </p>
+
+        </div>
+
+
+        <form id="appointmentForm"
+              class="space-y-7">
+
+
+          <!-- PATIENT INFORMATION -->
+
+          <div>
+
+            <h3 class="font-bold text-lg
+                       text-navy dark:text-white
+                       flex items-center gap-3">
+
+              <span class="w-9 h-9 rounded-lg
+                           bg-pink/10 text-pink
+                           flex items-center justify-center">
+
+                <i class="fa-solid fa-user"></i>
+
+              </span>
+
+              Patient Information
+
+            </h3>
+
+
+            <div class="grid md:grid-cols-2 gap-5 mt-5">
+
+
+              <!-- NAME -->
+
+              <div>
+
+                <label for="patientName"
+                       class="block mb-2
+                              text-sm font-bold">
+
+                  Full Name
+
+                </label>
+
+                <input
+                  type="text"
+                  id="patientName"
+                  placeholder="Enter your full name"
+                  required
+                  class="w-full px-4 py-3.5
+                         rounded-xl
+                         border border-slate-200
+                         dark:border-slate-700
+                         bg-white dark:bg-slate-950
+                         outline-none
+                         focus:border-pink
+                         focus:ring-4
+                         focus:ring-pink/10
+                         transition">
+
+              </div>
+
+
+              <!-- PHONE -->
+
+              <div>
+
+                <label for="phone"
+                       class="block mb-2
+                              text-sm font-bold">
+
+                  Phone Number
+
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="+91 XXXXX XXXXX"
+                  required
+                  class="w-full px-4 py-3.5
+                         rounded-xl
+                         border border-slate-200
+                         dark:border-slate-700
+                         bg-white dark:bg-slate-950
+                         outline-none
+                         focus:border-pink
+                         focus:ring-4
+                         focus:ring-pink/10
+                         transition">
+
+              </div>
+
+
+              <!-- EMAIL -->
+
+              <div>
+
+                <label for="email"
+                       class="block mb-2
+                              text-sm font-bold">
+
+                  Email Address
+
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="you@example.com"
+                  required
+                  class="w-full px-4 py-3.5
+                         rounded-xl
+                         border border-slate-200
+                         dark:border-slate-700
+                         bg-white dark:bg-slate-950
+                         outline-none
+                         focus:border-pink
+                         focus:ring-4
+                         focus:ring-pink/10
+                         transition">
+
+              </div>
+
+
+              <!-- AGE -->
+
+              <div>
+
+                <label for="age"
+                       class="block mb-2
+                              text-sm font-bold">
+
+                  Age
+
+                </label>
+
+                <input
+                  type="number"
+                  id="age"
+                  min="1"
+                  max="120"
+                  placeholder="Your age"
+                  class="w-full px-4 py-3.5
+                         rounded-xl
+                         border border-slate-200
+                         dark:border-slate-700
+                         bg-white dark:bg-slate-950
+                         outline-none
+                         focus:border-pink
+                         focus:ring-4
+                         focus:ring-pink/10
+                         transition">
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- DIVIDER -->
+
+          <div class="border-t
+                      border-slate-200
+                      dark:border-slate-800">
+          </div>
+
+
+          <!-- TREATMENT -->
+
+          <div>
+
+            <h3 class="font-bold text-lg
+                       text-navy dark:text-white
+                       flex items-center gap-3">
+
+              <span class="w-9 h-9 rounded-lg
+                           bg-purple/10 text-purple
+                           flex items-center justify-center">
+
+                <i class="fa-solid fa-tooth"></i>
+
+              </span>
+
+              Treatment Details
+
+            </h3>
+
+
+            <div class="grid md:grid-cols-2
+                        gap-5 mt-5">
+
+
+              <!-- SERVICE -->
+
+              <div>
+
+                <label for="service"
+                       class="block mb-2
+                              text-sm font-bold">
+
+                  Select Treatment
+
+                </label>
+
+                <select
+                  id="service"
+                  required
+                  class="w-full px-4 py-3.5
+                         rounded-xl
+                         border border-slate-200
+                         dark:border-slate-700
+                         bg-white dark:bg-slate-950
+                         outline-none
+                         focus:border-pink
+                         focus:ring-4
+                         focus:ring-pink/10
+                         transition">
+
+                  <option value="">
+                    Choose a treatment
+                  </option>
+
+                  <option>
+                    General Dentistry
+                  </option>
+
+                  <option>
+                    Cosmetic Dentistry
+                  </option>
+
+                  <option>
+                    Orthodontics
+                  </option>
+
+                  <option>
+                    Dental Implants
+                  </option>
+
+                  <option>
+                    Root Canal Treatment
+                  </option>
+
+                  <option>
+                    Pediatric Dentistry
+                  </option>
+
+                  <option>
+                    Periodontal Care
+                  </option>
+
+                  <option>
+                    Smile Makeover
+                  </option>
+
+                  <option>
+                    Oral Surgery
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- DOCTOR -->
+
+              <div>
+
+                <label for="doctor"
+                       class="block mb-2
+                              text-sm font-bold">
+
+                  Preferred Doctor
+
+                </label>
+
+                <select
+                  id="doctor"
+                  class="w-full px-4 py-3.5
+                         rounded-xl
+                         border border-slate-200
+                         dark:border-slate-700
+                         bg-white dark:bg-slate-950
+                         outline-none
+                         focus:border-pink
+                         focus:ring-4
+                         focus:ring-pink/10
+                         transition">
+
+                  <option value="">
+                    Any Available Doctor
+                  </option>
+
+                  <option>
+                    Dr. Sarah Johnson
+                  </option>
+
+                  <option>
+                    Dr. Emily Chen
+                  </option>
+
+                  <option>
+                    Dr. Arjun Sharma
+                  </option>
+
+                  <option>
+                    Dr. Michael Bennett
+                  </option>
+
+                  <option>
+                    Dr. Sofia Ramos
+                  </option>
+
+                  <option>
+                    Dr. Daniel Vance
+                  </option>
+
+                  <option>
+                    Dr. Ananya Roy
+                  </option>
+
+                  <option>
+                    Dr. Olivia Taylor
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- DIVIDER -->
+
+          <div class="border-t
+                      border-slate-200
+                      dark:border-slate-800">
+          </div>
+
+
+          <!-- DATE & TIME -->
+
+          <div>
+
+            <h3 class="font-bold text-lg
+                       text-navy dark:text-white
+                       flex items-center gap-3">
+
+              <span class="w-9 h-9 rounded-lg
+                           bg-pink/10 text-pink
+                           flex items-center justify-center">
+
+                <i class="fa-regular fa-calendar"></i>
+
+              </span>
+
+              Date & Time
+
+            </h3>
+
+
+            <div class="grid md:grid-cols-2
+                        gap-5 mt-5">
+
+
+              <div>
+
+                <label for="appointmentDate"
+                       class="block mb-2
+                              text-sm font-bold">
+
+                  Preferred Date
+
+                </label>
+
+                <input
+                  type="date"
+                  id="appointmentDate"
+                  required
+                  class="w-full px-4 py-3.5
+                         rounded-xl
+                         border border-slate-200
+                         dark:border-slate-700
+                         bg-white dark:bg-slate-950
+                         outline-none
+                         focus:border-pink
+                         focus:ring-4
+                         focus:ring-pink/10
+                         transition">
+
+              </div>
+
+
+              <div>
+
+                <label for="appointmentTime"
+                       class="block mb-2
+                              text-sm font-bold">
+
+                  Preferred Time
+
+                </label>
+
+                <select
+                  id="appointmentTime"
+                  required
+                  class="w-full px-4 py-3.5
+                         rounded-xl
+                         border border-slate-200
+                         dark:border-slate-700
+                         bg-white dark:bg-slate-950
+                         outline-none
+                         focus:border-pink
+                         focus:ring-4
+                         focus:ring-pink/10
+                         transition">
+
+                  <option value="">
+                    Select time
+                  </option>
+
+                  <option>09:00 AM</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>02:00 PM</option>
+                  <option>03:00 PM</option>
+                  <option>04:00 PM</option>
+                  <option>05:00 PM</option>
+                  <option>06:00 PM</option>
+                  <option>07:00 PM</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- DIVIDER -->
+
+          <div class="border-t
+                      border-slate-200
+                      dark:border-slate-800">
+          </div>
+
+
+          <!-- MESSAGE -->
+
+          <div>
+
+            <label for="message"
+                   class="block mb-2
+                          text-sm font-bold">
+
+              Additional Information
+
+            </label>
+
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Tell us about your dental concern..."
+              class="w-full px-4 py-3.5
+                     rounded-xl
+                     border border-slate-200
+                     dark:border-slate-700
+                     bg-white dark:bg-slate-950
+                     outline-none
+                     resize-none
+                     focus:border-pink
+                     focus:ring-4
+                     focus:ring-pink/10
+                     transition"></textarea>
+
+          </div>
+
+
+          <!-- TERMS -->
+
+          <label class="flex items-start gap-3
+                        text-sm text-slate-500
+                        dark:text-slate-400
+                        cursor-pointer">
+
+            <input
+              type="checkbox"
+              id="consent"
+              required
+              class="w-4 h-4 mt-0.5
+                     accent-pink">
+
+            <span>
+              I agree to be contacted regarding my appointment
+              request and dental care.
+            </span>
+
+          </label>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            class="w-full px-6 py-4
+                   rounded-xl
+                   bg-gradient-to-r
+                   from-pink to-purple
+                   text-white
+                   font-bold
+                   shadow-lg shadow-pink/20
+                   hover:-translate-y-1
+                   hover:shadow-xl
+                   transition-all duration-300">
+
+            <i class="fa-solid fa-calendar-check mr-2"></i>
+
+            Request Appointment
+
+          </button>
+
+
+          <!-- MESSAGE -->
+
+          <div id="appointmentMessage"
+               class="hidden p-4 rounded-xl
+                      text-sm font-semibold">
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <!-- =================================================
+           RIGHT SIDEBAR
+      ================================================== -->
+
+      <aside class="space-y-6">
+
+
+        <!-- QUICK INFO -->
+
+        <div class="rounded-3xl
+                    bg-gradient-to-br
+                    from-navy to-purple
+                    text-white p-7
+                    shadow-xl">
+
+          <div class="w-14 h-14 rounded-2xl
+                      bg-white/10
+                      flex items-center justify-center">
+
+            <i class="fa-solid fa-headset
+                      text-2xl text-pink"></i>
+
+          </div>
+
+
+          <h3 class="text-2xl font-extrabold mt-6">
+
+            Need Help?
+
+          </h3>
+
+
+          <p class="mt-3 text-slate-300
+                    leading-relaxed">
+
+            Our friendly dental team is here to help
+            you choose the right appointment.
+
+          </p>
+
+
+          <a href="contact.html"
+             class="inline-flex items-center
+                    mt-6 px-5 py-3
+                    rounded-xl
+                    bg-white text-navy
+                    font-bold
+                    hover:-translate-y-1
+                    transition">
+
+            Contact Us
+
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+
+          </a>
+
+        </div>
+
+
+        <!-- CLINIC HOURS -->
+
+        <div class="rounded-3xl
+                    bg-white dark:bg-slate-900
+                    border border-slate-200
+                    dark:border-slate-800
+                    p-7 shadow-lg">
+
+          <h3 class="text-xl font-extrabold
+                     text-navy dark:text-white">
+
+            Clinic Hours
+
+          </h3>
+
+
+          <div class="mt-5 space-y-4">
+
+
+            <div class="flex justify-between
+                        items-center
+                        text-sm">
+
+              <span class="text-slate-500">
+                Monday - Friday
+              </span>
+
+              <span class="font-bold">
+                9:00 AM - 8:00 PM
+              </span>
+
+            </div>
+
+
+            <div class="flex justify-between
+                        items-center
+                        text-sm">
+
+              <span class="text-slate-500">
+                Saturday
+              </span>
+
+              <span class="font-bold">
+                9:00 AM - 6:00 PM
+              </span>
+
+            </div>
+
+
+            <div class="flex justify-between
+                        items-center
+                        text-sm">
+
+              <span class="text-slate-500">
+                Sunday
+              </span>
+
+              <span class="font-bold text-pink">
+                Closed
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- WHY BOOK -->
+
+        <div class="rounded-3xl
+                    bg-white dark:bg-slate-900
+                    border border-slate-200
+                    dark:border-slate-800
+                    p-7 shadow-lg">
+
+          <h3 class="text-xl font-extrabold
+                     text-navy dark:text-white">
+
+            Why Book With Us?
+
+          </h3>
+
+
+          <div class="mt-6 space-y-5">
+
+
+            <div class="flex gap-4">
+
+              <div class="w-10 h-10 rounded-xl
+                          bg-pink/10 text-pink
+                          flex items-center justify-center
+                          shrink-0">
+
+                <i class="fa-solid fa-user-doctor"></i>
+
+              </div>
+
+              <div>
+
+                <h4 class="font-bold">
+                  Expert Dentists
+                </h4>
+
+                <p class="text-sm text-slate-500 mt-1">
+                  Experienced dental specialists.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="flex gap-4">
+
+              <div class="w-10 h-10 rounded-xl
+                          bg-purple/10 text-purple
+                          flex items-center justify-center
+                          shrink-0">
+
+                <i class="fa-solid fa-microscope"></i>
+
+              </div>
+
+              <div>
+
+                <h4 class="font-bold">
+                  Advanced Technology
+                </h4>
+
+                <p class="text-sm text-slate-500 mt-1">
+                  Modern tools for precise care.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="flex gap-4">
+
+              <div class="w-10 h-10 rounded-xl
+                          bg-pink/10 text-pink
+                          flex items-center justify-center
+                          shrink-0">
+
+                <i class="fa-solid fa-heart"></i>
+
+              </div>
+
+              <div>
+
+                <h4 class="font-bold">
+                  Patient First
+                </h4>
+
+                <p class="text-sm text-slate-500 mt-1">
+                  Comfortable personalized treatment.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="pb-20 lg:pb-24">
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+
+    <div class="rounded-3xl
+                bg-gradient-to-r
+                from-navy via-purple to-pink
+                text-white p-8 md:p-12
+                text-center">
+
+      <h2 class="text-3xl md:text-4xl
+                 font-black">
+
+        Your Smile Deserves
+        <span class="text-pink">
+          Expert Care
+        </span>
+
+      </h2>
+
+
+      <p class="mt-4 text-white/80
+                max-w-2xl mx-auto">
+
+        Schedule your visit today and take the
+        first step towards a healthier smile.
+
+      </p>
+
+
+      <a href="#appointmentForm"
+         class="inline-flex items-center
+                mt-7 px-6 py-3.5
+                rounded-xl
+                bg-white text-navy
+                font-bold
+                hover:-translate-y-1
+                transition">
+
+        <i class="fa-solid fa-calendar-check mr-2"></i>
+
+        Book Your Visit
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer-adaptive">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+
+      <!-- BRAND -->
+
+      <div>
+
+        <a href="index.html" class="flex items-center gap-3">
+
+          <div class="w-11 h-11 rounded-xl
+                      bg-gradient-to-br from-[#E83E8C] to-[#7C3AED]
+                      text-white
+                      flex items-center justify-center">
+
+            <i class="fa-solid fa-tooth text-xl"></i>
+
+          </div>
+
+          <div>
+
+            <div class="text-xl font-bold">
+
+              Denta<span class="text-[#E83E8C]">Care</span>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <p class="text-white/60 leading-7 mt-5">
+
+          Premium dental and oral care focused
+          on healthy, confident smiles.
+
+        </p>
+
+      </div>
+
+
+      <!-- QUICK LINKS -->
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Quick Links
+        </h3>
+
+        <div class="space-y-3 text-white/60">
+
+          <a href="index.html"
+             class="block hover:text-[#E83E8C] transition">
+            Home
+          </a>
+
+          <a href="about.html"
+             class="block hover:text-[#E83E8C] transition">
+            About
+          </a>
+
+          <a href="services.html"
+             class="block hover:text-[#E83E8C] transition">
+            Services
+          </a>
+
+          <a href="doctors.html"
+             class="block hover:text-[#E83E8C] transition">
+            Doctors
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SERVICES -->
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Services
+        </h3>
+
+        <div class="space-y-3 text-white/60">
+
+          <p>General Dentistry</p>
+          <p>Cosmetic Dentistry</p>
+          <p>Dental Implants</p>
+          <p>Orthodontics</p>
+          <p>Smile Makeover</p>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTACT -->
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Contact
+        </h3>
+
+        <div class="space-y-4 text-white/60">
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-location-dot text-[#E83E8C] mt-1"></i>
+
+            Ramanathapuram, Tamil Nadu
+
+          </p>
+
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-phone text-[#E83E8C] mt-1"></i>
+
+            +91 98765 43210
+
+          </p>
+
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-envelope text-[#E83E8C] mt-1"></i>
+
+            info@dentacare.com
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p class="text-white/50 text-sm">
+
+        © 2026 DentaCare. All Rights Reserved.
+
+      </p>
+
+
+      <div class="flex gap-4">
+
+        <a href="#"
+           class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E83E8C] transition">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </a>
+
+
+        <a href="#"
+           class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E83E8C] transition">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </a>
+
+
+        <a href="#"
+           class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E83E8C] transition">
+
+          <i class="fa-brands fa-linkedin-in"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+<script src="../js/main.js"></script>
+<script>
+  /* ================= APPOINTMENT DATE ================= */
+  const appointmentDate = document.getElementById("appointmentDate");
+  const today = new Date().toISOString().split("T")[0];
+  if (appointmentDate) {
+    appointmentDate.min = today;
+  }
+
+  /* ================= FORM SUBMISSION ================= */
+  const appointmentForm = document.getElementById("appointmentForm");
+  const appointmentMessage = document.getElementById("appointmentMessage");
+
+  appointmentForm?.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (appointmentMessage) {
+      appointmentMessage.className =
+        "p-4 rounded-xl text-sm font-semibold bg-green-50 text-green-600 dark:bg-green-950/30 dark:text-green-400";
+      appointmentMessage.textContent =
+        "Your appointment request has been submitted successfully. Our team will contact you shortly.";
+      appointmentMessage.classList.remove("hidden");
+    }
+    appointmentForm.reset();
+    if (appointmentDate) {
+      appointmentDate.min = new Date().toISOString().split("T")[0];
+    }
+  });
+</script>
+
+</body>
+</html>

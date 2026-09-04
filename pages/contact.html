@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DentaCare | Contact</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            navy: "#111A3A",
+            pink: "#E83E8C",
+            purple: "#7C3AED"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-white text-slate-800
+             dark:bg-[#0b1026] dark:text-white
+             transition-colors duration-300">
+
+             <!-- =========================================================
+     TOP BAR
+========================================================= -->
+<div class="bg-[#111A3A] text-white text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5
+              flex flex-wrap items-center justify-between gap-3">
+
+    <div class="flex flex-wrap items-center gap-5">
+      <span>
+        <i class="fa-solid fa-location-dot mr-2 text-pink"></i>
+        Ramanathapuram
+      </span>
+
+      <span>
+        <i class="fa-regular fa-clock mr-2 text-pink"></i>
+        Mon - Sat : 9:00 AM - 8:00 PM
+      </span>
+    </div>
+
+    <a href="tel:+919876543210"
+       class="hover:text-pink transition">
+      <i class="fa-solid fa-phone mr-2 text-pink"></i>
+      +91 98765 43210
+    </a>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="sticky top-0 z-50
+               bg-white/95 dark:bg-[#111A3A]/95
+               backdrop-blur-md shadow-sm">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <nav class="flex items-center justify-between min-h-[78px]">
+
+      <!-- LOGO -->
+
+      <a href="index.html"
+         class="flex items-center gap-3 shrink-0">
+
+        <div class="w-11 h-11 rounded-xl
+                    bg-gradient-to-br
+                    from-[#E83E8C] to-[#7C3AED]
+                    flex items-center justify-center
+                    text-white shadow-lg">
+
+          <i class="fa-solid fa-tooth text-xl"></i>
+
+        </div>
+
+        <div>
+
+          <div class="text-xl font-bold
+                      text-[#111A3A] dark:text-white">
+
+            Denta<span class="text-[#E83E8C]">Care</span>
+
+          </div>
+
+          <div class="text-[10px]
+                      text-slate-500 dark:text-slate-300
+                      tracking-wide">
+
+            Premium Dental & Oral Care
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- DESKTOP NAV -->
+
+      <div class="hidden lg:flex items-center gap-6">
+
+        <!-- HOME DROPDOWN -->
+
+        <div class="relative group">
+
+          <button type="button"
+                  class="flex items-center gap-2 py-7
+                         text-sm font-semibold
+                         text-[#111A3A] dark:text-white
+                         hover:text-[#E83E8C]
+                         transition cursor-pointer">
+
+            Home
+
+            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+
+          </button>
+
+
+          <div class="absolute left-0 top-full w-48
+                      bg-white dark:bg-[#111A3A]
+                      rounded-xl shadow-xl
+                      border border-slate-100
+                      dark:border-slate-700
+                      opacity-0 invisible
+                      translate-y-2
+                      group-hover:opacity-100
+                      group-hover:visible
+                      group-hover:translate-y-0
+                      transition-all duration-300">
+
+            <a href="index.html"
+               class="block px-5 py-3 text-sm
+                      hover:bg-pink-50
+                      dark:hover:bg-white/10
+                      hover:text-[#E83E8C]
+                      rounded-t-xl transition">
+
+              Home 1
+
+            </a>
+
+            <a href="home2.html"
+               class="block px-5 py-3 text-sm
+                      hover:bg-pink-50
+                      dark:hover:bg-white/10
+                      hover:text-[#E83E8C]
+                      rounded-b-xl transition">
+
+              Home 2
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <a href="about.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          About
+
+        </a>
+
+
+        <a href="services.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Services
+
+        </a>
+
+
+        <a href="doctors.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Doctors
+
+        </a>
+
+
+        <a href="gallery.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Gallery
+
+        </a>
+
+
+        <a href="pricing.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Pricing
+
+        </a>
+
+
+        <a href="contact.html"
+           class="text-sm font-semibold
+                  text-[#E83E8C]">
+
+          Contact
+
+        </a>
+
+      </div>
+
+
+      <!-- ACTIONS -->
+
+      <div class="hidden lg:flex items-center gap-3">
+
+        <button id="themeToggle"
+                onclick="toggleTheme()"
+                type="button"
+                class="w-10 h-10 rounded-full
+                       hover:bg-pink-50
+                       dark:hover:bg-white/10
+                       text-[#111A3A]
+                       dark:text-white
+                       hover:text-[#E83E8C]
+                       transition cursor-pointer">
+
+          <i id="themeIcon"
+             class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+        <button onclick="toggleDirection()"
+                type="button"
+                class="px-3 py-2 rounded-full
+                       border border-slate-200
+                       dark:border-slate-600
+                       text-xs font-bold
+                       hover:border-[#E83E8C]
+                       hover:text-[#E83E8C]
+                       transition cursor-pointer">
+
+          RTL
+
+        </button>
+
+
+        <a href="login.html"
+           class="px-4 py-2 text-sm font-semibold
+                  hover:text-[#E83E8C] transition">
+
+          Login
+
+        </a>
+
+
+        <a href="appointment.html"
+           class="px-5 py-3 rounded-xl
+                  bg-gradient-to-r
+                  from-[#E83E8C] to-[#7C3AED]
+                  text-white text-sm font-bold
+                  shadow-lg
+                  hover:-translate-y-1
+                  hover:shadow-xl
+                  transition-all duration-300">
+
+          Book Appointment
+
+        </a>
+
+      </div>
+
+      <!-- MOBILE BUTTON -->
+
+      <button onclick="toggleMobileMenu()"
+              type="button"
+              class="lg:hidden w-11 h-11 rounded-xl
+                     bg-gradient-to-r
+                     from-[#E83E8C] to-[#7C3AED]
+                     text-white">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </nav>
+
+  </div>
+
+
+  <!-- MOBILE MENU -->
+
+  <div id="mobileMenu"
+       class="hidden lg:hidden
+              border-t border-slate-200
+              dark:border-slate-700
+              bg-white dark:bg-[#111A3A]">
+
+    <div class="container mx-auto px-5 py-5 space-y-1">
+
+      <button onclick="toggleMobileHome()"
+              class="w-full flex justify-between
+                     items-center px-4 py-3 rounded-lg
+                     font-semibold">
+
+        Home
+
+        <i id="mobileHomeIcon"
+           class="fa-solid fa-chevron-down text-xs"></i>
+
+      </button>
+
+
+      <div id="mobileHomeMenu"
+           class="hidden pl-5">
+
+        <a href="index.html"
+           class="block px-4 py-2
+                  hover:text-[#E83E8C]">
+
+          Home 1
+
+        </a>
+
+        <a href="home2.html"
+           class="block px-4 py-2
+                  hover:text-[#E83E8C]">
+
+          Home 2
+
+        </a>
+
+      </div>
+
+
+      <a href="about.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]">
+
+        About
+
+      </a>
+
+
+      <a href="services.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]">
+
+        Services
+
+      </a>
+
+
+      <a href="doctors.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]">
+
+        Doctors
+
+      </a>
+
+
+      <a href="gallery.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]">
+
+        Gallery
+
+      </a>
+
+
+      <a href="pricing.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]">
+
+        Pricing
+
+      </a>
+
+
+      <a href="contact.html"
+         class="block px-4 py-3 rounded-lg
+                bg-pink-50 dark:bg-white/10
+                text-[#E83E8C] font-semibold">
+
+        Contact
+
+      </a>
+
+
+      <div class="flex gap-3 pt-3">
+
+        <button onclick="toggleTheme()"
+                class="flex-1 py-3 rounded-xl
+                       border border-slate-200
+                       dark:border-slate-600">
+
+          <i class="fa-solid fa-moon mr-2"></i>
+
+          Theme
+
+        </button>
+
+
+        <button onclick="toggleDirection()"
+                class="px-5 py-3 rounded-xl
+                       border border-slate-200
+                       dark:border-slate-600">
+
+          RTL
+
+        </button>
+
+      </div>
+
+
+      <a href="appointment.html"
+         class="block text-center mt-3 py-3 rounded-xl
+                bg-gradient-to-r
+                from-[#E83E8C] to-[#7C3AED]
+                text-white font-bold">
+
+        Book Appointment
+
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     SECTION 1 — HERO (Adaptive Hero Background & Custom Buttons)
+========================================================= -->
+
+<section class="hero-adaptive py-24 lg:py-32">
+
+  <img src="../assets/images/contact-hero-exterior.jpg"
+       alt="DentaCare Clinic Center"
+       class="hero-img-adaptive">
+
+  <div class="hero-overlay-adaptive"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+
+    <div class="hero-badge mb-6 shadow-lg shadow-cyan-500/10">
+      <i class="fa-solid fa-headset text-cyan-400"></i>
+      <span>📍 24/7 DENTAL CARE DESK & CLINIC</span>
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-white font-heading max-w-4xl mb-6">
+      We're Here For You
+      <span class="block gradient-text mt-1">
+        Contact DentaCare Today
+      </span>
+    </h1>
+
+    <p class="text-base sm:text-lg lg:text-xl text-white/90 mt-2 max-w-3xl leading-relaxed mx-auto mb-8">
+      Have questions or dental emergencies? Visit our Ramanathapuram clinic or reach out directly to our 24/7 patient support desk.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
+      <a href="#contact-form"
+         class="px-8 py-4 rounded-xl font-bold text-white shadow-xl shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span>Send Us a Direct Message</span>
+      </a>
+
+      <a href="#map"
+         class="glass-btn px-8 py-4 rounded-xl font-bold hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
+        <i class="fa-solid fa-location-dot text-cyan-400"></i>
+        <span>Get Directions to Clinic</span>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     SECTION 2 — CONTACT INFORMATION
+========================================================= -->
+
+<section class="py-20 lg:py-24
+                bg-white dark:bg-[#0b1026]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center max-w-2xl mx-auto mb-12">
+
+      <span class="text-[#E83E8C]
+                   font-bold uppercase
+                   tracking-widest text-sm">
+
+        Contact Information
+
+      </span>
+
+
+      <h2 class="text-3xl md:text-4xl
+                 font-extrabold
+                 text-[#111A3A]
+                 dark:text-white mt-3">
+
+        We're Always Happy To Help
+
+      </h2>
+
+    </div>
+
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+      <!-- CARD -->
+
+      <div class="card-equal group p-7 rounded-2xl
+                  bg-slate-50 dark:bg-[#111A3A]
+                  border border-slate-200
+                  dark:border-slate-700
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                  hover:border-[#E83E8C]
+                  transition-all duration-500">
+
+        <div class="card-equal-body">
+          <div class="w-14 h-14 rounded-2xl
+                      bg-pink-50
+                      dark:bg-pink-500/10
+                      text-[#E83E8C]
+                      flex items-center justify-center
+                      text-xl
+                      group-hover:scale-110
+                      transition">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+          </div>
+
+
+          <h3 class="font-bold text-xl mt-5">
+            Our Clinic
+          </h3>
+
+
+          <p class="text-slate-500
+                    dark:text-slate-300
+                    leading-7 mt-3">
+
+            Ramanathapuram,<br>
+            Tamil Nadu, India
+
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="card-equal group p-7 rounded-2xl
+                  bg-slate-50 dark:bg-[#111A3A]
+                  border border-slate-200
+                  dark:border-slate-700
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                  hover:border-[#7C3AED]
+                  transition-all duration-500">
+
+        <div class="card-equal-body">
+          <div class="w-14 h-14 rounded-2xl
+                      bg-purple-50
+                      dark:bg-purple-500/10
+                      text-[#7C3AED]
+                      flex items-center justify-center
+                      text-xl
+                      group-hover:scale-110
+                      transition">
+
+            <i class="fa-solid fa-phone"></i>
+
+          </div>
+
+
+          <h3 class="font-bold text-xl mt-5">
+            Phone
+          </h3>
+
+
+          <p class="text-slate-500
+                    dark:text-slate-300
+                    leading-7 mt-3">
+
+            +91 98765 43210<br>
+            +91 98765 43211
+
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="card-equal group p-7 rounded-2xl
+                  bg-slate-50 dark:bg-[#111A3A]
+                  border border-slate-200
+                  dark:border-slate-700
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                  hover:border-[#E83E8C]
+                  transition-all duration-500">
+
+        <div class="card-equal-body">
+          <div class="w-14 h-14 rounded-2xl
+                      bg-pink-50
+                      dark:bg-pink-500/10
+                      text-[#E83E8C]
+                      flex items-center justify-center
+                      text-xl
+                      group-hover:scale-110
+                      transition">
+
+            <i class="fa-solid fa-envelope"></i>
+
+          </div>
+
+
+          <h3 class="font-bold text-xl mt-5">
+            Email
+          </h3>
+
+
+          <p class="text-slate-500
+                    dark:text-slate-300
+                    leading-7 mt-3">
+
+            info@dentacare.com<br>
+            care@dentacare.com
+
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="card-equal group p-7 rounded-2xl
+                  bg-slate-50 dark:bg-[#111A3A]
+                  border border-slate-200
+                  dark:border-slate-700
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                  hover:border-[#7C3AED]
+                  transition-all duration-500">
+
+        <div class="card-equal-body">
+          <div class="w-14 h-14 rounded-2xl
+                      bg-purple-50
+                      dark:bg-purple-500/10
+                      text-[#7C3AED]
+                      flex items-center justify-center
+                      text-xl
+                      group-hover:scale-110
+                      transition">
+
+            <i class="fa-solid fa-clock"></i>
+
+          </div>
+
+
+          <h3 class="font-bold text-xl mt-5">
+            Working Hours
+          </h3>
+
+
+          <p class="text-slate-500
+                    dark:text-slate-300
+                    leading-7 mt-3">
+
+            Mon - Sat<br>
+            9:00 AM - 8:00 PM
+
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECTION 3 — CONTACT FORM
+========================================================= -->
+
+<section id="contact-form"
+         class="py-20 lg:py-24
+                bg-slate-50 dark:bg-[#0f1530]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-12
+                items-start">
+
+
+      <!-- LEFT -->
+
+      <div>
+
+        <span class="text-[#7C3AED]
+                     font-bold uppercase
+                     tracking-widest text-sm">
+
+          Send A Message
+
+        </span>
+
+
+        <h2 class="text-3xl md:text-4xl
+                   font-extrabold
+                   text-[#111A3A]
+                   dark:text-white mt-3">
+
+          Let's Talk About
+          Your Dental Care
+
+        </h2>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  leading-8 mt-5">
+
+          Fill out the form and our team
+          will get back to you as soon
+          as possible.
+
+        </p>
+
+
+        <div class="mt-8 space-y-5">
+
+          <div class="flex gap-4">
+
+            <div class="w-11 h-11 shrink-0
+                        rounded-xl
+                        bg-pink-50
+                        dark:bg-pink-500/10
+                        text-[#E83E8C]
+                        flex items-center justify-center">
+
+              <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <div>
+
+              <h4 class="font-bold">
+                Quick Response
+              </h4>
+
+              <p class="text-sm
+                        text-slate-500
+                        dark:text-slate-300 mt-1">
+
+                Our team responds to enquiries
+                promptly.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="flex gap-4">
+
+            <div class="w-11 h-11 shrink-0
+                        rounded-xl
+                        bg-purple-50
+                        dark:bg-purple-500/10
+                        text-[#7C3AED]
+                        flex items-center justify-center">
+
+              <i class="fa-solid fa-shield-heart"></i>
+
+            </div>
+
+            <div>
+
+              <h4 class="font-bold">
+                Patient First
+              </h4>
+
+              <p class="text-sm
+                        text-slate-500
+                        dark:text-slate-300 mt-1">
+
+                Your questions and concerns
+                are important to us.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <form id="contactForm"
+            onsubmit="submitContact(event)"
+            class="bg-white dark:bg-[#111A3A]
+                   p-7 md:p-9 rounded-3xl
+                   border border-slate-200
+                   dark:border-slate-700
+                   shadow-lg">
+
+
+        <div class="grid sm:grid-cols-2 gap-5">
+
+
+          <div>
+
+            <label class="block text-sm
+                          font-semibold mb-2">
+
+              Full Name
+
+            </label>
+
+            <input type="text"
+                   required
+                   placeholder="Your name"
+                   class="w-full px-4 py-3 rounded-xl
+                          border border-slate-200
+                          dark:border-slate-600
+                          bg-white dark:bg-[#0b1026]
+                          outline-none
+                          focus:border-[#E83E8C]
+                          transition">
+
+          </div>
+
+
+          <div>
+
+            <label class="block text-sm
+                          font-semibold mb-2">
+
+              Phone Number
+
+            </label>
+
+            <input type="tel"
+                   required
+                   placeholder="+91 XXXXX XXXXX"
+                   class="w-full px-4 py-3 rounded-xl
+                          border border-slate-200
+                          dark:border-slate-600
+                          bg-white dark:bg-[#0b1026]
+                          outline-none
+                          focus:border-[#E83E8C]
+                          transition">
+
+          </div>
+
+
+          <div class="sm:col-span-2">
+
+            <label class="block text-sm
+                          font-semibold mb-2">
+
+              Email Address
+
+            </label>
+
+            <input type="email"
+                   required
+                   placeholder="you@example.com"
+                   class="w-full px-4 py-3 rounded-xl
+                          border border-slate-200
+                          dark:border-slate-600
+                          bg-white dark:bg-[#0b1026]
+                          outline-none
+                          focus:border-[#E83E8C]
+                          transition">
+
+          </div>
+
+
+          <div class="sm:col-span-2">
+
+            <label class="block text-sm
+                          font-semibold mb-2">
+
+              Subject
+
+            </label>
+
+            <select
+              class="w-full px-4 py-3 rounded-xl
+                     border border-slate-200
+                     dark:border-slate-600
+                     bg-white dark:bg-[#0b1026]
+                     outline-none
+                     focus:border-[#E83E8C]
+                     transition">
+
+              <option>General Enquiry</option>
+              <option>Appointment</option>
+              <option>Dental Treatment</option>
+              <option>Insurance</option>
+              <option>Emergency Care</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="sm:col-span-2">
+
+            <label class="block text-sm
+                          font-semibold mb-2">
+
+              Message
+
+            </label>
+
+            <textarea
+              rows="5"
+              required
+              placeholder="How can we help you?"
+              class="w-full px-4 py-3 rounded-xl
+                     border border-slate-200
+                     dark:border-slate-600
+                     bg-white dark:bg-[#0b1026]
+                     outline-none resize-none
+                     focus:border-[#E83E8C]
+                     transition"></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button type="submit"
+                class="w-full mt-6 px-6 py-3 rounded-xl
+                       bg-gradient-to-r
+                       from-[#E83E8C] to-[#7C3AED]
+                       text-white font-bold
+                       shadow-lg
+                       hover:-translate-y-1
+                       hover:shadow-xl
+                       transition-all duration-300">
+
+          <i class="fa-solid fa-paper-plane mr-2"></i>
+
+          Send Message
+
+        </button>
+
+
+        <p id="formMessage"
+           class="hidden text-center
+                  text-[#E83E8C]
+                  font-semibold mt-4">
+
+          Thank you! Your message has been received.
+
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECTION 4 — APPOINTMENT
+========================================================= -->
+
+<section class="py-20 lg:py-24
+                bg-white dark:bg-[#0b1026]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="relative overflow-hidden
+                rounded-3xl
+                bg-gradient-to-r
+                from-[#111A3A]
+                via-[#24194F]
+                to-[#7C3AED]
+                p-8 md:p-12 text-white">
+
+
+      <div class="grid lg:grid-cols-2
+                  gap-10 items-center">
+
+        <div>
+
+          <span class="text-[#E83E8C]
+                       font-bold uppercase
+                       tracking-widest text-sm">
+
+            Need An Appointment?
+
+          </span>
+
+
+          <h2 class="text-3xl md:text-4xl
+                     font-extrabold mt-3">
+
+            Your Smile Deserves
+            Expert Care
+
+          </h2>
+
+
+          <p class="text-white/70
+                    leading-8 mt-5">
+
+            Schedule a consultation with
+            our experienced dental team
+            at a time that works for you.
+
+          </p>
+
+
+          <a href="appointment.html"
+             class="inline-flex items-center gap-2
+                    mt-7 px-6 py-3 rounded-xl
+                    bg-gradient-to-r
+                    from-[#E83E8C] to-[#7C3AED]
+                    font-bold
+                    hover:-translate-y-1
+                    hover:shadow-xl
+                    transition-all duration-300">
+
+            Book Appointment
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </a>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4">
+
+
+          <div class="p-5 rounded-2xl
+                      bg-white/10
+                      border border-white/10">
+
+            <i class="fa-solid fa-user-doctor
+                      text-2xl text-[#E83E8C]"></i>
+
+            <h4 class="font-bold mt-3">
+              Expert Doctors
+            </h4>
+
+          </div>
+
+
+          <div class="p-5 rounded-2xl
+                      bg-white/10
+                      border border-white/10">
+
+            <i class="fa-solid fa-calendar-check
+                      text-2xl text-[#E83E8C]"></i>
+
+            <h4 class="font-bold mt-3">
+              Easy Booking
+            </h4>
+
+          </div>
+
+
+          <div class="p-5 rounded-2xl
+                      bg-white/10
+                      border border-white/10">
+
+            <i class="fa-solid fa-hospital
+                      text-2xl text-[#E83E8C]"></i>
+
+            <h4 class="font-bold mt-3">
+              Modern Clinic
+            </h4>
+
+          </div>
+
+
+          <div class="p-5 rounded-2xl
+                      bg-white/10
+                      border border-white/10">
+
+            <i class="fa-solid fa-heart-pulse
+                      text-2xl text-[#E83E8C]"></i>
+
+            <h4 class="font-bold mt-3">
+              Patient Care
+            </h4>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECTION 5 — LOCATION
+========================================================= -->
+
+<section id="map"
+         class="py-20 lg:py-24
+                bg-slate-50 dark:bg-[#0f1530]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-10
+                items-center">
+
+
+      <div>
+
+        <span class="text-[#E83E8C]
+                     font-bold uppercase
+                     tracking-widest text-sm">
+
+          Visit Our Clinic
+
+        </span>
+
+
+        <h2 class="text-3xl md:text-4xl
+                   font-extrabold
+                   text-[#111A3A]
+                   dark:text-white mt-3">
+
+          Conveniently Located
+          For Your Care
+
+        </h2>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  leading-8 mt-5">
+
+          Visit DentaCare for a comfortable,
+          modern and patient-friendly dental
+          experience.
+
+        </p>
+
+
+        <div class="space-y-5 mt-8">
+
+
+          <div class="flex gap-4">
+
+            <div class="w-12 h-12 rounded-xl
+                        bg-pink-50
+                        dark:bg-pink-500/10
+                        text-[#E83E8C]
+                        flex items-center justify-center">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+            </div>
+
+            <div>
+
+              <h4 class="font-bold">
+                Clinic Address
+              </h4>
+
+              <p class="text-slate-500
+                        dark:text-slate-300 mt-1">
+
+                Ramanathapuram,
+                Tamil Nadu, India
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="flex gap-4">
+
+            <div class="w-12 h-12 rounded-xl
+                        bg-purple-50
+                        dark:bg-purple-500/10
+                        text-[#7C3AED]
+                        flex items-center justify-center">
+
+              <i class="fa-solid fa-car"></i>
+
+            </div>
+
+            <div>
+
+              <h4 class="font-bold">
+                Easy Access
+              </h4>
+
+              <p class="text-slate-500
+                        dark:text-slate-300 mt-1">
+
+                Convenient parking and rapid access for patients
+                and families.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- LOCATION / RECEPTION VISUAL -->
+
+      <div class="h-[360px]
+                  rounded-3xl
+                  relative overflow-hidden
+                  shadow-xl group">
+
+        <img src="../assets/images/contact-reception-hall.jpg"
+             alt="DentaCare Ramanathapuram Clinic"
+             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="absolute inset-0 bg-gradient-to-t from-[#111A3A]/90 via-[#111A3A]/40 to-transparent flex items-end p-8">
+          <div class="text-white">
+            <h3 class="text-xl font-bold">DentaCare Ramanathapuram Main Center</h3>
+            <p class="text-white/80 text-sm mt-1">Modern reception & dedicated parking available</p>
+            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-lg bg-[#E83E8C] text-white text-xs font-bold hover:bg-[#7C3AED] transition">
+              <i class="fa-solid fa-location-arrow"></i>
+              Open In Google Maps
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECTION 6 — OPENING HOURS
+========================================================= -->
+
+<section class="py-20 lg:py-24
+                bg-white dark:bg-[#0b1026]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-4xl mx-auto">
+
+      <div class="text-center mb-12">
+
+        <span class="text-[#7C3AED]
+                     font-bold uppercase
+                     tracking-widest text-sm">
+
+          Clinic Hours
+
+        </span>
+
+
+        <h2 class="text-3xl md:text-4xl
+                   font-extrabold
+                   text-[#111A3A]
+                   dark:text-white mt-3">
+
+        When You Can Visit Us
+
+        </h2>
+
+      </div>
+
+
+      <div class="bg-slate-50
+                  dark:bg-[#111A3A]
+                  rounded-3xl p-6 md:p-8
+                  border border-slate-200
+                  dark:border-slate-700">
+
+
+        <div class="flex justify-between
+                    items-center py-5
+                    border-b
+                    border-slate-200
+                    dark:border-slate-700">
+
+          <span class="font-semibold">
+            Monday - Friday
+          </span>
+
+          <span class="font-bold
+                       text-[#E83E8C]">
+
+            9:00 AM - 8:00 PM
+
+          </span>
+
+        </div>
+
+
+        <div class="flex justify-between
+                    items-center py-5
+                    border-b
+                    border-slate-200
+                    dark:border-slate-700">
+
+          <span class="font-semibold">
+            Saturday
+          </span>
+
+          <span class="font-bold
+                       text-[#E83E8C]">
+
+            9:00 AM - 6:00 PM
+
+          </span>
+
+        </div>
+
+
+        <div class="flex justify-between
+                    items-center py-5">
+
+          <span class="font-semibold">
+            Sunday
+          </span>
+
+          <span class="font-bold text-red-500">
+
+            Closed (Emergency on call)
+
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="mt-6 p-5 rounded-2xl
+                  bg-pink-50
+                  dark:bg-pink-500/10
+                  border border-pink-100
+                  dark:border-pink-500/20
+                  text-center">
+
+        <i class="fa-solid fa-circle-info
+                  text-[#E83E8C] mr-2"></i>
+
+        Emergency dental support is available 24/7. Call our priority emergency line anytime.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECTION 7 — EMERGENCY CARE
+========================================================= -->
+
+<section class="py-20 lg:py-24
+                bg-slate-50 dark:bg-[#0f1530]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-10
+                items-center">
+
+
+      <div class="order-2 lg:order-1">
+
+        <div class="inline-flex items-center gap-2
+                    px-4 py-2 rounded-full
+                    bg-pink-50
+                    dark:bg-pink-500/10
+                    text-[#E83E8C]
+                    font-bold text-sm">
+
+          <i class="fa-solid fa-triangle-exclamation"></i>
+
+          Emergency Dental Care
+
+        </div>
+
+
+        <h2 class="text-3xl md:text-4xl
+                   font-extrabold
+                   text-[#111A3A]
+                   dark:text-white mt-5">
+
+          Don't Ignore
+          <span class="text-[#E83E8C]">
+            Dental Emergencies
+          </span>
+
+        </h2>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  leading-8 mt-5">
+
+          Severe tooth pain, dental injuries,
+          swelling or other urgent dental
+          concerns should receive prompt
+          professional attention.
+
+        </p>
+
+
+        <div class="flex flex-wrap gap-4 mt-7">
+
+          <a href="tel:+919876543210"
+             class="px-6 py-3 rounded-xl
+                    bg-gradient-to-r
+                    from-[#E83E8C] to-[#7C3AED]
+                    text-white font-bold
+                    hover:-translate-y-1
+                    hover:shadow-xl
+                    transition-all duration-300">
+
+            <i class="fa-solid fa-phone mr-2"></i>
+
+            Call Now
+
+          </a>
+
+
+          <a href="appointment.html"
+             class="px-6 py-3 rounded-xl
+                    border border-[#E83E8C]
+                    text-[#E83E8C]
+                    font-bold
+                    hover:bg-[#E83E8C]
+                    hover:text-white
+                    transition-all duration-300">
+
+            Request Care
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-1 lg:order-2
+                  rounded-3xl
+                  bg-gradient-to-br
+                  from-[#111A3A]
+                  to-[#7C3AED]
+                  p-8 md:p-10 text-white">
+
+
+        <div class="grid grid-cols-2 gap-5">
+
+
+          <div class="p-5 rounded-2xl
+                      bg-white/10">
+
+            <i class="fa-solid fa-tooth
+                      text-2xl text-[#E83E8C]"></i>
+
+            <p class="font-bold mt-3">
+              Severe Toothache
+            </p>
+
+          </div>
+
+
+          <div class="p-5 rounded-2xl
+                      bg-white/10">
+
+            <i class="fa-solid fa-face-frown
+                      text-2xl text-[#E83E8C]"></i>
+
+            <p class="font-bold mt-3">
+              Dental Injury
+            </p>
+
+          </div>
+
+
+          <div class="p-5 rounded-2xl
+                      bg-white/10">
+
+            <i class="fa-solid fa-droplet
+                      text-2xl text-[#E83E8C]"></i>
+
+            <p class="font-bold mt-3">
+              Dental Bleeding
+            </p>
+
+          </div>
+
+
+          <div class="p-5 rounded-2xl
+                      bg-white/10">
+
+            <i class="fa-solid fa-bolt
+                      text-2xl text-[#E83E8C]"></i>
+
+            <p class="font-bold mt-3">
+              Sudden Pain
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECTION 8 — FAQ + FINAL CTA
+========================================================= -->
+
+<section class="py-20 lg:py-24
+                bg-white dark:bg-[#0b1026]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+    <div class="text-center mb-12">
+
+      <span class="text-[#E83E8C]
+                   font-bold uppercase
+                   tracking-widest text-sm">
+
+        Contact FAQ
+
+      </span>
+
+
+      <h2 class="text-3xl md:text-4xl
+                 font-extrabold
+                 text-[#111A3A]
+                 dark:text-white mt-3">
+
+        Frequently Asked Questions
+
+      </h2>
+
+    </div>
+
+
+    <div class="max-w-3xl mx-auto space-y-4">
+
+
+      <details
+        class="group p-5 rounded-xl
+               bg-slate-50 dark:bg-[#111A3A]
+               border border-slate-200
+               dark:border-slate-700
+               cursor-pointer">
+
+        <summary class="flex justify-between
+                         items-center
+                         font-bold list-none">
+
+          How can I book an appointment?
+
+          <i class="fa-solid fa-plus
+                    text-[#E83E8C]
+                    group-open:rotate-45
+                    transition-transform"></i>
+
+        </summary>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  mt-4 leading-7">
+
+          You can book online through our
+          appointment page or contact the clinic
+          directly by phone.
+
+        </p>
+
+      </details>
+
+
+      <details
+        class="group p-5 rounded-xl
+               bg-slate-50 dark:bg-[#111A3A]
+               border border-slate-200
+               dark:border-slate-700
+               cursor-pointer">
+
+        <summary class="flex justify-between
+                         items-center
+                         font-bold list-none">
+
+          Can I contact the clinic about treatment costs?
+
+          <i class="fa-solid fa-plus
+                    text-[#E83E8C]
+                    group-open:rotate-45
+                    transition-transform"></i>
+
+        </summary>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  mt-4 leading-7">
+
+          Yes. Our team can provide general
+          information and discuss treatment
+          estimates after consultation.
+
+        </p>
+
+      </details>
+
+
+      <details
+        class="group p-5 rounded-xl
+               bg-slate-50 dark:bg-[#111A3A]
+               border border-slate-200
+               dark:border-slate-700
+               cursor-pointer">
+
+        <summary class="flex justify-between
+                         items-center
+                         font-bold list-none">
+
+          Do you handle dental emergencies?
+
+          <i class="fa-solid fa-plus
+                    text-[#E83E8C]
+                    group-open:rotate-45
+                    transition-transform"></i>
+
+        </summary>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  mt-4 leading-7">
+
+          Contact the clinic as soon as possible
+          for urgent dental concerns so the team
+          can advise you on the next step.
+
+        </p>
+
+      </details>
+
+    </div>
+
+
+    <!-- FINAL CTA -->
+
+    <div class="mt-16 rounded-3xl
+                bg-gradient-to-r
+                from-[#111A3A]
+                via-[#24194F]
+                to-[#7C3AED]
+                p-8 md:p-12
+                text-white text-center">
+
+      <div class="w-16 h-16 rounded-2xl
+                  bg-white/10
+                  flex items-center justify-center
+                  mx-auto">
+
+        <i class="fa-solid fa-tooth
+                  text-2xl text-[#E83E8C]"></i>
+
+      </div>
+
+
+      <h2 class="text-3xl md:text-4xl
+                 font-extrabold mt-5">
+
+        Ready To Take Care Of Your Smile?
+
+      </h2>
+
+
+      <p class="text-white/70
+                max-w-2xl mx-auto
+                leading-7 mt-4">
+
+        Contact DentaCare today and take
+        the next step toward healthier,
+        more confident dental care.
+
+      </p>
+
+
+      <div class="flex flex-wrap
+                  justify-center gap-4 mt-7">
+
+        <a href="appointment.html"
+           class="px-7 py-3 rounded-xl
+                  bg-gradient-to-r
+                  from-[#E83E8C] to-[#7C3AED]
+                  font-bold
+                  hover:-translate-y-1
+                  hover:shadow-xl
+                  transition-all duration-300">
+
+          Book Appointment
+
+        </a>
+
+
+        <a href="tel:+919876543210"
+           class="px-7 py-3 rounded-xl
+                  border border-white/30
+                  font-bold
+                  hover:bg-white/10
+                  transition">
+
+          <i class="fa-solid fa-phone mr-2"></i>
+
+          Call Clinic
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer-adaptive">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <div class="grid sm:grid-cols-2
+                lg:grid-cols-4 gap-10">
+
+
+      <div>
+
+        <a href="index.html"
+           class="flex items-center gap-3">
+
+          <div class="w-11 h-11 rounded-xl
+                      bg-gradient-to-br
+                      from-[#E83E8C] to-[#7C3AED]
+                      flex items-center justify-center text-white">
+
+            <i class="fa-solid fa-tooth"></i>
+
+          </div>
+
+
+          <div class="text-xl font-bold">
+
+            Denta<span class="text-[#E83E8C]">Care</span>
+
+          </div>
+
+        </a>
+
+
+        <p class="text-white/60
+                  leading-7 mt-5">
+
+          Premium dental and oral care focused
+          on healthy, confident smiles.
+
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Quick Links
+        </h3>
+
+        <div class="space-y-3 text-white/60">
+
+          <a href="index.html"
+             class="block hover:text-[#E83E8C] transition">
+            Home
+          </a>
+
+          <a href="about.html"
+             class="block hover:text-[#E83E8C] transition">
+            About
+          </a>
+
+          <a href="services.html"
+             class="block hover:text-[#E83E8C] transition">
+            Services
+          </a>
+
+          <a href="doctors.html"
+             class="block hover:text-[#E83E8C] transition">
+            Doctors
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Services
+        </h3>
+
+        <div class="space-y-3 text-white/60">
+
+          <p>General Dentistry</p>
+          <p>Cosmetic Dentistry</p>
+          <p>Dental Implants</p>
+          <p>Orthodontics</p>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Contact
+        </h3>
+
+        <div class="space-y-4 text-white/60">
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-location-dot
+                      text-[#E83E8C] mt-1"></i>
+
+            Ramanathapuram, Tamil Nadu
+
+          </p>
+
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-phone
+                      text-[#E83E8C] mt-1"></i>
+
+            +91 98765 43210
+
+          </p>
+
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-envelope
+                      text-[#E83E8C] mt-1"></i>
+
+            info@dentacare.com
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="border-t border-white/10
+                mt-10 pt-6
+                flex flex-col md:flex-row
+                justify-between items-center
+                gap-4">
+
+      <p class="text-white/50 text-sm">
+
+        © 2026 DentaCare. All Rights Reserved.
+
+      </p>
+
+
+      <div class="flex gap-4">
+
+        <a href="#"
+           class="w-9 h-9 rounded-full
+                  bg-white/10
+                  flex items-center justify-center
+                  hover:bg-[#E83E8C]
+                  transition">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </a>
+
+
+        <a href="#"
+           class="w-9 h-9 rounded-full
+                  bg-white/10
+                  flex items-center justify-center
+                  hover:bg-[#E83E8C]
+                  transition">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </a>
+
+
+        <a href="#"
+           class="w-9 h-9 rounded-full
+                  bg-white/10
+                  flex items-center justify-center
+                  hover:bg-[#E83E8C]
+                  transition">
+
+          <i class="fa-brands fa-linkedin-in"></i>
+
+        </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+<script src="../js/main.js"></script>
+<script>
+  function submitContact(event) {
+    event.preventDefault();
+    const message = document.getElementById("formMessage");
+    if (message) {
+      message.classList.remove("hidden");
+    }
+    event.target.reset();
+  }
+</script>
+
+</body>
+</html>

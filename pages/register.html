@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration | DentaCare</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            navy: "#070B19",
+            darkCard: "#0E152E",
+            darkBorder: "#1E294B",
+            pink: "#E83E8C",
+            purple: "#7C3AED",
+            cyan: "#06B6D4"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-[#070B19] text-white min-h-screen flex flex-col justify-between selection:bg-pink selection:text-white font-['Plus_Jakarta_Sans',sans-serif]">
+
+  <!-- TOP BAR -->
+  <header class="w-full px-5 lg:px-10 py-5 flex items-center justify-between z-20">
+    <a href="login.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition duration-200">
+      <i class="fa-solid fa-arrow-left text-xs"></i>
+      <span>Back to Sign In</span>
+    </a>
+
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="text-xs font-semibold text-slate-400 hover:text-white transition">
+        Home
+      </a>
+      <button id="rtlToggle" onclick="toggleDirection()" class="px-3 py-1.5 rounded-lg border border-slate-700/80 bg-slate-800/40 hover:bg-slate-700/60 text-xs font-bold text-slate-200 hover:text-white transition flex items-center gap-1.5 cursor-pointer">
+        <i class="fa-solid fa-right-left text-[10px]"></i>
+        <span>RTL</span>
+      </button>
+      <button id="themeToggle" onclick="toggleTheme()" class="w-8 h-8 rounded-lg border border-slate-700/80 bg-slate-800/40 hover:bg-slate-700/60 text-slate-300 hover:text-white flex items-center justify-center text-xs transition cursor-pointer" title="Settings">
+        <i class="fa-solid fa-gear"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="w-full max-w-xl mx-auto px-4 py-4 flex-1 flex flex-col justify-center items-center relative z-10">
+
+    <div class="absolute -top-24 -left-24 w-72 h-72 bg-purple/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-pink/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- LOGO & BRANDING -->
+    <div class="text-center mb-5">
+      <div class="inline-flex items-center justify-center gap-3 mb-2">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#E83E8C] flex items-center justify-center shadow-lg shadow-purple-500/30">
+          <i class="fa-solid fa-tooth text-2xl text-white"></i>
+        </div>
+        <div class="text-left">
+          <h1 class="text-2xl font-extrabold tracking-tight text-white leading-tight font-heading">
+            Denta<span class="text-pink">Care</span>
+          </h1>
+          <p class="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">
+            DENTAL CLINIC • NEXT-GEN
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-white tracking-tight mt-1 font-heading">
+        Complete Patient Registration
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-md mx-auto">
+        Create your digital medical record profile & schedule painless treatments.
+      </p>
+    </div>
+
+    <!-- ALERT -->
+    <div id="regAlert" class="hidden w-full mb-4 p-3.5 rounded-xl text-sm font-medium text-center transition"></div>
+
+    <!-- FORM CARD -->
+    <div class="w-full bg-[#0D1326]/90 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/60 relative">
+      <form id="patientRegistrationForm" class="space-y-4">
+        <!-- Name Fields -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">First Name *</label>
+            <input type="text" id="pFirstName" required placeholder="e.g. Sarah"
+              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Last Name *</label>
+            <input type="text" id="pLastName" required placeholder="e.g. Jenkins"
+              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+          </div>
+        </div>
+
+        <!-- Contact Fields -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+            <input type="email" id="pEmail" required placeholder="sarah@example.com"
+              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number *</label>
+            <input type="tel" id="pPhone" required placeholder="+91 98765 43210"
+              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+          </div>
+        </div>
+
+        <!-- DOB & Gender -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Date of Birth</label>
+            <input type="date" id="pDOB"
+              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Gender</label>
+            <select id="pGender" class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="nonbinary">Non-Binary / Other</option>
+              <option value="prefer_not">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Primary Concern -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Primary Dental Need / Specialty</label>
+          <select id="pConcern" class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-pink">
+            <option value="cleaning">Routine Dental Cleaning & Checkup</option>
+            <option value="whitening">Cosmetic Teeth Whitening</option>
+            <option value="braces">Orthodontics & Clear Aligners</option>
+            <option value="implants">Dental Implants & Restoration</option>
+            <option value="rootcanal">Painless Root Canal Treatment</option>
+            <option value="emergency">Emergency Dental Pain</option>
+          </select>
+        </div>
+
+        <!-- Password -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Create Password *</label>
+            <input type="password" id="pPass" required placeholder="••••••••"
+              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Confirm Password *</label>
+            <input type="password" id="pConfirmPass" required placeholder="••••••••"
+              class="w-full px-3.5 py-2.5 bg-[#131B38]/80 border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink">
+          </div>
+        </div>
+
+        <!-- Agreement -->
+        <div class="flex items-start gap-2 pt-1">
+          <input type="checkbox" id="pTerms" required class="mt-0.5 rounded bg-slate-800 border-slate-700 text-pink focus:ring-pink">
+          <label for="pTerms" class="text-[11px] text-slate-400 leading-tight">
+            I agree to DentaCare <a href="javascript:void(0)" class="text-pink underline">Terms of Service</a> and HIPAA <a href="javascript:void(0)" class="text-pink underline">Privacy Protection Policy</a>.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full py-3.5 px-6 rounded-xl font-bold text-white text-xs sm:text-sm tracking-wide bg-gradient-to-r from-[#6366F1] via-[#A855F7] to-[#EC4899] hover:from-[#4F46E5] hover:via-[#9333EA] hover:to-[#DB2777] shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-200 cursor-pointer mt-3">
+          Complete Registration & Access Portal
+        </button>
+      </form>
+
+      <!-- SWITCH TO LOGIN -->
+      <div class="mt-5 text-center text-xs text-slate-400">
+        <span>Already have an account? </span>
+        <a href="login.html" class="text-pink font-semibold hover:underline">
+          Sign In to Portal
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-5 flex items-center justify-center gap-2 text-xs text-slate-500 font-medium">
+      <i class="fa-solid fa-lock text-purple text-xs"></i>
+      <span>256-Bit HIPAA Encrypted Portal Access</span>
+    </div>
+
+  </main>
+
+  <footer class="w-full py-4 px-5 text-center text-xs text-slate-600">
+    <span>© 2026 DentaCare Clinic. All rights reserved.</span>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.getElementById('patientRegistrationForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const p1 = document.getElementById('pPass').value;
+      const p2 = document.getElementById('pConfirmPass').value;
+      const alertBox = document.getElementById('regAlert');
+      if (p1 !== p2) {
+        alertBox.className = 'w-full mb-4 p-3.5 rounded-xl text-xs font-medium text-center bg-rose-950/80 text-rose-300 border border-rose-600/50';
+        alertBox.innerText = 'Passwords do not match! Please check and try again.';
+        return;
+      }
+      alertBox.className = 'w-full mb-4 p-3.5 rounded-xl text-xs font-medium text-center bg-emerald-950/80 text-emerald-300 border border-emerald-600/50';
+      alertBox.innerText = 'Registration successful! Creating your 3D patient portal account...';
+      setTimeout(() => {
+        window.location.href = "appointment.html";
+      }, 1400);
+    });
+  </script>
+</body>
+</html>

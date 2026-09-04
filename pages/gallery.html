@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DentaCare | Gallery</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            navy: "#111A3A",
+            pink: "#E83E8C",
+            purple: "#7C3AED"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-white text-slate-800
+             dark:bg-[#0b1026] dark:text-white
+             transition-colors duration-300">
+
+             <!-- =========================================================
+     TOP BAR
+========================================================= -->
+<div class="bg-[#111A3A] text-white text-sm">
+  <div class="mx-auto px-5 lg:px-10 py-2.5
+              flex flex-wrap items-center justify-between gap-3">
+
+    <div class="flex flex-wrap items-center gap-5">
+      <span>
+        <i class="fa-solid fa-location-dot mr-2 text-pink"></i>
+        Ramanathapuram
+      </span>
+
+      <span>
+        <i class="fa-regular fa-clock mr-2 text-pink"></i>
+        Mon - Sat : 9:00 AM - 8:00 PM
+      </span>
+    </div>
+
+    <a href="tel:+919876543210"
+       class="hover:text-pink transition">
+      <i class="fa-solid fa-phone mr-2 text-pink"></i>
+      +91 98765 43210
+    </a>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="sticky top-0 z-50
+               bg-white/95 dark:bg-[#111A3A]/95
+               backdrop-blur-md shadow-sm">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <nav class="flex items-center justify-between min-h-[78px]">
+
+      <!-- LOGO -->
+      <a href="index.html"
+         class="flex items-center gap-3 shrink-0">
+
+        <div class="w-11 h-11 rounded-xl
+                    bg-gradient-to-br from-[#E83E8C] to-[#7C3AED]
+                    flex items-center justify-center
+                    text-white shadow-lg">
+
+          <i class="fa-solid fa-tooth text-xl"></i>
+
+        </div>
+
+        <div>
+
+          <div class="text-xl font-bold
+                      text-[#111A3A] dark:text-white">
+
+            Denta<span class="text-[#E83E8C]">Care</span>
+
+          </div>
+
+          <div class="text-[10px]
+                      text-slate-500 dark:text-slate-300
+                      tracking-wide">
+
+            Premium Dental & Oral Care
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- DESKTOP NAV -->
+      <div class="hidden lg:flex items-center gap-6">
+
+        <!-- HOME DROPDOWN -->
+        <div class="relative group">
+
+          <button
+            type="button"
+            class="flex items-center gap-2 py-7
+                   text-sm font-semibold
+                   text-[#111A3A] dark:text-white
+                   hover:text-[#E83E8C]
+                   transition cursor-pointer">
+
+            Home
+
+            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+
+          </button>
+
+
+          <div class="absolute left-0 top-full w-48
+                      bg-white dark:bg-[#111A3A]
+                      rounded-xl shadow-xl
+                      border border-slate-100
+                      dark:border-slate-700
+                      opacity-0 invisible
+                      translate-y-2
+                      group-hover:opacity-100
+                      group-hover:visible
+                      group-hover:translate-y-0
+                      transition-all duration-300">
+
+            <a href="index.html"
+               class="block px-5 py-3 text-sm
+                      hover:bg-pink-50
+                      dark:hover:bg-white/10
+                      hover:text-[#E83E8C]
+                      rounded-t-xl transition">
+
+              Home 1
+
+            </a>
+
+
+            <a href="home2.html"
+               class="block px-5 py-3 text-sm
+                      hover:bg-pink-50
+                      dark:hover:bg-white/10
+                      hover:text-[#E83E8C]
+                      rounded-b-xl transition">
+
+              Home 2
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <a href="about.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C]
+                  transition cursor-pointer">
+
+          About
+
+        </a>
+
+
+        <a href="services.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C]
+                  transition cursor-pointer">
+
+          Services
+
+        </a>
+
+
+        <a href="doctors.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C]
+                  transition cursor-pointer">
+
+          Doctors
+
+        </a>
+
+
+        <a href="gallery.html"
+           class="text-sm font-semibold
+                  text-[#E83E8C]
+                  transition cursor-pointer">
+
+          Gallery
+
+        </a>
+
+
+        <a href="pricing.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C]
+                  transition cursor-pointer">
+
+          Pricing
+
+        </a>
+
+
+        <a href="contact.html"
+           class="text-sm font-semibold
+                  hover:text-[#E83E8C]
+                  transition cursor-pointer">
+
+          Contact
+
+        </a>
+
+      </div>
+
+
+      <!-- RIGHT ACTIONS -->
+      <div class="hidden lg:flex items-center gap-3">
+
+        <button
+          id="themeToggle"
+          type="button"
+          onclick="toggleTheme()"
+          class="w-10 h-10 rounded-full
+                 hover:bg-pink-50 dark:hover:bg-white/10
+                 text-[#111A3A] dark:text-white
+                 hover:text-[#E83E8C]
+                 transition cursor-pointer">
+
+          <i id="themeIcon"
+             class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+        <button
+          type="button"
+          onclick="toggleDirection()"
+          class="px-3 py-2 rounded-full
+                 border border-slate-200
+                 dark:border-slate-600
+                 text-xs font-bold
+                 text-[#111A3A] dark:text-white
+                 hover:border-[#E83E8C]
+                 hover:text-[#E83E8C]
+                 transition cursor-pointer">
+
+          RTL
+
+        </button>
+
+
+        <a href="login.html"
+           class="px-4 py-2 text-sm font-semibold
+                  text-[#111A3A] dark:text-white
+                  hover:text-[#E83E8C]
+                  transition cursor-pointer">
+
+          Login
+
+        </a>
+
+
+        <a href="appointment.html"
+           class="px-5 py-3 rounded-xl
+                  bg-gradient-to-r
+                  from-[#E83E8C] to-[#7C3AED]
+                  text-white text-sm font-bold
+                  shadow-lg shadow-purple-500/20
+                  hover:-translate-y-1
+                  hover:shadow-xl
+                  transition-all duration-300
+                  cursor-pointer">
+
+          Book Appointment
+
+        </a>
+
+      </div>
+
+
+      <!-- MOBILE BUTTON -->
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        onclick="toggleMobileMenu()"
+        class="lg:hidden w-11 h-11 rounded-xl
+               bg-gradient-to-r
+               from-[#E83E8C] to-[#7C3AED]
+               text-white cursor-pointer">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </nav>
+
+  </div>
+
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+       class="hidden lg:hidden
+              border-t border-slate-200
+              dark:border-slate-700
+              bg-white dark:bg-[#111A3A]">
+
+    <div class="container mx-auto px-5 py-5 space-y-1">
+
+
+      <div>
+
+        <button
+          onclick="toggleMobileHome()"
+          type="button"
+          class="w-full flex justify-between items-center
+                 px-4 py-3 rounded-lg
+                 font-semibold
+                 hover:bg-pink-50
+                 dark:hover:bg-white/10
+                 transition cursor-pointer">
+
+          Home
+
+          <i id="mobileHomeIcon"
+             class="fa-solid fa-chevron-down text-xs"></i>
+
+        </button>
+
+
+        <div id="mobileHomeMenu"
+             class="hidden pl-5">
+
+          <a href="index.html"
+             class="block px-4 py-2 rounded-lg
+                    hover:text-[#E83E8C]
+                    transition">
+
+            Home 1
+
+          </a>
+
+
+          <a href="home2.html"
+             class="block px-4 py-2 rounded-lg
+                    hover:text-[#E83E8C]
+                    transition">
+
+            Home 2
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a href="about.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]
+                transition">
+
+        About
+
+      </a>
+
+
+      <a href="services.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]
+                transition">
+
+        Services
+
+      </a>
+
+
+      <a href="doctors.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]
+                transition">
+
+        Doctors
+
+      </a>
+
+
+      <a href="gallery.html"
+         class="block px-4 py-3 rounded-lg
+                bg-pink-50 dark:bg-white/10
+                text-[#E83E8C] font-semibold">
+
+        Gallery
+
+      </a>
+
+
+      <a href="pricing.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]
+                transition">
+
+        Pricing
+
+      </a>
+
+
+      <a href="contact.html"
+         class="block px-4 py-3 rounded-lg
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C]
+                transition">
+
+        Contact
+
+      </a>
+
+
+      <div class="flex gap-3 pt-3">
+
+        <button
+          onclick="toggleTheme()"
+          type="button"
+          class="flex-1 py-3 rounded-xl
+                 border border-slate-200
+                 dark:border-slate-600
+                 cursor-pointer">
+
+          <i class="fa-solid fa-moon mr-2"></i>
+
+          Theme
+
+        </button>
+
+
+        <button
+          onclick="toggleDirection()"
+          type="button"
+          class="px-5 py-3 rounded-xl
+                 border border-slate-200
+                 dark:border-slate-600
+                 cursor-pointer">
+
+          RTL
+
+        </button>
+
+      </div>
+
+
+      <a href="appointment.html"
+         class="block text-center mt-3 py-3 rounded-xl
+                bg-gradient-to-r
+                from-[#E83E8C] to-[#7C3AED]
+                text-white font-bold
+                cursor-pointer">
+
+        Book Appointment
+
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO (Adaptive Hero Background & Custom Buttons)
+========================================================= -->
+
+<section class="hero-adaptive py-24 lg:py-32">
+
+  <img src="../assets/images/gallery-hero-showcase.jpg"
+       alt="DentaCare Smile Gallery"
+       class="hero-img-adaptive">
+
+  <div class="hero-overlay-adaptive"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+
+    <div class="hero-badge mb-6 shadow-lg shadow-cyan-500/10">
+      <i class="fa-solid fa-camera-retro text-cyan-400"></i>
+      <span>📸 REAL SMILE TRANSFORMATIONS</span>
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-white font-heading max-w-4xl mb-6">
+      Inspiring Results &
+      <span class="block gradient-text mt-1">
+        Before-After Showcase
+      </span>
+    </h1>
+
+    <p class="text-base sm:text-lg lg:text-xl text-white/90 mt-2 max-w-3xl leading-relaxed mx-auto mb-8">
+      Witness true aesthetic smile transformations, cosmetic aligner results, and flawless clinical restorations achieved by our expert dental masters.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
+      <a href="#gallery"
+         class="px-8 py-4 rounded-xl font-bold text-white shadow-xl shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
+        <i class="fa-solid fa-images"></i>
+        <span>Explore Smile Showcase</span>
+      </a>
+
+      <a href="appointment.html"
+         class="glass-btn px-8 py-4 rounded-xl font-bold hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
+        <i class="fa-solid fa-calendar-check text-cyan-400"></i>
+        <span>Book Consultation</span>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     GALLERY FILTER
+========================================================= -->
+
+<section id="gallery"
+         class="py-20 lg:py-24
+                bg-white dark:bg-[#0b1026]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+    <div class="text-center max-w-2xl mx-auto mb-12">
+
+      <span class="text-[#E83E8C]
+                   font-bold uppercase
+                   tracking-widest text-sm">
+
+        Our Gallery
+
+      </span>
+
+
+      <h2 class="text-3xl md:text-4xl
+                 font-extrabold
+                 text-[#111A3A]
+                 dark:text-white mt-3">
+
+        Filter By Facility
+
+      </h2>
+
+
+      <p class="text-slate-500
+                dark:text-slate-300
+                mt-4 leading-7">
+
+        Explore different areas of our clinic
+        and discover the DentaCare experience.
+
+      </p>
+
+    </div>
+
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="flex flex-wrap
+                justify-center gap-3 mb-12">
+
+      <button
+        type="button"
+        data-filter="all"
+        onclick="filterGallery('all', this)"
+        class="gallery-filter active-filter
+               px-5 py-2.5 rounded-xl
+               bg-gradient-to-r
+               from-[#E83E8C] to-[#7C3AED]
+               text-white text-sm font-bold
+               transition-all duration-300
+               hover:-translate-y-1
+               cursor-pointer">
+
+        All Photos
+
+      </button>
+
+
+      <button
+        type="button"
+        data-filter="operating"
+        onclick="filterGallery('operating', this)"
+        class="gallery-filter
+               px-5 py-2.5 rounded-xl
+               border border-slate-200
+               dark:border-slate-700
+               text-slate-700
+               dark:text-slate-200
+               hover:border-[#E83E8C]
+               hover:text-[#E83E8C]
+               transition-all duration-300
+               hover:-translate-y-1
+               cursor-pointer">
+
+        Operating Suites
+
+      </button>
+
+
+      <button
+        type="button"
+        data-filter="diagnostics"
+        onclick="filterGallery('diagnostics', this)"
+        class="gallery-filter
+               px-5 py-2.5 rounded-xl
+               border border-slate-200
+               dark:border-slate-700
+               text-slate-700
+               dark:text-slate-200
+               hover:border-[#E83E8C]
+               hover:text-[#E83E8C]
+               transition-all duration-300
+               hover:-translate-y-1
+               cursor-pointer">
+
+        3D Diagnostics
+
+      </button>
+
+
+      <button
+        type="button"
+        data-filter="lounge"
+        onclick="filterGallery('lounge', this)"
+        class="gallery-filter
+               px-5 py-2.5 rounded-xl
+               border border-slate-200
+               dark:border-slate-700
+               text-slate-700
+               dark:text-slate-200
+               hover:border-[#E83E8C]
+               hover:text-[#E83E8C]
+               transition-all duration-300
+               hover:-translate-y-1
+               cursor-pointer">
+
+        Patient Lounges
+
+      </button>
+
+    </div>
+
+
+    <!-- GALLERY GRID -->
+
+    <div id="galleryGrid"
+         class="grid sm:grid-cols-2
+                lg:grid-cols-3 gap-6">
+
+
+      <!-- IMAGE 1 -->
+
+      <div class="gallery-item operating
+                  group relative overflow-hidden
+                  rounded-2xl
+                  bg-slate-100
+                  dark:bg-[#111A3A]
+                  cursor-pointer">
+
+        <img src="../assets/images/gallery-implant-suite.jpg"
+             alt="Modern Operating Suite"
+             class="w-full h-[300px]
+                    object-cover
+                    group-hover:scale-110
+                    transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    via-transparent
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition duration-500">
+
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+
+            <span class="text-xs
+                         text-[#E83E8C]
+                         font-bold uppercase">
+
+              Operating Suites
+
+            </span>
+
+            <h3 class="text-white
+                       font-bold text-xl mt-1">
+
+              Modern Treatment Room
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IMAGE 2 -->
+
+      <div class="gallery-item diagnostics
+                  group relative overflow-hidden
+                  rounded-2xl
+                  bg-slate-100
+                  dark:bg-[#111A3A]
+                  cursor-pointer">
+
+        <img src="../assets/images/gallery-digital-imaging.jpg"
+             alt="3D Dental Diagnostics"
+             class="w-full h-[300px]
+                    object-cover
+                    group-hover:scale-110
+                    transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    via-transparent
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition duration-500">
+
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+
+            <span class="text-xs
+                         text-[#E83E8C]
+                         font-bold uppercase">
+
+              3D Diagnostics
+
+            </span>
+
+            <h3 class="text-white
+                       font-bold text-xl mt-1">
+
+              Advanced Imaging
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IMAGE 3 -->
+
+      <div class="gallery-item lounge
+                  group relative overflow-hidden
+                  rounded-2xl
+                  bg-slate-100
+                  dark:bg-[#111A3A]
+                  cursor-pointer">
+
+        <img src="../assets/images/gallery-relaxation-spa.jpg"
+             alt="Patient Lounge"
+             class="w-full h-[300px]
+                    object-cover
+                    group-hover:scale-110
+                    transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    via-transparent
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition duration-500">
+
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+
+            <span class="text-xs
+                         text-[#E83E8C]
+                         font-bold uppercase">
+
+              Patient Lounges
+
+            </span>
+
+            <h3 class="text-white
+                       font-bold text-xl mt-1">
+
+              Comfortable Patient Lounge
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IMAGE 4 -->
+
+      <div class="gallery-item operating
+                  group relative overflow-hidden
+                  rounded-2xl
+                  bg-slate-100
+                  dark:bg-[#111A3A]
+                  cursor-pointer">
+
+        <img src="../assets/images/gallery-cosmetic-studio.jpg"
+             alt="Dental Treatment Suite"
+             class="w-full h-[300px]
+                    object-cover
+                    group-hover:scale-110
+                    transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    via-transparent
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition duration-500">
+
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+
+            <span class="text-xs
+                         text-[#E83E8C]
+                         font-bold uppercase">
+
+              Operating Suites
+
+            </span>
+
+            <h3 class="text-white
+                       font-bold text-xl mt-1">
+
+              Cosmetic Treatment Suite
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IMAGE 5 -->
+
+      <div class="gallery-item diagnostics
+                  group relative overflow-hidden
+                  rounded-2xl
+                  bg-slate-100
+                  dark:bg-[#111A3A]
+                  cursor-pointer">
+
+        <img src="../assets/images/gallery-orthodontic-bay.jpg"
+             alt="Dental Technology"
+             class="w-full h-[300px]
+                    object-cover
+                    group-hover:scale-110
+                    transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    via-transparent
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition duration-500">
+
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+
+            <span class="text-xs
+                         text-[#E83E8C]
+                         font-bold uppercase">
+
+              3D Diagnostics
+
+            </span>
+
+            <h3 class="text-white
+                       font-bold text-xl mt-1">
+
+              Orthodontic & Scanning Bay
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IMAGE 6 -->
+
+      <div class="gallery-item lounge
+                  group relative overflow-hidden
+                  rounded-2xl
+                  bg-slate-100
+                  dark:bg-[#111A3A]
+                  cursor-pointer">
+
+        <img src="../assets/images/clinic-reception.jpg"
+             alt="Clinic Reception"
+             class="w-full h-[300px]
+                    object-cover
+                    group-hover:scale-110
+                    transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    via-transparent
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition duration-500">
+
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+
+            <span class="text-xs
+                         text-[#E83E8C]
+                         font-bold uppercase">
+
+              Patient Lounges
+
+            </span>
+
+            <h3 class="text-white
+                       font-bold text-xl mt-1">
+
+              Welcoming Reception Lounge
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     PREMIUM GALLERY SHOWCASE — EXTRA SECTION
+========================================================= -->
+
+<section class="py-20 lg:py-24
+                bg-white dark:bg-[#0b1026]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- SECTION HEADER -->
+
+    <div class="text-center max-w-3xl mx-auto mb-14">
+
+      <span class="text-[#E83E8C]
+                   font-bold uppercase
+                   tracking-widest text-sm">
+
+        Premium Gallery
+
+      </span>
+
+      <h2 class="text-3xl md:text-4xl lg:text-5xl
+                 font-extrabold
+                 text-[#111A3A]
+                 dark:text-white
+                 mt-3">
+
+        A Closer Look at
+        <span class="text-[#E83E8C]">DentaCare</span>
+
+      </h2>
+
+      <p class="text-slate-500
+                dark:text-slate-300
+                mt-5 leading-8">
+
+        Discover our premium dental environment,
+        advanced facilities and carefully designed
+        patient spaces.
+
+      </p>
+
+    </div>
+
+
+    <!-- PREMIUM MASONRY STYLE GRID -->
+
+    <div class="grid lg:grid-cols-12 gap-5">
+
+
+      <!-- LARGE IMAGE -->
+
+      <div class="lg:col-span-7
+                  group relative overflow-hidden
+                  rounded-3xl
+                  h-[520px]
+                  bg-slate-100
+                  dark:bg-[#111A3A]
+                  cursor-pointer">
+
+        <img
+          src="../assets/images/gallery-pediatric-room.jpg"
+          alt="Premium DentaCare Treatment Room"
+          class="w-full h-full
+                 object-cover
+                 group-hover:scale-105
+                 transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    via-[#111A3A]/10
+                    to-transparent">
+
+          <div class="absolute bottom-0 left-0
+                      right-0 p-7">
+
+            <span class="inline-block
+                         px-3 py-1
+                         rounded-full
+                         bg-[#E83E8C]
+                         text-white
+                         text-xs font-bold
+                         uppercase
+                         tracking-wide">
+
+              Premium Facility
+
+            </span>
+
+            <h3 class="text-white
+                       text-2xl md:text-3xl
+                       font-extrabold mt-3">
+
+              Modern Treatment Environment
+
+            </h3>
+
+            <p class="text-white/70
+                      mt-2 max-w-xl">
+
+              Comfortable spaces designed to
+              make every dental visit relaxed
+              and professional.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT COLUMN -->
+
+      <div class="lg:col-span-5 grid gap-5">
+
+
+        <!-- IMAGE 2 -->
+
+        <div class="group relative overflow-hidden
+                    rounded-3xl
+                    h-[248px]
+                    bg-slate-100
+                    dark:bg-[#111A3A]
+                    cursor-pointer">
+
+          <img
+            src="../assets/images/gallery-digital-imaging.jpg"
+            alt="Advanced Dental Technology"
+            class="w-full h-full
+                   object-cover
+                   group-hover:scale-110
+                   transition-transform duration-700">
+
+          <div class="absolute inset-0
+                      bg-gradient-to-t
+                      from-[#111A3A]/90
+                      to-transparent">
+
+            <div class="absolute bottom-0
+                        left-0 right-0 p-6">
+
+              <span class="text-[#E83E8C]
+                           text-xs font-bold
+                           uppercase">
+
+                Technology
+
+              </span>
+
+              <h3 class="text-white
+                         text-xl font-bold mt-1">
+
+                Advanced Dental Technology
+
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- IMAGE 3 -->
+
+        <div class="group relative overflow-hidden
+                    rounded-3xl
+                    h-[248px]
+                    bg-slate-100
+                    dark:bg-[#111A3A]
+                    cursor-pointer">
+
+          <img
+            src="../assets/images/gallery-relaxation-spa.jpg"
+            alt="Premium Patient Lounge"
+            class="w-full h-full
+                   object-cover
+                   group-hover:scale-110
+                   transition-transform duration-700">
+
+          <div class="absolute inset-0
+                      bg-gradient-to-t
+                      from-[#111A3A]/90
+                      to-transparent">
+
+            <div class="absolute bottom-0
+                        left-0 right-0 p-6">
+
+              <span class="text-[#E83E8C]
+                           text-xs font-bold
+                           uppercase">
+
+                Patient Experience
+
+              </span>
+
+              <h3 class="text-white
+                         text-xl font-bold mt-1">
+
+                Premium Patient Lounge
+
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SMALL PREMIUM CARDS -->
+
+    <div class="grid sm:grid-cols-2
+                lg:grid-cols-4
+                gap-5 mt-5">
+
+
+      <!-- CARD 1 -->
+
+      <div class="group relative overflow-hidden
+                  rounded-2xl
+                  h-[240px]
+                  cursor-pointer">
+
+        <img
+          src="../assets/images/gallery-cosmetic-studio.jpg"
+          alt="Dental Treatment Chair"
+          class="w-full h-full
+                 object-cover
+                 group-hover:scale-110
+                 transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    to-transparent">
+
+          <div class="absolute bottom-0
+                      left-0 right-0 p-5">
+
+            <h3 class="text-white
+                       font-bold text-lg">
+
+              Treatment Suites
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CARD 2 -->
+
+      <div class="group relative overflow-hidden
+                  rounded-2xl
+                  h-[240px]
+                  cursor-pointer">
+
+        <img
+          src="../assets/images/gallery-digital-imaging.jpg"
+          alt="Digital Dental Diagnostics"
+          class="w-full h-full
+                 object-cover
+                 group-hover:scale-110
+                 transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    to-transparent">
+
+          <div class="absolute bottom-0
+                      left-0 right-0 p-5">
+
+            <h3 class="text-white
+                       font-bold text-lg">
+
+              3D Diagnostics
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CARD 3 -->
+
+      <div class="group relative overflow-hidden
+                  rounded-2xl
+                  h-[240px]
+                  cursor-pointer">
+
+        <img
+          src="../assets/images/clinic-reception.jpg"
+          alt="DentaCare Reception"
+          class="w-full h-full
+                 object-cover
+                 group-hover:scale-110
+                 transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    to-transparent">
+
+          <div class="absolute bottom-0
+                      left-0 right-0 p-5">
+
+            <h3 class="text-white
+                       font-bold text-lg">
+
+              Reception Area
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CARD 4 -->
+
+      <div class="group relative overflow-hidden
+                  rounded-2xl
+                  h-[240px]
+                  cursor-pointer">
+
+        <img
+          src="../assets/images/gallery-implant-suite.jpg"
+          alt="DentaCare Premium Care"
+          class="w-full h-full
+                 object-cover
+                 group-hover:scale-110
+                 transition-transform duration-700">
+
+        <div class="absolute inset-0
+                    bg-gradient-to-t
+                    from-[#111A3A]/90
+                    to-transparent">
+
+          <div class="absolute bottom-0
+                      left-0 right-0 p-5">
+
+            <h3 class="text-white
+                       font-bold text-lg">
+
+              Premium Care
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BOTTOM CTA -->
+
+    <div class="mt-10 text-center">
+
+      <a href="appointment.html"
+         class="inline-flex items-center gap-3
+                px-7 py-3.5
+                rounded-xl
+                bg-gradient-to-r
+                from-[#E83E8C] to-[#7C3AED]
+                text-white font-bold
+                shadow-lg
+                hover:-translate-y-1
+                hover:shadow-xl
+                transition-all duration-300
+                cursor-pointer">
+
+        Explore DentaCare
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PREMIUM TREATMENT
+========================================================= -->
+
+<section class="py-20 lg:py-24
+                bg-slate-50 dark:bg-[#0f1530]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2
+                gap-12 items-center">
+
+
+      <div>
+
+        <span class="text-[#E83E8C]
+                     font-bold uppercase
+                     tracking-widest text-sm">
+
+          Premium Treatment
+
+        </span>
+
+
+        <h2 class="text-3xl md:text-4xl
+                   font-extrabold
+                   text-[#111A3A]
+                   dark:text-white
+                   mt-3 mb-6">
+
+          Designed For Better Dental Care
+
+        </h2>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  leading-8 mb-7">
+
+          Every area of DentaCare is designed to
+          provide a comfortable, professional and
+          modern dental experience.
+
+        </p>
+
+
+        <div class="space-y-4">
+
+
+          <div class="flex items-center gap-4">
+
+            <div class="w-11 h-11 rounded-xl
+                        bg-pink-50
+                        dark:bg-pink-500/10
+                        text-[#E83E8C]
+                        flex items-center justify-center">
+
+              <i class="fa-solid fa-shield-heart"></i>
+
+            </div>
+
+            <span class="font-semibold">
+              Comfortable treatment environment
+            </span>
+
+          </div>
+
+
+          <div class="flex items-center gap-4">
+
+            <div class="w-11 h-11 rounded-xl
+                        bg-purple-50
+                        dark:bg-purple-500/10
+                        text-[#7C3AED]
+                        flex items-center justify-center">
+
+              <i class="fa-solid fa-microscope"></i>
+
+            </div>
+
+            <span class="font-semibold">
+              Advanced dental technology
+            </span>
+
+          </div>
+
+
+          <div class="flex items-center gap-4">
+
+            <div class="w-11 h-11 rounded-xl
+                        bg-pink-50
+                        dark:bg-pink-500/10
+                        text-[#E83E8C]
+                        flex items-center justify-center">
+
+              <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+            <span class="font-semibold">
+              Safe and patient-focused care
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="group overflow-hidden
+                  rounded-3xl">
+
+        <img src="../assets/images/gallery-pediatric-room.jpg"
+             alt="Premium Dental Treatment"
+             class="w-full h-[420px]
+                    object-cover
+                    group-hover:scale-105
+                    transition-transform duration-700">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FACILITY QUESTIONS
+========================================================= -->
+
+<section class="py-20 lg:py-24
+                bg-white dark:bg-[#0b1026]">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+
+      <span class="text-[#7C3AED]
+                   font-bold uppercase
+                   tracking-widest text-sm">
+
+        Facility Questions
+
+      </span>
+
+
+      <h2 class="text-3xl md:text-4xl
+                 font-extrabold
+                 text-[#111A3A]
+                 dark:text-white mt-3">
+
+        About Our Clinic
+
+      </h2>
+
+    </div>
+
+
+    <div class="max-w-3xl mx-auto space-y-4">
+
+
+      <details
+        class="group bg-slate-50
+               dark:bg-[#111A3A]
+               rounded-xl p-5
+               border border-slate-200
+               dark:border-slate-700
+               cursor-pointer">
+
+        <summary
+          class="flex justify-between
+                 items-center
+                 font-bold list-none">
+
+          Is the clinic equipped with modern technology?
+
+          <i class="fa-solid fa-plus
+                    text-[#E83E8C]
+                    group-open:rotate-45
+                    transition-transform"></i>
+
+        </summary>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  leading-7 mt-4">
+
+          Yes. DentaCare uses modern dental
+          equipment and digital diagnostic
+          technology to support accurate treatment.
+
+        </p>
+
+      </details>
+
+
+      <details
+        class="group bg-slate-50
+               dark:bg-[#111A3A]
+               rounded-xl p-5
+               border border-slate-200
+               dark:border-slate-700
+               cursor-pointer">
+
+        <summary
+          class="flex justify-between
+                 items-center
+                 font-bold list-none">
+
+          Are the treatment rooms comfortable?
+
+          <i class="fa-solid fa-plus
+                    text-[#E83E8C]
+                    group-open:rotate-45
+                    transition-transform"></i>
+
+        </summary>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  leading-7 mt-4">
+
+          Our treatment spaces are designed
+          to provide a clean, calm and comfortable
+          environment for every patient.
+
+        </p>
+
+      </details>
+
+
+      <details
+        class="group bg-slate-50
+               dark:bg-[#111A3A]
+               rounded-xl p-5
+               border border-slate-200
+               dark:border-slate-700
+               cursor-pointer">
+
+        <summary
+          class="flex justify-between
+                 items-center
+                 font-bold list-none">
+
+          Do you have a comfortable waiting area?
+
+          <i class="fa-solid fa-plus
+                    text-[#E83E8C]
+                    group-open:rotate-45
+                    transition-transform"></i>
+
+        </summary>
+
+
+        <p class="text-slate-500
+                  dark:text-slate-300
+                  leading-7 mt-4">
+
+          Yes. Our patient lounge is designed
+          to make your visit comfortable from
+          arrival to consultation.
+
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="py-20 lg:py-24">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="relative overflow-hidden
+                rounded-3xl
+                bg-gradient-to-r
+                from-[#111A3A]
+                via-[#24194F]
+                to-[#7C3AED]
+                text-white
+                p-10 md:p-14">
+
+      <div class="relative z-10
+                  flex flex-col lg:flex-row
+                  items-center justify-between
+                  gap-8">
+
+
+        <div class="max-w-2xl">
+
+          <span class="text-[#E83E8C]
+                       font-bold uppercase
+                       tracking-widest text-sm">
+
+            Your Smile Starts Here
+
+          </span>
+
+
+          <h2 class="text-3xl md:text-4xl
+                     font-extrabold mt-3">
+
+            Ready To Visit DentaCare?
+
+          </h2>
+
+
+          <p class="text-white/75
+                    mt-4 leading-7">
+
+            Schedule your appointment and
+            experience premium dental care.
+
+          </p>
+
+        </div>
+
+
+        <a href="appointment.html"
+           class="shrink-0
+                  px-7 py-4 rounded-xl
+                  bg-gradient-to-r
+                  from-[#E83E8C] to-[#7C3AED]
+                  text-white font-bold
+                  shadow-xl
+                  hover:-translate-y-1
+                  hover:shadow-2xl
+                  transition-all duration-300
+                  cursor-pointer">
+
+          <i class="fa-solid fa-calendar-check mr-2"></i>
+
+          Book Appointment
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer-adaptive">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <div class="grid sm:grid-cols-2
+                lg:grid-cols-4 gap-10">
+
+
+      <!-- BRAND -->
+
+      <div>
+
+        <a href="index.html"
+           class="flex items-center gap-3">
+
+          <div class="w-11 h-11 rounded-xl
+                      bg-gradient-to-br
+                      from-[#E83E8C] to-[#7C3AED]
+                      flex items-center justify-center text-white">
+
+            <i class="fa-solid fa-tooth"></i>
+
+          </div>
+
+
+          <div class="text-xl font-bold">
+
+            Denta<span class="text-[#E83E8C]">Care</span>
+
+          </div>
+
+        </a>
+
+
+        <p class="text-white/60
+                  leading-7 mt-5">
+
+          Premium dental and oral care focused
+          on healthy, confident smiles.
+
+        </p>
+
+      </div>
+
+
+      <!-- QUICK LINKS -->
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Quick Links
+        </h3>
+
+
+        <div class="space-y-3 text-white/60">
+
+          <a href="index.html"
+             class="block hover:text-[#E83E8C]
+                    transition">
+
+            Home
+
+          </a>
+
+
+          <a href="about.html"
+             class="block hover:text-[#E83E8C]
+                    transition">
+
+            About
+
+          </a>
+
+
+          <a href="services.html"
+             class="block hover:text-[#E83E8C]
+                    transition">
+
+            Services
+
+          </a>
+
+
+          <a href="doctors.html"
+             class="block hover:text-[#E83E8C]
+                    transition">
+
+            Doctors
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SERVICES -->
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Services
+        </h3>
+
+
+        <div class="space-y-3 text-white/60">
+
+          <p>General Dentistry</p>
+          <p>Cosmetic Dentistry</p>
+          <p>Dental Implants</p>
+          <p>Orthodontics</p>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTACT -->
+
+      <div>
+
+        <h3 class="font-bold text-lg mb-5">
+          Contact
+        </h3>
+
+
+        <div class="space-y-4 text-white/60">
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-location-dot
+                      text-[#E83E8C] mt-1"></i>
+
+            Ramanathapuram, Tamil Nadu
+
+          </p>
+
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-phone
+                      text-[#E83E8C] mt-1"></i>
+
+            +91 98765 43210
+
+          </p>
+
+
+          <p class="flex gap-3">
+
+            <i class="fa-solid fa-envelope
+                      text-[#E83E8C] mt-1"></i>
+
+            info@dentacare.com
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="border-t border-white/10
+                mt-10 pt-6
+                flex flex-col md:flex-row
+                justify-between items-center
+                gap-4">
+
+      <p class="text-white/50 text-sm">
+
+        © 2026 DentaCare. All Rights Reserved.
+
+      </p>
+
+
+      <div class="flex gap-4">
+
+        <a href="#"
+           aria-label="Facebook"
+           class="w-9 h-9 rounded-full
+                  bg-white/10
+                  flex items-center justify-center
+                  hover:bg-[#E83E8C]
+                  transition cursor-pointer">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </a>
+
+
+        <a href="#"
+           aria-label="Instagram"
+           class="w-9 h-9 rounded-full
+                  bg-white/10
+                  flex items-center justify-center
+                  hover:bg-[#E83E8C]
+                  transition cursor-pointer">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </a>
+
+
+        <a href="#"
+           aria-label="LinkedIn"
+           class="w-9 h-9 rounded-full
+                  bg-white/10
+                  flex items-center justify-center
+                  hover:bg-[#E83E8C]
+                  transition cursor-pointer">
+
+          <i class="fa-brands fa-linkedin-in"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+<script src="../js/main.js"></script>
+<script>
+  /* GALLERY FILTER */
+  function filterGallery(category, button) {
+    const items = document.querySelectorAll(".gallery-item");
+    const buttons = document.querySelectorAll(".gallery-filter");
+
+    buttons.forEach(btn => {
+      btn.classList.remove(
+        "active-filter",
+        "bg-gradient-to-r",
+        "from-[#E83E8C]",
+        "to-[#7C3AED]",
+        "text-white"
+      );
+      btn.classList.add(
+        "border",
+        "border-slate-200",
+        "dark:border-slate-700",
+        "text-slate-700",
+        "dark:text-slate-200"
+      );
+    });
+
+    button.classList.remove(
+      "border",
+      "border-slate-200",
+      "dark:border-slate-700",
+      "text-slate-700",
+      "dark:text-slate-200"
+    );
+
+    button.classList.add(
+      "active-filter",
+      "bg-gradient-to-r",
+      "from-[#E83E8C]",
+      "to-[#7C3AED]",
+      "text-white"
+    );
+
+    items.forEach(item => {
+      if (category === "all" || item.classList.contains(category)) {
+        item.classList.remove("hidden");
+        setTimeout(() => {
+          item.classList.remove("opacity-0");
+        }, 20);
+      } else {
+        item.classList.add("opacity-0", "hidden");
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
