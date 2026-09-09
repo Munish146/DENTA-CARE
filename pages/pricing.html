@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -34,30 +34,33 @@
              dark:bg-[#0b1026] dark:text-white
              transition-colors duration-300">
 
-             <!-- =========================================================
+<!-- =========================================================
      TOP BAR
 ========================================================= -->
-<div class="bg-[#111A3A] text-white text-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5
-              flex flex-wrap items-center justify-between gap-3">
-
-    <div class="flex flex-wrap items-center gap-5">
-      <span>
-        <i class="fa-solid fa-location-dot mr-2 text-pink"></i>
+<div class="bg-[#111A3A] text-white text-sm w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-2.5 flex items-center justify-between">
+    
+    <!-- Left: Location & Hours -->
+    <div class="flex items-center gap-6">
+      <span class="flex items-center text-xs sm:text-sm">
+        <i class="fa-solid fa-location-dot mr-2 text-[#E83E8C]"></i>
         Ramanathapuram
       </span>
 
-      <span>
-        <i class="fa-regular fa-clock mr-2 text-pink"></i>
+      <span class="hidden sm:flex items-center text-xs sm:text-sm">
+        <i class="fa-regular fa-clock mr-2 text-[#E83E8C]"></i>
         Mon - Sat : 9:00 AM - 8:00 PM
       </span>
     </div>
 
-    <a href="tel:+919876543210"
-       class="hover:text-pink transition">
-      <i class="fa-solid fa-phone mr-2 text-pink"></i>
-      +91 98765 43210
-    </a>
+    <!-- Right: Emergency Contact Number (Moved to extreme right) -->
+    <div class="flex items-center text-xs sm:text-sm pr-1 lg:pr-2">
+      <span class="flex items-center font-medium">
+        <i class="fa-solid fa-phone-volume mr-2 text-[#E83E8C]"></i>
+        <span class="hidden md:inline mr-1">Emergency:</span> +91 98765 43210
+      </span>
+    </div>
+
   </div>
 </div>
 
@@ -66,22 +69,23 @@
      NAVBAR
 ========================================================= -->
 
-<header class="sticky top-0 z-50
-               bg-white/95 dark:bg-[#111A3A]/95
-               backdrop-blur-md shadow-sm">
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-[#111A3A]/95 backdrop-blur-md shadow-sm w-full">
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Adjusted padding (lg:px-4) so logo moves further left -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
 
     <nav class="flex items-center justify-between min-h-[78px]">
 
-      <!-- LOGO -->
+      <!-- LOGO (Shifted further left) -->
+
       <a href="index.html"
-         class="flex items-center gap-3 shrink-0">
+         class="flex items-center gap-3 shrink-0 pl-1">
 
         <div class="w-11 h-11 rounded-xl
-                    bg-gradient-to-br from-[#E83E8C] to-[#7C3AED]
+                    bg-gradient-to-br
+                    from-[#E83E8C] to-[#7C3AED]
                     flex items-center justify-center
-                    text-white shadow-lg">
+                    text-white shadow-lg shrink-0">
 
           <i class="fa-solid fa-tooth text-xl"></i>
 
@@ -90,7 +94,7 @@
         <div>
 
           <div class="text-xl font-bold
-                      text-[#111A3A] dark:text-white">
+                      text-[#111A3A] dark:text-white leading-tight">
 
             Denta<span class="text-[#E83E8C]">Care</span>
 
@@ -100,7 +104,7 @@
                       text-slate-500 dark:text-slate-300
                       tracking-wide">
 
-            Premium Dental & Oral Care
+            Premium Dental &amp; Oral Care
 
           </div>
 
@@ -109,24 +113,27 @@
       </a>
 
 
-      <!-- DESKTOP NAV -->
-      <div class="hidden lg:flex items-center gap-6">
+      <!-- DESKTOP NAV (Center Aligned) -->
+
+      <div class="hidden lg:flex items-center justify-center flex-1 px-4 lg:gap-3 xl:gap-6">
+
+        <!-- HOME DROPDOWN -->
 
         <div class="relative group">
 
-          <button
-            type="button"
-            class="flex items-center gap-2 py-7
-                   text-sm font-semibold
-                   text-[#111A3A] dark:text-white
-                   hover:text-[#E83E8C]
-                   transition cursor-pointer">
+          <button type="button"
+                  class="flex items-center gap-1.5 py-7
+                         text-xs lg:text-sm font-semibold
+                         text-[#111A3A] dark:text-white
+                         hover:text-[#E83E8C]
+                         transition cursor-pointer">
 
             Home
 
             <i class="fa-solid fa-chevron-down text-[10px]"></i>
 
           </button>
+
 
           <div class="absolute left-0 top-full w-48
                       bg-white dark:bg-[#111A3A]
@@ -168,7 +175,7 @@
 
 
         <a href="about.html"
-           class="text-sm font-semibold
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
                   hover:text-[#E83E8C] transition">
 
           About
@@ -177,7 +184,7 @@
 
 
         <a href="services.html"
-           class="text-sm font-semibold
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
                   hover:text-[#E83E8C] transition">
 
           Services
@@ -186,7 +193,7 @@
 
 
         <a href="doctors.html"
-           class="text-sm font-semibold
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
                   hover:text-[#E83E8C] transition">
 
           Doctors
@@ -195,7 +202,7 @@
 
 
         <a href="gallery.html"
-           class="text-sm font-semibold
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
                   hover:text-[#E83E8C] transition">
 
           Gallery
@@ -204,8 +211,8 @@
 
 
         <a href="pricing.html"
-           class="text-sm font-semibold
-                  text-[#E83E8C] transition">
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
+                  hover:text-[#E83E8C] transition">
 
           Pricing
 
@@ -213,8 +220,7 @@
 
 
         <a href="contact.html"
-           class="text-sm font-semibold
-                  hover:text-[#E83E8C] transition">
+           class="text-xs lg:text-sm font-semibold text-[#E83E8C]">
 
           Contact
 
@@ -223,64 +229,58 @@
       </div>
 
 
-      <!-- ACTIONS -->
+      <!-- ACTIONS (Right Aligned - Moved slightly left/inward from edge with pr-1) -->
 
-      <div class="hidden lg:flex items-center gap-3">
+      <div class="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0 pr-1 lg:pr-2">
 
-        <button
-          id="themeToggle"
-          type="button"
-          onclick="toggleTheme()"
-          class="w-10 h-10 rounded-full
-                 hover:bg-pink-50 dark:hover:bg-white/10
-                 text-[#111A3A] dark:text-white
-                 hover:text-[#E83E8C]
-                 transition cursor-pointer">
-
+        <button id="themeToggle"
+                onclick="toggleTheme()"
+                type="button"
+                title="Toggle Dark / Light Theme"
+                class="w-10 h-10 rounded-full
+                       hover:bg-pink-50
+                       dark:hover:bg-white/10
+                       text-[#111A3A]
+                       dark:text-white
+                       hover:text-[#E83E8C]
+                       transition cursor-pointer flex items-center justify-center shrink-0">
           <i id="themeIcon"
-             class="fa-solid fa-moon"></i>
-
+             class="fa-solid fa-moon text-sm"></i>
         </button>
 
-
-        <button
-          type="button"
-          onclick="toggleDirection()"
-          class="px-3 py-2 rounded-full
-                 border border-slate-200
-                 dark:border-slate-600
-                 text-xs font-bold
-                 hover:border-[#E83E8C]
-                 hover:text-[#E83E8C]
-                 transition cursor-pointer">
-
+        <button onclick="toggleDirection()"
+                type="button"
+                class="px-3 py-2 rounded-full
+                       border border-slate-200
+                       dark:border-slate-600
+                       text-xs font-bold
+                       hover:border-[#E83E8C]
+                       hover:text-[#E83E8C]
+                       transition cursor-pointer shrink-0">
           RTL
-
         </button>
-
 
         <a href="login.html"
-           class="px-4 py-2 text-sm font-semibold
+           class="px-2.5 xl:px-3.5 py-2 text-xs xl:text-sm font-semibold
                   text-[#111A3A] dark:text-white
-                  hover:text-[#E83E8C] transition cursor-pointer">
+                  hover:text-[#E83E8C] transition cursor-pointer shrink-0">
           Login
         </a>
 
         <a href="appointment.html"
-           class="btn-book-rounded !py-2.5 !px-5 !text-sm">
+           class="btn-book-rounded !py-2.5 !px-3.5 xl:!px-4.5 !text-xs xl:!text-sm shrink-0 whitespace-nowrap">
           Book Appointment
         </a>
 
       </div>
 
-      <!-- MOBILE -->
-      <button
-        type="button"
-        onclick="toggleMobileMenu()"
-        class="lg:hidden w-11 h-11 rounded-full
-               bg-gradient-to-r
-               from-[#E83E8C] to-[#7C3AED]
-               text-white cursor-pointer">
+      <!-- MOBILE BUTTON (Visible only below 1024px) -->
+      <button onclick="toggleMobileMenu()"
+              type="button"
+              class="lg:hidden w-11 h-11 rounded-full
+                     bg-gradient-to-r
+                     from-[#E83E8C] to-[#7C3AED]
+                     text-white cursor-pointer flex items-center justify-center shrink-0">
         <i class="fa-solid fa-bars"></i>
       </button>
 
@@ -288,23 +288,22 @@
 
   </div>
 
-  <!-- MOBILE MENU -->
+  <!-- MOBILE MENU (Below 1024px) -->
   <div id="mobileMenu"
        class="hidden lg:hidden
               border-t border-slate-200
               dark:border-slate-700
               bg-white dark:bg-[#111A3A]">
 
-    <div class="container mx-auto px-5 py-5 space-y-1">
+    <div class="container mx-auto px-5 py-4 space-y-1">
 
-      <button
-        onclick="toggleMobileHome()"
-        class="w-full flex justify-between
-               items-center px-4 py-3 rounded-lg
-               font-semibold
-               hover:bg-pink-50
-               dark:hover:bg-white/10
-               transition cursor-pointer">
+      <button onclick="toggleMobileHome()"
+              class="w-full flex justify-between
+                     items-center px-4 py-2.5 rounded-lg
+                     font-semibold text-sm
+                     hover:bg-pink-50
+                     dark:hover:bg-white/10
+                     transition cursor-pointer">
         Home
         <i id="mobileHomeIcon"
            class="fa-solid fa-chevron-down text-xs"></i>
@@ -313,19 +312,19 @@
       <div id="mobileHomeMenu"
            class="hidden pl-5">
         <a href="index.html"
-           class="block px-4 py-2 rounded-lg
+           class="block px-4 py-2 rounded-lg text-sm
                   hover:text-[#E83E8C] transition">
           Home 1
         </a>
         <a href="home2.html"
-           class="block px-4 py-2 rounded-lg
+           class="block px-4 py-2 rounded-lg text-sm
                   hover:text-[#E83E8C] transition">
           Home 2
         </a>
       </div>
 
       <a href="about.html"
-         class="block px-4 py-3 rounded-lg
+         class="block px-4 py-2.5 rounded-lg text-sm
                 hover:bg-pink-50
                 dark:hover:bg-white/10
                 hover:text-[#E83E8C] transition">
@@ -333,7 +332,7 @@
       </a>
 
       <a href="services.html"
-         class="block px-4 py-3 rounded-lg
+         class="block px-4 py-2.5 rounded-lg text-sm
                 hover:bg-pink-50
                 dark:hover:bg-white/10
                 hover:text-[#E83E8C] transition">
@@ -341,7 +340,7 @@
       </a>
 
       <a href="doctors.html"
-         class="block px-4 py-3 rounded-lg
+         class="block px-4 py-2.5 rounded-lg text-sm
                 hover:bg-pink-50
                 dark:hover:bg-white/10
                 hover:text-[#E83E8C] transition">
@@ -349,7 +348,7 @@
       </a>
 
       <a href="gallery.html"
-         class="block px-4 py-3 rounded-lg
+         class="block px-4 py-2.5 rounded-lg text-sm
                 hover:bg-pink-50
                 dark:hover:bg-white/10
                 hover:text-[#E83E8C] transition">
@@ -357,49 +356,50 @@
       </a>
 
       <a href="pricing.html"
-         class="block px-4 py-3 rounded-lg
-                bg-pink-50 dark:bg-white/10
-                text-[#E83E8C] font-semibold">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C] transition">
         Pricing
       </a>
 
       <a href="contact.html"
-         class="block px-4 py-3 rounded-lg
-                hover:bg-pink-50
-                dark:hover:bg-white/10
-                hover:text-[#E83E8C] transition">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                bg-pink-50 dark:bg-white/10
+                text-[#E83E8C] font-semibold">
         Contact
       </a>
 
       <a href="login.html"
-         class="block px-4 py-3 rounded-lg
+         class="block px-4 py-2.5 rounded-lg text-sm
                 hover:bg-pink-50
                 dark:hover:bg-white/10
                 hover:text-[#E83E8C] font-medium transition">
         Login
       </a>
 
-      <div class="flex gap-3 pt-3">
-        <button
-          onclick="toggleTheme()"
-          class="flex-1 py-3 rounded-xl
-                 border border-slate-200
-                 dark:border-slate-600 cursor-pointer">
-          <i class="fa-solid fa-moon mr-2"></i>
+      <div class="flex gap-3 pt-2">
+
+        <button onclick="toggleTheme()"
+                class="flex-1 py-2.5 rounded-xl text-sm
+                       border border-slate-200
+                       dark:border-slate-600
+                       hover:border-[#E83E8C]
+                       hover:text-[#E83E8C]
+                       transition cursor-pointer flex items-center justify-center">
+          <i class="fa-solid fa-moon theme-icon mr-2 text-xs"></i>
           Theme
         </button>
-
-        <button
-          onclick="toggleDirection()"
-          class="px-5 py-3 rounded-xl
-                 border border-slate-200
-                 dark:border-slate-600 cursor-pointer">
+        <button onclick="toggleDirection()"
+                class="px-4 py-2.5 rounded-xl text-xs font-bold
+                       border border-slate-200
+                       dark:border-slate-600 cursor-pointer">
           RTL
         </button>
       </div>
 
       <a href="appointment.html"
-         class="btn-book-rounded !py-3 w-full text-center block mt-3">
+         class="btn-book-rounded !py-2.5 !px-4 !text-sm w-full text-center block mt-2.5">
         Book Appointment
       </a>
 
@@ -410,57 +410,65 @@
 </header>
 
 
+
 <!-- =========================================================
-     SECTION 1 — HERO (Adaptive Hero Background & Custom Buttons)
+     SECTION 1 — HERO (Reduced Fonts, Pink Badge Icon & Unique Buttons)
 ========================================================= -->
 
-<section class="hero-adaptive relative min-h-[500px] lg:min-h-[580px] flex items-center justify-center overflow-hidden py-14 lg:py-20">
+<section class="hero-adaptive relative min-h-[480px] lg:min-h-[540px] flex items-center justify-center overflow-hidden py-12 lg:py-16">
 
   <img src="../assets/images/pricing-hero-desk.jpg"
        alt="DentaCare Transparent Pricing"
-       class="hero-img-adaptive">
+       class="hero-img-adaptive absolute inset-0 w-full h-full object-cover">
 
   <div class="hero-overlay-adaptive absolute inset-0"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
 
-    <div class="hero-badge-adaptive mb-6 shadow-sm">
-      <i class="fa-solid fa-tags text-pink dark:text-cyan-400"></i>
-      <span>💳 HONEST & TRANSPARENT PRICING</span>
-    </div>
+    <!-- Top Badge (Adaptive Text & Pink Icon) -->
+<div class="hero-badge-adaptive mb-5 shadow-sm inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/5 dark:bg-white/10 border border-slate-900/10 dark:border-white/20 backdrop-blur-md text-[11px] sm:text-xs font-medium">
+  <i class="fa-solid fa-tags text-[#E83E8C]"></i>
+  <span class="text-[#7C3AED] dark:text-white font-semibold">HONEST & TRANSPARENT PRICING</span>
+</div>
 
-    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-slate-900 dark:text-white font-heading max-w-4xl mb-6">
+    <!-- Main Headings (Reduced Sizing: text-3xl to text-6xl) -->
+    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white font-heading max-w-4xl mb-4">
       Affordable Dental Care
       <span class="block gradient-text mt-1">
         Without Compromise
       </span>
     </h1>
 
-    <p class="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 mt-2 max-w-3xl leading-relaxed mx-auto mb-8">
+    <!-- Subtitle (Reduced Sizing: text-xs to text-base) -->
+    <p class="text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-2xl leading-relaxed mx-auto mb-6">
       Clear upfront packages, 0% interest flexible financing, and hassle-free insurance claim processing for your entire family's dental health.
     </p>
 
-    <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
-      <a href="#pricing"
-         class="px-8 py-4 rounded-full font-bold text-white shadow-xl shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
-        <i class="fa-solid fa-file-invoice-dollar"></i>
-        <span>View Treatment Cost Plans</span>
+    <!-- Action Buttons (Different Names & Smaller Font) -->
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
+      
+      <!-- Button 1 -->
+      <a href="appointment.html"
+         class="px-6 py-3 rounded-full font-semibold text-white shadow-lg shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2 text-xs sm:text-sm cursor-pointer">
+        <i class="fa-solid fa-file-invoice-dollar text-xs"></i>
+        <span>Request Cost Estimate</span>
       </a>
 
-      <a href="#insurance"
-         class="glass-btn-adaptive px-8 py-4 rounded-full font-bold hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
-        <i class="fa-solid fa-shield-halved text-pink dark:text-cyan-400"></i>
-        <span>Check Insurance Coverage</span>
-      </a>
+      <!-- Button with Adaptive Style, Purple Border & Hover Effects -->
+<a href="services.html"
+   class="px-6 py-3 rounded-full font-medium text-slate-800 dark:text-white bg-white/10 hover:bg-[#7C3AED]/10 dark:hover:bg-[#7C3AED]/20 border border-[#7C3AED]/50 hover:border-[#7C3AED] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-500/20 inline-flex items-center gap-2 text-xs sm:text-sm cursor-pointer">
+  <i class="fa-solid fa-stethoscope text-xs text-[#E83E8C]"></i>
+  <span class="text-slate-800 dark:text-white">Explore Packages</span>
+</a>
+
     </div>
 
   </div>
 
 </section>
 
-
 <!-- =========================================================
-     SECTION 2 — PRICING PLANS
+     SECTION 2 — PRICING PLANS (Light Theme Optimized for Plan 2)
 ========================================================= -->
 
 <section id="pricing"
@@ -514,7 +522,8 @@
                   hover:-translate-y-2
                   hover:shadow-2xl
                   hover:border-[#E83E8C]
-                  transition-all duration-500">
+                  transition-all duration-500
+                  flex flex-col justify-between">
 
         <div class="card-equal-body">
           <div class="w-14 h-14 rounded-2xl
@@ -524,7 +533,7 @@
                       flex items-center justify-center
                       text-2xl">
 
-            <i class="fa-solid fa-tooth"></i>
+            <i class="fa-solid fa-notes-medical"></i>
 
           </div>
 
@@ -565,27 +574,23 @@
 
           <div class="space-y-3 mt-7">
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#E83E8C] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-300 text-sm">
+              <i class="fa-solid fa-circle-check text-[#E83E8C] mr-2.5"></i>
               Dental Consultation
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#E83E8C] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-300 text-sm">
+              <i class="fa-solid fa-circle-check text-[#E83E8C] mr-2.5"></i>
               Oral Examination
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#E83E8C] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-300 text-sm">
+              <i class="fa-solid fa-circle-check text-[#E83E8C] mr-2.5"></i>
               Basic Cleaning
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#E83E8C] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-300 text-sm">
+              <i class="fa-solid fa-circle-check text-[#E83E8C] mr-2.5"></i>
               Treatment Guidance
             </p>
 
@@ -610,23 +615,24 @@
       </div>
 
 
-      <!-- PLAN 2 -->
+      <!-- PLAN 2 (Light mode-ku soft gradient/white bg, Dark mode-ku dark background) -->
 
       <div class="card-equal relative group p-7 rounded-3xl
-                  bg-gradient-to-br
-                  from-[#111A3A]
-                  to-[#24194F]
-                  text-white
+                  bg-gradient-to-b from-pink-50/50 via-white to-purple-50/30
+                  dark:bg-gradient-to-br dark:from-[#111A3A] dark:to-[#24194F]
+                  border-2 border-[#E83E8C]/40 dark:border-slate-700
+                  text-[#111A3A] dark:text-white
                   shadow-xl
                   hover:-translate-y-2
                   hover:shadow-2xl
-                  transition-all duration-500">
+                  transition-all duration-500
+                  flex flex-col justify-between">
 
 
         <div class="absolute top-5 right-5
                     px-3 py-1 rounded-full
                     bg-[#E83E8C]
-                    text-white text-xs font-bold">
+                    text-white text-xs font-bold shadow-sm">
 
           POPULAR
 
@@ -635,24 +641,24 @@
 
         <div class="card-equal-body">
           <div class="w-14 h-14 rounded-2xl
-                      bg-white/10
+                      bg-pink-100 dark:bg-white/10
                       text-[#E83E8C]
                       flex items-center justify-center
                       text-2xl">
 
-            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-shield-heart"></i>
 
           </div>
 
 
-          <h3 class="text-2xl font-bold mt-6">
+          <h3 class="text-2xl font-bold mt-6 text-[#111A3A] dark:text-white">
 
             Complete Care
 
           </h3>
 
 
-          <p class="text-white/75 mt-3">
+          <p class="text-slate-600 dark:text-slate-300 mt-3">
 
             Comprehensive care for your entire smile health and restoration.
 
@@ -661,11 +667,11 @@
 
           <div class="mt-6">
 
-            <span class="text-4xl font-extrabold">
+            <span class="text-4xl font-extrabold text-[#111A3A] dark:text-white">
               ₹4,999
             </span>
 
-            <span class="text-white/50">
+            <span class="text-slate-400 dark:text-white/50">
               / plan
             </span>
 
@@ -674,27 +680,23 @@
 
           <div class="space-y-3 mt-7">
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#E83E8C] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-200 text-sm">
+              <i class="fa-solid fa-circle-check text-[#E83E8C] mr-2.5"></i>
               Complete Dental Checkup
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#E83E8C] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-200 text-sm">
+              <i class="fa-solid fa-circle-check text-[#E83E8C] mr-2.5"></i>
               Professional Cleaning
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#E83E8C] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-200 text-sm">
+              <i class="fa-solid fa-circle-check text-[#E83E8C] mr-2.5"></i>
               Digital Diagnostics
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#E83E8C] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-200 text-sm">
+              <i class="fa-solid fa-circle-check text-[#E83E8C] mr-2.5"></i>
               Personalized Care Plan
             </p>
 
@@ -707,7 +709,7 @@
                   px-5 py-3 rounded-full
                   bg-gradient-to-r
                   from-[#E83E8C] to-[#7C3AED]
-                  font-bold
+                  font-bold text-white
                   hover:-translate-y-1
                   hover:shadow-lg
                   transition-all duration-300">
@@ -729,7 +731,8 @@
                   hover:-translate-y-2
                   hover:shadow-2xl
                   hover:border-[#7C3AED]
-                  transition-all duration-500">
+                  transition-all duration-500
+                  flex flex-col justify-between">
 
         <div class="card-equal-body">
           <div class="w-14 h-14 rounded-2xl
@@ -739,7 +742,7 @@
                       flex items-center justify-center
                       text-2xl">
 
-            <i class="fa-solid fa-gem"></i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
 
           </div>
 
@@ -780,27 +783,23 @@
 
           <div class="space-y-3 mt-7">
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#7C3AED] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-300 text-sm">
+              <i class="fa-solid fa-circle-check text-[#7C3AED] mr-2.5"></i>
               Smile Consultation
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#7C3AED] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-300 text-sm">
+              <i class="fa-solid fa-circle-check text-[#7C3AED] mr-2.5"></i>
               Digital Smile Planning
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#7C3AED] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-300 text-sm">
+              <i class="fa-solid fa-circle-check text-[#7C3AED] mr-2.5"></i>
               Cosmetic Assessment
             </p>
 
-            <p>
-              <i class="fa-solid fa-check
-                        text-[#7C3AED] mr-2"></i>
+            <p class="flex items-center text-slate-700 dark:text-slate-300 text-sm">
+              <i class="fa-solid fa-circle-check text-[#7C3AED] mr-2.5"></i>
               Personalized Treatment
             </p>
 
@@ -830,9 +829,8 @@
 
 </section>
 
-
 <!-- =========================================================
-     SECTION 3 — POPULAR TREATMENTS
+     SECTION 3 — POPULAR TREATMENTS & PRICE GUIDE
 ========================================================= -->
 
 <section class="py-12 lg:py-16
@@ -840,7 +838,8 @@
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="text-center mb-12">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-14">
 
       <span class="text-[#7C3AED]
                    font-bold uppercase
@@ -849,7 +848,6 @@
         Popular Treatments
 
       </span>
-
 
       <h2 class="text-3xl md:text-4xl
                  font-extrabold
@@ -860,153 +858,193 @@
 
       </h2>
 
+      <p class="text-slate-500
+                dark:text-slate-300 mt-4">
+
+        Transparent and affordable pricing for our most requested dental procedures.
+
+      </p>
+
     </div>
 
 
-    <div class="max-w-4xl mx-auto
-                bg-white dark:bg-[#111A3A]
-                rounded-3xl overflow-hidden
-                border border-slate-200
-                dark:border-slate-700
-                shadow-lg">
+    <!-- Treatments Grid Layout -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-      <div class="grid grid-cols-2
-                  bg-[#111A3A]
-                  text-white font-bold
-                  px-6 py-4">
-
-        <span>Treatment</span>
-        <span class="text-right">Starting From</span>
-
+      <!-- Item 1: Dental Cleaning -->
+      <div class="group bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-slate-700/80 
+                  rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#E83E8C]/50 
+                  transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-pink-500/10 text-[#E83E8C] flex items-center justify-center text-xl">
+              <i class="fa-solid fa-hand-holding-medical"></i>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+              Routine
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-[#111A3A] dark:text-white group-hover:text-[#E83E8C] transition-colors">
+            Dental Cleaning
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Professional scaling and polishing to remove plaque and maintain gum health.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-medium">Starting From</span>
+          <span class="text-2xl font-extrabold text-[#E83E8C]">₹1,500</span>
+        </div>
       </div>
 
 
-      <div class="divide-y
-                  divide-slate-200
-                  dark:divide-slate-700">
-
-
-        <div class="grid grid-cols-2
-                    px-6 py-5
-                    hover:bg-pink-50
-                    dark:hover:bg-white/5
-                    transition">
-
-          <span>Dental Cleaning</span>
-
-          <span class="text-right
-                       font-bold
-                       text-[#E83E8C]">
-
-            ₹1,500
-
-          </span>
-
+      <!-- Item 2: Dental Filling -->
+      <div class="group bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-slate-700/80 
+                  rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#E83E8C]/50 
+                  transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-pink-500/10 text-[#E83E8C] flex items-center justify-center text-xl">
+              <i class="fa-solid fa-tooth"></i>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+              Restorative
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-[#111A3A] dark:text-white group-hover:text-[#E83E8C] transition-colors">
+            Dental Filling
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Tooth-colored composite fillings to restore cavities and minor structural damage.
+          </p>
         </div>
-
-
-        <div class="grid grid-cols-2
-                    px-6 py-5
-                    hover:bg-pink-50
-                    dark:hover:bg-white/5
-                    transition">
-
-          <span>Dental Filling</span>
-
-          <span class="text-right
-                       font-bold
-                       text-[#E83E8C]">
-
-            ₹1,200
-
-          </span>
-
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-medium">Starting From</span>
+          <span class="text-2xl font-extrabold text-[#E83E8C]">₹1,200</span>
         </div>
-
-
-        <div class="grid grid-cols-2
-                    px-6 py-5
-                    hover:bg-pink-50
-                    dark:hover:bg-white/5
-                    transition">
-
-          <span>Root Canal Treatment</span>
-
-          <span class="text-right
-                       font-bold
-                       text-[#E83E8C]">
-
-            ₹5,000
-
-          </span>
-
-        </div>
-
-
-        <div class="grid grid-cols-2
-                    px-6 py-5
-                    hover:bg-pink-50
-                    dark:hover:bg-white/5
-                    transition">
-
-          <span>Dental Crown</span>
-
-          <span class="text-right
-                       font-bold
-                       text-[#E83E8C]">
-
-            ₹7,500
-
-          </span>
-
-        </div>
-
-
-        <div class="grid grid-cols-2
-                    px-6 py-5
-                    hover:bg-pink-50
-                    dark:hover:bg-white/5
-                    transition">
-
-          <span>Dental Implant</span>
-
-          <span class="text-right
-                       font-bold
-                       text-[#E83E8C]">
-
-            ₹25,000
-
-          </span>
-
-        </div>
-
-
-        <div class="grid grid-cols-2
-                    px-6 py-5
-                    hover:bg-pink-50
-                    dark:hover:bg-white/5
-                    transition">
-
-          <span>Teeth Whitening</span>
-
-          <span class="text-right
-                       font-bold
-                       text-[#E83E8C]">
-
-            ₹6,000
-
-          </span>
-
-        </div>
-
       </div>
 
+
+      <!-- Item 3: Root Canal Treatment -->
+      <div class="group bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-slate-700/80 
+                  rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#E83E8C]/50 
+                  transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-pink-500/10 text-[#E83E8C] flex items-center justify-center text-xl">
+              <i class="fa-solid fa-syringe"></i>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+              Specialized
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-[#111A3A] dark:text-white group-hover:text-[#E83E8C] transition-colors">
+            Root Canal Treatment
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Painless endodontic treatment to save infected or damaged teeth.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-medium">Starting From</span>
+          <span class="text-2xl font-extrabold text-[#E83E8C]">₹5,000</span>
+        </div>
+      </div>
+
+
+      <!-- Item 4: Dental Crown -->
+      <div class="group bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-slate-700/80 
+                  rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#E83E8C]/50 
+                  transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-500/10 text-[#7C3AED] flex items-center justify-center text-xl">
+              <i class="fa-solid fa-chess-rook"></i>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+              Protection
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-[#111A3A] dark:text-white group-hover:text-[#7C3AED] transition-colors">
+            Dental Crown
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Durable caps designed to restore strength and aesthetics to weak teeth.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-medium">Starting From</span>
+          <span class="text-2xl font-extrabold text-[#7C3AED]">₹7,500</span>
+        </div>
+      </div>
+
+
+      <!-- Item 5: Dental Implant -->
+      <div class="group bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-slate-700/80 
+                  rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#7C3AED]/50 
+                  transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-500/10 text-[#7C3AED] flex items-center justify-center text-xl">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+              Advanced
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-[#111A3A] dark:text-white group-hover:text-[#7C3AED] transition-colors">
+            Dental Implant
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Permanent, natural-looking replacement solution for missing teeth.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-medium">Starting From</span>
+          <span class="text-2xl font-extrabold text-[#7C3AED]">₹25,000</span>
+        </div>
+      </div>
+
+
+      <!-- Item 6: Teeth Whitening -->
+      <div class="group bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-slate-700/80 
+                  rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#7C3AED]/50 
+                  transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-500/10 text-[#7C3AED] flex items-center justify-center text-xl">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+              Cosmetic
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-[#111A3A] dark:text-white group-hover:text-[#7C3AED] transition-colors">
+            Teeth Whitening
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Advanced clinical whitening treatment to instantly brighten your smile.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-medium">Starting From</span>
+          <span class="text-2xl font-extrabold text-[#7C3AED]">₹6,000</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Note / Call to Action -->
+    <div class="text-center mt-12">
+      <p class="text-slate-500 dark:text-slate-400 text-sm">
+        Looking for a specific treatment or custom quote? 
+        <a href="appointment.html" class="text-[#E83E8C] font-semibold hover:underline ml-1">Book a Consultation <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+      </p>
     </div>
 
   </div>
 
 </section>
-
 
 <!-- =========================================================
      SECTION 4 — MEMBERSHIP
@@ -1021,7 +1059,8 @@
                 items-center">
 
 
-      <div>
+      <!-- Left Column (Text & Button) -->
+      <div class="flex flex-col justify-center">
 
         <span class="text-[#E83E8C]
                      font-bold uppercase
@@ -1057,128 +1096,143 @@
         </p>
 
 
-        <a href="appointment.html"
-           class="inline-flex items-center gap-2
-                  mt-7 px-6 py-3 rounded-full
-                  bg-gradient-to-r
-                  from-[#E83E8C] to-[#7C3AED]
-                  text-white font-bold
-                  hover:-translate-y-1
-                  hover:shadow-xl
-                  transition-all duration-300">
+        <div>
+          <a href="appointment.html"
+             class="inline-flex items-center gap-2
+                    mt-7 px-6 py-3 rounded-full
+                    bg-gradient-to-r
+                    from-[#E83E8C] to-[#7C3AED]
+                    text-white font-bold
+                    hover:-translate-y-1
+                    hover:shadow-xl
+                    transition-all duration-300">
 
-          Get Membership
+            Get Membership
 
-          <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
 
-        </a>
+          </a>
+        </div>
 
       </div>
 
 
+      <!-- Right Column (Cards Grid) -->
       <div class="grid sm:grid-cols-2 gap-5">
 
 
+        <!-- Card 1 -->
         <div class="p-6 rounded-2xl
                     bg-slate-50
                     dark:bg-[#111A3A]
                     border border-slate-200
                     dark:border-slate-700
                     hover:-translate-y-2
-                    transition-all duration-300">
+                    transition-all duration-300
+                    flex flex-col justify-between">
 
-          <i class="fa-solid fa-calendar-check
-                    text-2xl text-[#E83E8C]"></i>
+          <div>
+            <i class="fa-solid fa-calendar-check
+                      text-2xl text-[#E83E8C]"></i>
 
-          <h3 class="font-bold text-lg mt-4">
-            Priority Visits
-          </h3>
+            <h3 class="font-bold text-lg mt-4 text-[#111A3A] dark:text-white">
+              Priority Visits
+            </h3>
 
-          <p class="text-sm
-                    text-slate-500
-                    dark:text-slate-300 mt-2">
-
-            Convenient appointment scheduling.
-
-          </p>
+            <p class="text-sm
+                      text-slate-500
+                      dark:text-slate-300 mt-2
+                      line-clamp-3">
+              Get hassle-free, fast-track appointment scheduling designed to fit your busy daily lifestyle.
+            </p>
+          </div>
 
         </div>
 
 
+        <!-- Card 2 -->
         <div class="p-6 rounded-2xl
                     bg-slate-50
                     dark:bg-[#111A3A]
                     border border-slate-200
                     dark:border-slate-700
                     hover:-translate-y-2
-                    transition-all duration-300">
+                    transition-all duration-300
+                    flex flex-col justify-between">
 
-          <i class="fa-solid fa-percent
-                    text-2xl text-[#7C3AED]"></i>
+          <div>
+            <i class="fa-solid fa-percent
+                      text-2xl text-[#7C3AED]"></i>
 
-          <h3 class="font-bold text-lg mt-4">
-            Exclusive Savings
-          </h3>
+            <h3 class="font-bold text-lg mt-4 text-[#111A3A] dark:text-white">
+              Exclusive Savings
+            </h3>
 
-          <p class="text-sm
-                    text-slate-500
-                    dark:text-slate-300 mt-2">
-
-            Special member-only treatment offers.
-
-          </p>
+            <p class="text-sm
+                      text-slate-500
+                      dark:text-slate-300 mt-2
+                      line-clamp-3">
+              Enjoy special member-only treatment discounts and valuable cost-saving offers all year round.
+            </p>
+          </div>
 
         </div>
 
 
+        <!-- Card 3 -->
         <div class="p-6 rounded-2xl
                     bg-slate-50
                     dark:bg-[#111A3A]
                     border border-slate-200
                     dark:border-slate-700
                     hover:-translate-y-2
-                    transition-all duration-300">
+                    transition-all duration-300
+                    flex flex-col justify-between">
 
-          <i class="fa-solid fa-tooth
-                    text-2xl text-[#E83E8C]"></i>
+          <div>
+            <i class="fa-solid fa-tooth
+                      text-2xl text-[#E83E8C]"></i>
 
-          <h3 class="font-bold text-lg mt-4">
-            Preventive Care
-          </h3>
+            <h3 class="font-bold text-lg mt-4 text-[#111A3A] dark:text-white">
+              Preventive Care
+            </h3>
 
-          <p class="text-sm
-                    text-slate-500
-                    dark:text-slate-300 mt-2">
-
-            Regular dental health monitoring.
-
-          </p>
+            <p class="text-sm
+                      text-slate-500
+                      dark:text-slate-300 mt-2
+                      line-clamp-3">
+              Receive regular dental health checkups and continuous monitoring to prevent major oral issues.
+            </p>
+          </div>
 
         </div>
 
 
+        <!-- Card 4 -->
         <div class="p-6 rounded-2xl
                     bg-slate-50
                     dark:bg-[#111A3A]
                     border border-slate-200
                     dark:border-slate-700
                     hover:-translate-y-2
-                    transition-all duration-300">
+                    transition-all duration-300
+                    flex flex-col justify-between">
 
-          <i class="fa-solid fa-gift
-                    text-2xl text-[#7C3AED]"></i>
+          <div>
+            <i class="fa-solid fa-gift
+                      text-2xl text-[#7C3AED]"></i>
 
-          <h3 class="font-bold text-lg mt-4">
-            Member Benefits
-          </h3>
+            <h3 class="font-bold text-lg mt-4 text-[#111A3A] dark:text-white">
+              Member Benefits
+            </h3>
 
-          <p class="text-sm
-                    text-slate-500
-                    dark:text-slate-300 mt-2">
-
-            Added value for your dental journey.
-
-          </p>
+            <p class="text-sm
+                      text-slate-500
+                      dark:text-slate-300 mt-2
+                      line-clamp-3">
+              Unlock added value and special privileges to enhance your complete long-term dental journey.
+            </p>
+          </div>
 
         </div>
 
@@ -1190,18 +1244,18 @@
 
 </section>
 
-
 <!-- =========================================================
-     SECTION 5 — INSURANCE
+     SECTION 5 — INSURANCE & PAYMENT (Professional Clean Version)
 ========================================================= -->
 
 <section id="insurance"
-         class="py-12 lg:py-16
+         class="py-16 lg:py-24
                 bg-slate-50 dark:bg-[#0f1530]">
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="max-w-3xl mx-auto text-center">
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
 
       <span class="text-[#7C3AED]
                    font-bold uppercase
@@ -1210,7 +1264,6 @@
         Payment & Insurance
 
       </span>
-
 
       <h2 class="text-3xl md:text-4xl
                  font-extrabold
@@ -1221,118 +1274,148 @@
 
       </h2>
 
-
       <p class="text-slate-500
                 dark:text-slate-300
-                leading-8 mt-5">
+                text-base md:text-lg leading-8 mt-4">
 
         We make quality dental care easier
         with multiple convenient payment
-        and insurance options.
+        and insurance options tailored for you.
 
       </p>
 
     </div>
 
 
-    <div class="grid md:grid-cols-3 gap-6 mt-12">
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
 
 
-      <div class="p-7 rounded-2xl
+      <!-- Card 1: Card Payments -->
+      <div class="p-8 rounded-2xl
                   bg-white dark:bg-[#111A3A]
                   border border-slate-200
-                  dark:border-slate-700
+                  dark:border-slate-800
+                  hover:border-[#E83E8C]/50
+                  dark:hover:border-[#E83E8C]/50
                   hover:-translate-y-2
                   hover:shadow-xl
-                  transition-all duration-500">
+                  transition-all duration-300
+                  flex flex-col justify-between">
 
-        <div class="w-12 h-12 rounded-xl
-                    bg-pink-50
-                    dark:bg-pink-500/10
-                    text-[#E83E8C]
-                    flex items-center justify-center">
+        <div>
+          <div class="w-12 h-12 rounded-xl
+                      bg-pink-50
+                      dark:bg-pink-500/10
+                      text-[#E83E8C]
+                      flex items-center justify-center text-xl">
 
-          <i class="fa-solid fa-credit-card"></i>
+            <i class="fa-solid fa-credit-card"></i>
 
+          </div>
+
+          <h3 class="font-bold text-xl mt-6 text-[#111A3A] dark:text-white">
+            Card Payments
+          </h3>
+
+          <p class="text-slate-500
+                    dark:text-slate-300 mt-3 leading-relaxed text-sm">
+
+            Secure debit and credit card payment options are readily available at our clinic for smooth and fast transactions.
+
+          </p>
         </div>
 
-        <h3 class="font-bold text-xl mt-5">
-          Card Payments
-        </h3>
-
-        <p class="text-slate-500
-                  dark:text-slate-300 mt-3 leading-7">
-
-          Secure debit and credit card
-          payment options are available.
-
-        </p>
+        <div class="mt-8 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Accepted All Cards</span>
+          <i class="fa-solid fa-arrow-right text-[#E83E8C] text-sm"></i>
+        </div>
 
       </div>
 
 
-      <div class="p-7 rounded-2xl
+      <!-- Card 2: Insurance Support -->
+      <div class="p-8 rounded-2xl
                   bg-white dark:bg-[#111A3A]
                   border border-slate-200
-                  dark:border-slate-700
+                  dark:border-slate-800
+                  hover:border-[#7C3AED]/50
+                  dark:hover:border-[#7C3AED]/50
                   hover:-translate-y-2
                   hover:shadow-xl
-                  transition-all duration-500">
+                  transition-all duration-300
+                  flex flex-col justify-between">
 
-        <div class="w-12 h-12 rounded-xl
-                    bg-purple-50
-                    dark:bg-purple-500/10
-                    text-[#7C3AED]
-                    flex items-center justify-center">
+        <div>
+          <div class="w-12 h-12 rounded-xl
+                      bg-purple-50
+                      dark:bg-purple-500/10
+                      text-[#7C3AED]
+                      flex items-center justify-center text-xl">
 
-          <i class="fa-solid fa-file-shield"></i>
+            <i class="fa-solid fa-file-shield"></i>
 
+          </div>
+
+          <h3 class="font-bold text-xl mt-6 text-[#111A3A] dark:text-white">
+            Insurance Support
+          </h3>
+
+          <p class="text-slate-500
+                    dark:text-slate-300 mt-3 leading-relaxed text-sm">
+
+            Our expert support team can help you understand and claim your eligible dental insurance benefits easily.
+
+          </p>
         </div>
 
-        <h3 class="font-bold text-xl mt-5">
-          Insurance Support
-        </h3>
-
-        <p class="text-slate-500
-                  dark:text-slate-300 mt-3 leading-7">
-
-          Our team can help you understand
-          eligible insurance benefits.
-
-        </p>
+        <div class="mt-8 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Full Assistance</span>
+          <i class="fa-solid fa-arrow-right text-[#7C3AED] text-sm"></i>
+        </div>
 
       </div>
 
 
-      <div class="p-7 rounded-2xl
+      <!-- Card 3: Flexible Payments -->
+      <div class="p-8 rounded-2xl
                   bg-white dark:bg-[#111A3A]
                   border border-slate-200
-                  dark:border-slate-700
+                  dark:border-slate-800
+                  hover:border-[#E83E8C]/50
+                  dark:hover:border-[#E83E8C]/50
                   hover:-translate-y-2
                   hover:shadow-xl
-                  transition-all duration-500">
+                  transition-all duration-300
+                  flex flex-col justify-between">
 
-        <div class="w-12 h-12 rounded-xl
-                    bg-pink-50
-                    dark:bg-pink-500/10
-                    text-[#E83E8C]
-                    flex items-center justify-center">
+        <div>
+          <div class="w-12 h-12 rounded-xl
+                      bg-pink-50
+                      dark:bg-pink-500/10
+                      text-[#E83E8C]
+                      flex items-center justify-center text-xl">
 
-          <i class="fa-solid fa-wallet"></i>
+            <i class="fa-solid fa-wallet"></i>
 
+          </div>
+
+          <h3 class="font-bold text-xl mt-6 text-[#111A3A] dark:text-white">
+            Flexible Payments
+          </h3>
+
+          <p class="text-slate-500
+                    dark:text-slate-300 mt-3 leading-relaxed text-sm">
+
+            Ask our front desk team about customized and flexible payment arrangements for your larger clinical treatments.
+
+          </p>
         </div>
 
-        <h3 class="font-bold text-xl mt-5">
-          Flexible Payments
-        </h3>
-
-        <p class="text-slate-500
-                  dark:text-slate-300 mt-3 leading-7">
-
-          Ask our team about available
-          payment arrangements.
-
-        </p>
+        <div class="mt-8 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Custom Plans</span>
+          <i class="fa-solid fa-arrow-right text-[#E83E8C] text-sm"></i>
+        </div>
 
       </div>
 
@@ -1341,7 +1424,6 @@
   </div>
 
 </section>
-
 
 <!-- =========================================================
      SECTION 6 — FINANCIAL ASSISTANCE
@@ -1357,13 +1439,14 @@
                 from-[#111A3A]
                 via-[#24194F]
                 to-[#7C3AED]
-                text-white p-8 md:p-12">
+                text-white p-8 md:p-12 shadow-2xl">
 
 
       <div class="grid lg:grid-cols-2
                   gap-10 items-center">
 
 
+        <!-- Left Column: Content -->
         <div>
 
           <span class="text-[#E83E8C]
@@ -1384,39 +1467,42 @@
 
 
           <p class="text-white/80
-                    leading-8 mt-5">
+                    leading-8 mt-5 text-sm md:text-base">
 
             If you have concerns about treatment
             costs, our team can discuss available
             payment options and help you understand
-            your choices.
+            your choices clearly.
 
           </p>
 
           <div class="space-y-3 mt-6">
-            <div class="flex gap-4 p-4 rounded-xl bg-white/10 border border-white/10">
-              <i class="fa-solid fa-circle-check text-[#E83E8C] mt-1"></i>
-              <span>Clear treatment estimates</span>
+            <div class="flex gap-4 p-4 rounded-xl bg-white/10 border border-white/10 items-center">
+              <i class="fa-solid fa-circle-check text-[#E83E8C]"></i>
+              <span class="text-sm font-medium">Clear treatment estimates</span>
             </div>
 
-            <div class="flex gap-4 p-4 rounded-xl bg-white/10 border border-white/10">
-              <i class="fa-solid fa-circle-check text-[#E83E8C] mt-1"></i>
-              <span>Flexible payment discussions</span>
+            <div class="flex gap-4 p-4 rounded-xl bg-white/10 border border-white/10 items-center">
+              <i class="fa-solid fa-circle-check text-[#E83E8C]"></i>
+              <span class="text-sm font-medium">Flexible payment discussions</span>
             </div>
 
-            <div class="flex gap-4 p-4 rounded-xl bg-white/10 border border-white/10">
-              <i class="fa-solid fa-circle-check text-[#E83E8C] mt-1"></i>
-              <span>Comprehensive insurance guidance</span>
+            <div class="flex gap-4 p-4 rounded-xl bg-white/10 border border-white/10 items-center">
+              <i class="fa-solid fa-circle-check text-[#E83E8C]"></i>
+              <span class="text-sm font-medium">Comprehensive insurance guidance</span>
             </div>
           </div>
 
         </div>
 
 
-        <div class="group overflow-hidden rounded-2xl shadow-xl">
-          <img src="../assets/images/pricing-insurance-care.jpg"
+        <!-- Right Column: Brand New Professional Consultation Image -->
+        <div class="group overflow-hidden rounded-2xl shadow-xl relative border border-white/10">
+          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800"
                alt="Financial Care at DentaCare"
                class="w-full h-[360px] object-cover group-hover:scale-105 transition duration-500">
+          <!-- Subtle Overlay -->
+          <div class="absolute inset-0 bg-[#111A3A]/10 pointer-events-none"></div>
         </div>
 
       </div>
@@ -1426,7 +1512,6 @@
   </div>
 
 </section>
-
 
 <!-- =========================================================
      SECTION 7 — FAQ
@@ -1613,7 +1698,7 @@
 </section>
 
 
-<!-- =========================================================
+<!-- ========================================================
      SECTION 8 — CTA
 ========================================================= -->
 
@@ -1817,36 +1902,37 @@
 </section>
 
 <!-- =========================================================
-     11. FINAL ESTIMATE CTA
+     12. FINAL CTA (Standardized with Rounded Button)
 ========================================================= -->
 <section class="py-12 lg:py-16 bg-white dark:bg-[#0b1026]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="rounded-3xl bg-[#111A3A] text-white p-10 md:p-14 text-center shadow-2xl relative overflow-hidden">
-      <div class="absolute -right-20 -top-20 w-80 h-80 bg-pink/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-purple/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-navy via-purple to-pink dark:from-[#0a0f24] dark:via-[#131b42] dark:to-[#1c123d] dark:border dark:border-purple-500/30 px-7 py-14 lg:px-16 text-center shadow-2xl">
+      <div class="absolute w-72 h-72 rounded-full bg-pink/20 blur-3xl -top-32 -left-20"></div>
+      <div class="absolute w-72 h-72 rounded-full bg-purple/20 blur-3xl -bottom-32 -right-20"></div>
 
       <div class="relative z-10 max-w-3xl mx-auto">
-        <span class="text-pink uppercase text-xs font-bold tracking-[.18em]">
-          Start Your Smile Journey
-        </span>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-bold uppercase tracking-wider mb-4 text-white">
+          <i class="fa-solid fa-star text-pink"></i>
+          <span class="text-white">Your Family Dental Home</span>
+        </div>
 
-        <h2 class="text-3xl lg:text-5xl font-bold text-white mt-4 font-heading leading-tight">
-          Get Your Personalized <span class="gradient-text">Treatment Estimate</span>
+        <h2 class="text-3xl md:text-5xl font-black font-heading leading-tight text-white mt-2">
+          Give Your Family The <span class="text-pink">Best Smiles Possible</span>
         </h2>
 
-        <p class="text-white/80 max-w-2xl mx-auto mt-5 text-base sm:text-lg leading-relaxed">
-          Book a consultation and let our dental specialists recommend the exact treatment plan tailored for your oral health and budget.
+        <p class="mt-4 text-white/90 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          Step into a friendly, stress-free dental environment right here in Ramanathapuram. Schedule your visit with our caring team today.
         </p>
 
         <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a href="appointment.html" class="btn-book-rounded !py-4 !px-8 !text-base shadow-xl">
+          <a href="appointment.html" class="btn-book-rounded !py-4 !px-8 !text-base shadow-2xl">
             <i class="fa-regular fa-calendar-check"></i>
-            <span>Book Consultation Now</span>
+            <span>Book Your Consultation Now</span>
           </a>
 
-          <a href="tel:+919876543210" class="px-7 py-3.5 rounded-full font-bold bg-white text-navy hover:bg-slate-100 transition inline-flex items-center gap-2 text-sm shadow-md">
+          <a href="tel:+919876543210" class="px-7 py-3.5 rounded-full font-bold bg-white text-navy hover:bg-slate-100 transition inline-flex items-center gap-2 text-sm">
             <i class="fa-solid fa-phone text-pink"></i>
-            <span>Call Desk: +91 98765 43210</span>
+            <span>Emergency Line: +91 98765 43210</span>
           </a>
         </div>
       </div>
@@ -1881,8 +1967,8 @@
           World-class oral healthcare combining painless precision, 3D diagnostics, and comfortable modern suites in Ramanathapuram.
         </p>
 
-        <!-- GITHUB & LINKEDIN PROFILES (LEFT COLUMN) -->
-        <div class="flex items-center gap-3 mt-6">
+        <!-- SOCIAL PROFILES (LEFT COLUMN) -->
+        <div class="flex items-center flex-wrap gap-3 mt-6">
           <a href="https://github.com/Munish146"
              target="_blank"
              rel="noopener noreferrer"
@@ -1900,6 +1986,33 @@
              aria-label="LinkedIn Profile">
             <i class="fa-brands fa-linkedin-in text-lg"></i>
           </a>
+
+          <a href="https://twitter.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn"
+             title="Twitter / X"
+             aria-label="Twitter Profile">
+            <i class="fa-brands fa-x-twitter text-lg"></i>
+          </a>
+
+          <a href="https://instagram.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn"
+             title="Instagram"
+             aria-label="Instagram Profile">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+
+          <a href="https://youtube.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn"
+             title="YouTube"
+             aria-label="YouTube Channel">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
         </div>
       </div>
 
@@ -1907,8 +2020,7 @@
       <div>
         <h3 class="font-bold text-base text-slate-900 dark:text-white font-heading">Quick Links</h3>
         <div class="space-y-2.5 mt-4 text-sm text-slate-600 dark:text-slate-400">
-          <a href="index.html" class="block hover:text-pink transition">Home 1</a>
-          <a href="home2.html" class="block hover:text-pink transition">Home 2</a>
+          <a href="index.html" class="block hover:text-pink transition">Home</a>
           <a href="about.html" class="block hover:text-pink transition">About Us</a>
           <a href="services.html" class="block hover:text-pink transition">Services & Treatments</a>
           <a href="doctors.html" class="block hover:text-pink transition">Our Specialist Doctors</a>

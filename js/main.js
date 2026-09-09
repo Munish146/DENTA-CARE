@@ -74,9 +74,16 @@
     document.documentElement.setAttribute("dir", isRTL ? "rtl" : "ltr");
     localStorage.setItem("dentacare_direction", isRTL ? "rtl" : "ltr");
 
-    const rtlTexts = document.querySelectorAll("#dirText, #rtlText, .rtl-text, [data-rtl-text]");
-    rtlTexts.forEach((el) => {
-      el.textContent = isRTL ? "LTR" : "RTL";
+    const rtlElements = document.querySelectorAll(
+      "#dirText, #rtlText, .rtl-text, [data-rtl-text], #rtlToggle, #mobileRtlToggle, [data-rtl-toggle], button[onclick*='toggleDirection']"
+    );
+    rtlElements.forEach((el) => {
+      const span = el.querySelector("#dirText, #rtlText, .rtl-text, [data-rtl-text]");
+      if (span) {
+        span.textContent = isRTL ? "LTR" : "RTL";
+      } else {
+        el.textContent = isRTL ? "LTR" : "RTL";
+      }
     });
   }
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -35,79 +35,96 @@
 <!-- =========================================================
      TOP BAR
 ========================================================= -->
-<div class="bg-[#111A3A] text-white text-sm">
-  <div class="mx-auto px-5 lg:px-10 py-2.5
-              flex flex-wrap items-center justify-between gap-3">
-
-    <div class="flex flex-wrap items-center gap-5">
-      <span>
-        <i class="fa-solid fa-location-dot mr-2 text-pink"></i>
+<div class="bg-[#111A3A] text-white text-sm w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-2.5 flex items-center justify-between">
+    
+    <!-- Left: Location & Hours -->
+    <div class="flex items-center gap-6">
+      <span class="flex items-center text-xs sm:text-sm">
+        <i class="fa-solid fa-location-dot mr-2 text-[#E83E8C]"></i>
         Ramanathapuram
       </span>
 
-      <span>
-        <i class="fa-regular fa-clock mr-2 text-pink"></i>
+      <span class="hidden sm:flex items-center text-xs sm:text-sm">
+        <i class="fa-regular fa-clock mr-2 text-[#E83E8C]"></i>
         Mon - Sat : 9:00 AM - 8:00 PM
       </span>
     </div>
 
-    <a href="tel:+919876543210"
-       class="hover:text-pink transition">
-      <i class="fa-solid fa-phone mr-2 text-pink"></i>
-      +91 98765 43210
-    </a>
+    <!-- Right: Emergency Contact Number (Moved to extreme right) -->
+    <div class="flex items-center text-xs sm:text-sm pr-1 lg:pr-2">
+      <span class="flex items-center font-medium">
+        <i class="fa-solid fa-phone-volume mr-2 text-[#E83E8C]"></i>
+        <span class="hidden md:inline mr-1">Emergency:</span> +91 98765 43210
+      </span>
+    </div>
+
   </div>
-</div> 
+</div>
+
 
 <!-- =========================================================
      NAVBAR
 ========================================================= -->
 
-<header class="sticky top-0 z-50 bg-white/95 dark:bg-[#111A3A]/95 backdrop-blur-md shadow-sm">
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-[#111A3A]/95 backdrop-blur-md shadow-sm w-full">
 
-  <div class="container mx-auto px-4 lg:px-8">
+  <!-- Adjusted padding (lg:px-4) so logo moves further left -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
 
     <nav class="flex items-center justify-between min-h-[78px]">
 
-      <!-- LOGO -->
+      <!-- LOGO (Shifted further left) -->
+
       <a href="index.html"
-         class="flex items-center gap-3 shrink-0">
+         class="flex items-center gap-3 shrink-0 pl-1">
 
         <div class="w-11 h-11 rounded-xl
-                    bg-gradient-to-br from-[#E83E8C] to-[#7C3AED]
+                    bg-gradient-to-br
+                    from-[#E83E8C] to-[#7C3AED]
                     flex items-center justify-center
-                    text-white shadow-lg">
+                    text-white shadow-lg shrink-0">
 
           <i class="fa-solid fa-tooth text-xl"></i>
 
         </div>
 
         <div>
-          <div class="text-xl font-bold text-[#111A3A] dark:text-white">
+
+          <div class="text-xl font-bold
+                      text-[#111A3A] dark:text-white leading-tight">
+
             Denta<span class="text-[#E83E8C]">Care</span>
+
           </div>
 
-          <div class="text-[10px] text-slate-500 dark:text-slate-300 tracking-wide">
-            Premium Dental & Oral Care
+          <div class="text-[10px]
+                      text-slate-500 dark:text-slate-300
+                      tracking-wide">
+
+            Premium Dental &amp; Oral Care
+
           </div>
+
         </div>
 
       </a>
 
 
-      <!-- DESKTOP NAV -->
-      <div class="hidden lg:flex items-center gap-6">
+      <!-- DESKTOP NAV (Center Aligned) -->
+
+      <div class="hidden lg:flex items-center justify-center flex-1 px-4 lg:gap-3 xl:gap-6">
 
         <!-- HOME DROPDOWN -->
+
         <div class="relative group">
 
-          <button
-            type="button"
-            class="nav-link flex items-center gap-2 py-7
-                   text-sm font-semibold
-                   text-[#111A3A] dark:text-white
-                   hover:text-[#E83E8C]
-                   transition cursor-pointer">
+          <button type="button"
+                  class="flex items-center gap-1.5 py-7
+                         text-xs lg:text-sm font-semibold
+                         text-[#111A3A] dark:text-white
+                         hover:text-[#E83E8C]
+                         transition cursor-pointer">
 
             Home
 
@@ -115,32 +132,39 @@
 
           </button>
 
-          <div
-            class="absolute left-0 top-full w-48
-                   bg-white dark:bg-[#111A3A]
-                   rounded-xl shadow-xl
-                   border border-slate-100 dark:border-slate-700
-                   opacity-0 invisible
-                   group-hover:opacity-100
-                   group-hover:visible
-                   translate-y-2
-                   group-hover:translate-y-0
-                   transition-all duration-300">
+
+          <div class="absolute left-0 top-full w-48
+                      bg-white dark:bg-[#111A3A]
+                      rounded-xl shadow-xl
+                      border border-slate-100
+                      dark:border-slate-700
+                      opacity-0 invisible
+                      translate-y-2
+                      group-hover:opacity-100
+                      group-hover:visible
+                      group-hover:translate-y-0
+                      transition-all duration-300">
 
             <a href="index.html"
                class="block px-5 py-3 text-sm
-                      hover:bg-pink-50 dark:hover:bg-white/10
+                      hover:bg-pink-50
+                      dark:hover:bg-white/10
                       hover:text-[#E83E8C]
                       rounded-t-xl transition">
+
               Home 1
+
             </a>
 
             <a href="home2.html"
                class="block px-5 py-3 text-sm
-                      hover:bg-pink-50 dark:hover:bg-white/10
+                      hover:bg-pink-50
+                      dark:hover:bg-white/10
                       hover:text-[#E83E8C]
                       rounded-b-xl transition">
+
               Home 2
+
             </a>
 
           </div>
@@ -149,111 +173,112 @@
 
 
         <a href="about.html"
-           class="nav-link text-sm font-semibold
-                  text-[#E83E8C] transition cursor-pointer">
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
+                  hover:text-[#E83E8C] transition">
+
           About
+
         </a>
 
 
         <a href="services.html"
-           class="nav-link text-sm font-semibold
-                  hover:text-[#E83E8C] transition cursor-pointer">
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
+                  hover:text-[#E83E8C] transition">
+
           Services
+
         </a>
 
 
         <a href="doctors.html"
-           class="nav-link text-sm font-semibold
-                  hover:text-[#E83E8C]
-                  transition cursor-pointer">
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
+                  hover:text-[#E83E8C] transition">
+
           Doctors
+
         </a>
 
 
         <a href="gallery.html"
-           class="nav-link text-sm font-semibold
-                  hover:text-[#E83E8C] transition cursor-pointer">
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
+                  hover:text-[#E83E8C] transition">
+
           Gallery
+
         </a>
 
 
         <a href="pricing.html"
-           class="nav-link text-sm font-semibold
-                  hover:text-[#E83E8C] transition cursor-pointer">
+           class="text-xs lg:text-sm font-semibold text-[#111A3A] dark:text-white
+                  hover:text-[#E83E8C] transition">
+
           Pricing
+
         </a>
 
 
         <a href="contact.html"
-           class="nav-link text-sm font-semibold
-                  hover:text-[#E83E8C] transition cursor-pointer">
+           class="text-xs lg:text-sm font-semibold text-[#E83E8C]">
+
           Contact
+
         </a>
 
       </div>
 
 
-      <!-- RIGHT ACTIONS -->
-      <div class="hidden lg:flex items-center gap-3">
+      <!-- ACTIONS (Right Aligned - Moved slightly left/inward from edge with pr-1) -->
 
-        <!-- THEME -->
-        <button
-          id="themeToggle"
-          type="button"
-          onclick="toggleTheme()"
-          class="w-10 h-10 rounded-full
-                 hover:bg-pink-50 dark:hover:bg-white/10
-                 text-[#111A3A] dark:text-white
-                 hover:text-[#E83E8C]
-                 transition cursor-pointer">
+      <div class="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0 pr-1 lg:pr-2">
 
-          <i id="themeIcon" class="fa-solid fa-moon"></i>
-
+        <button id="themeToggle"
+                onclick="toggleTheme()"
+                type="button"
+                title="Toggle Dark / Light Theme"
+                class="w-10 h-10 rounded-full
+                       hover:bg-pink-50
+                       dark:hover:bg-white/10
+                       text-[#111A3A]
+                       dark:text-white
+                       hover:text-[#E83E8C]
+                       transition cursor-pointer flex items-center justify-center shrink-0">
+          <i id="themeIcon"
+             class="fa-solid fa-moon text-sm"></i>
         </button>
 
-
-        <!-- RTL -->
-        <button
-          type="button"
-          onclick="toggleDirection()"
-          class="px-3 py-2 rounded-full
-                 border border-slate-200 dark:border-slate-600
-                 text-xs font-bold
-                 text-[#111A3A] dark:text-white
-                 hover:border-[#E83E8C]
-                 hover:text-[#E83E8C]
-                 transition cursor-pointer">
-
+        <button onclick="toggleDirection()"
+                type="button"
+                class="px-3 py-2 rounded-full
+                       border border-slate-200
+                       dark:border-slate-600
+                       text-xs font-bold
+                       hover:border-[#E83E8C]
+                       hover:text-[#E83E8C]
+                       transition cursor-pointer shrink-0">
           RTL
-
         </button>
 
-
-        <!-- LOGIN -->
         <a href="login.html"
-           class="text-sm font-bold
+           class="px-2.5 xl:px-3.5 py-2 text-xs xl:text-sm font-semibold
                   text-[#111A3A] dark:text-white
-                  hover:text-[#E83E8C]
-                  transition cursor-pointer">
+                  hover:text-[#E83E8C] transition cursor-pointer shrink-0">
           Login
         </a>
 
-        <!-- APPOINTMENT -->
         <a href="appointment.html"
-           class="btn-book-rounded !py-2.5 !px-5 !text-sm">
+           class="btn-book-rounded !py-2.5 !px-3.5 xl:!px-4.5 !text-xs xl:!text-sm shrink-0 whitespace-nowrap">
           Book Appointment
         </a>
 
       </div>
 
-      <!-- MOBILE BUTTON -->
-      <button
-        id="mobileMenuBtn"
-        type="button"
-        onclick="toggleMobileMenu()"
-        class="lg:hidden w-11 h-11 rounded-full
-               bg-gradient-to-r from-[#E83E8C] to-[#7C3AED]
-               text-white cursor-pointer">
+      <!-- MOBILE BUTTON (Visible only below 1024px) -->
+      <button onclick="toggleMobileMenu()"
+              type="button"
+              class="lg:hidden w-11 h-11 rounded-full
+                     bg-gradient-to-r
+                     from-[#E83E8C] to-[#7C3AED]
+                     text-white cursor-pointer flex items-center justify-center shrink-0">
         <i class="fa-solid fa-bars"></i>
       </button>
 
@@ -261,125 +286,118 @@
 
   </div>
 
-  <!-- MOBILE MENU -->
+  <!-- MOBILE MENU (Below 1024px) -->
   <div id="mobileMenu"
        class="hidden lg:hidden
-              border-t border-slate-200 dark:border-slate-700
+              border-t border-slate-200
+              dark:border-slate-700
               bg-white dark:bg-[#111A3A]">
 
-    <div class="container mx-auto px-5 py-5 space-y-1">
+    <div class="container mx-auto px-5 py-4 space-y-1">
 
-      <!-- MOBILE HOME -->
-      <div>
-        <button
-          onclick="toggleMobileHome()"
-          type="button"
-          class="w-full flex justify-between items-center
-                 px-4 py-3 rounded-lg
-                 font-semibold
-                 hover:bg-pink-50
-                 dark:hover:bg-white/10
-                 transition cursor-pointer">
-          Home
-          <i id="mobileHomeIcon"
-             class="fa-solid fa-chevron-down text-xs"></i>
-        </button>
+      <button onclick="toggleMobileHome()"
+              class="w-full flex justify-between
+                     items-center px-4 py-2.5 rounded-lg
+                     font-semibold text-sm
+                     hover:bg-pink-50
+                     dark:hover:bg-white/10
+                     transition cursor-pointer">
+        Home
+        <i id="mobileHomeIcon"
+           class="fa-solid fa-chevron-down text-xs"></i>
+      </button>
 
-        <div id="mobileHomeMenu"
-             class="hidden pl-5">
-          <a href="index.html"
-             class="block px-4 py-2 rounded-lg
-                    hover:text-[#E83E8C]
-                    transition">
-            Home 1
-          </a>
-          <a href="home2.html"
-             class="block px-4 py-2 rounded-lg
-                    hover:text-[#E83E8C]
-                    transition">
-            Home 2
-          </a>
-        </div>
+      <div id="mobileHomeMenu"
+           class="hidden pl-5">
+        <a href="index.html"
+           class="block px-4 py-2 rounded-lg text-sm
+                  hover:text-[#E83E8C] transition">
+          Home 1
+        </a>
+        <a href="home2.html"
+           class="block px-4 py-2 rounded-lg text-sm
+                  hover:text-[#E83E8C] transition">
+          Home 2
+        </a>
       </div>
 
       <a href="about.html"
-         class="block px-4 py-3 rounded-lg
-                bg-pink-50 dark:bg-white/10
-                text-[#E83E8C] font-semibold">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C] transition">
         About
       </a>
 
       <a href="services.html"
-         class="block px-4 py-3 rounded-lg
-                hover:bg-pink-50 dark:hover:bg-white/10
-                hover:text-[#E83E8C]
-                transition">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C] transition">
         Services
       </a>
 
       <a href="doctors.html"
-         class="block px-4 py-3 rounded-lg
-                hover:bg-pink-50 dark:hover:bg-white/10
-                hover:text-[#E83E8C]
-                transition">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C] transition">
         Doctors
       </a>
 
       <a href="gallery.html"
-         class="block px-4 py-3 rounded-lg
-                hover:bg-pink-50 dark:hover:bg-white/10
-                hover:text-[#E83E8C]
-                transition">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C] transition">
         Gallery
       </a>
 
       <a href="pricing.html"
-         class="block px-4 py-3 rounded-lg
-                hover:bg-pink-50 dark:hover:bg-white/10
-                hover:text-[#E83E8C]
-                transition">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C] transition">
         Pricing
       </a>
 
       <a href="contact.html"
-         class="block px-4 py-3 rounded-lg
-                hover:bg-pink-50 dark:hover:bg-white/10
-                hover:text-[#E83E8C]
-                transition">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                bg-pink-50 dark:bg-white/10
+                text-[#E83E8C] font-semibold">
         Contact
       </a>
 
       <a href="login.html"
-         class="block px-4 py-3 rounded-lg
-                hover:bg-pink-50 dark:hover:bg-white/10
-                hover:text-[#E83E8C] font-medium
-                transition">
+         class="block px-4 py-2.5 rounded-lg text-sm
+                hover:bg-pink-50
+                dark:hover:bg-white/10
+                hover:text-[#E83E8C] font-medium transition">
         Login
       </a>
 
-      <div class="flex gap-3 pt-3">
-        <button
-          onclick="toggleTheme()"
-          type="button"
-          class="flex-1 py-3 rounded-xl
-                 border border-slate-200 dark:border-slate-600
-                 cursor-pointer">
-          <i class="fa-solid fa-moon mr-2"></i>
+      <div class="flex gap-3 pt-2">
+
+        <button onclick="toggleTheme()"
+                class="flex-1 py-2.5 rounded-xl text-sm
+                       border border-slate-200
+                       dark:border-slate-600
+                       hover:border-[#E83E8C]
+                       hover:text-[#E83E8C]
+                       transition cursor-pointer flex items-center justify-center">
+          <i class="fa-solid fa-moon theme-icon mr-2 text-xs"></i>
           Theme
         </button>
-
-        <button
-          onclick="toggleDirection()"
-          type="button"
-          class="px-5 py-3 rounded-xl
-                 border border-slate-200 dark:border-slate-600
-                 cursor-pointer">
+        <button onclick="toggleDirection()"
+                class="px-4 py-2.5 rounded-xl text-xs font-bold
+                       border border-slate-200
+                       dark:border-slate-600 cursor-pointer">
           RTL
         </button>
       </div>
 
       <a href="appointment.html"
-         class="btn-book-rounded !py-3 w-full text-center block mt-3">
+         class="btn-book-rounded !py-2.5 !px-4 !text-sm w-full text-center block mt-2.5">
         Book Appointment
       </a>
 
@@ -389,55 +407,61 @@
 
 </header>
 
-
 <!-- =========================================================
-     1. ABOUT HERO (Centered Dark Background & Custom Buttons)
+     1. ABOUT HERO (Different Button Names & Reduced Font Size)
 ========================================================= -->
-
-<section class="hero-adaptive relative min-h-[500px] lg:min-h-[580px] flex items-center justify-center overflow-hidden py-14 lg:py-20">
+<section class="hero-adaptive relative min-h-[480px] lg:min-h-[540px] flex items-center justify-center overflow-hidden py-12 lg:py-16">
 
   <img src="../assets/images/about-hero-clinic.jpg"
        alt="DentaCare Clinic Center Team"
-       class="hero-img-adaptive">
+       class="hero-img-adaptive absolute inset-0 w-full h-full object-cover">
 
   <div class="hero-overlay-adaptive absolute inset-0"></div>
 
   <div class="relative z-10 container mx-auto px-5 lg:px-10 text-center flex flex-col items-center max-w-5xl">
 
-    <div class="hero-badge-adaptive mb-6 shadow-sm">
-      <i class="fa-solid fa-hospital-user text-pink dark:text-cyan-400"></i>
-      <span> ABOUT DENTACARE CLINIC • ESTD. 2010</span>
-    </div>
+<!-- Top Badge (Adaptive Text & Pink Icon) -->
+<div class="hero-badge-adaptive mb-5 shadow-sm inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/5 dark:bg-white/10 border border-slate-900/10 dark:border-white/20 backdrop-blur-md text-[11px] sm:text-xs font-medium">
+  <i class="fa-solid fa-hospital-user text-[#E83E8C]"></i>
+  <span class="text-[#7C3AED] dark:text-white font-semibold">ABOUT DENTACARE CLINIC • ESTD. 2010</span>
+</div>
 
-    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-slate-900 dark:text-white font-heading max-w-4xl mb-6">
+    <!-- Main Headings (Reduced Sizing: text-3xl to text-6xl) -->
+    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white font-heading max-w-4xl mb-4">
       Crafting Radiant Smiles
       <span class="block gradient-text mt-1">
         With Passion & Integrity
       </span>
     </h1>
 
-    <p class="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 mt-2 max-w-3xl leading-relaxed mx-auto mb-8">
+    <!-- Subtitle (Reduced Sizing: text-sm to text-base) -->
+    <p class="text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-2xl leading-relaxed mx-auto mb-6">
       Over 15+ years of delivering award-winning dental artistry, cutting-edge technology, and patient-first compassionate care in Ramanathapuram.
     </p>
 
-    <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
-      <a href="./about.html"
-         class="px-8 py-4 rounded-full font-bold text-white shadow-xl shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
-        <i class="fa-solid fa-book-open-reader"></i>
-        <span>Read Our Clinic Story</span>
+    <!-- Action Buttons (Different Names, Smaller Font & Context Icons) -->
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
+      
+      <!-- Button 1: Different Name & Smaller Size -->
+      <a href="doctors.html"
+         class="px-6 py-3 rounded-full font-semibold text-white shadow-lg shadow-pink-500/25 bg-gradient-to-r from-[#E83E8C] to-[#7C3AED] hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2 text-xs sm:text-sm cursor-pointer">
+        <i class="fa-solid fa-user-doctor text-xs"></i>
+        <span>Meet Our Specialists</span>
       </a>
 
-      <a href="doctors.html"
-         class="glass-btn-adaptive px-8 py-4 rounded-full font-bold hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2.5 cursor-pointer">
-        <i class="fa-solid fa-user-doctor text-pink dark:text-cyan-400"></i>
-        <span>Meet Our Medical Team</span>
-      </a>
+      <!-- Button with Guaranteed Color & Hover Effects -->
+<a href="contact.html"
+   class="px-6 py-3 rounded-full font-medium bg-white/10 hover:bg-[#7C3AED]/10 dark:hover:bg-[#7C3AED]/20 border backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-500/20 inline-flex items-center gap-2 text-xs sm:text-sm cursor-pointer"
+   style="border-color: rgba(124, 58, 237, 0.5);">
+  <i class="fa-solid fa-location-arrow text-xs" style="color: #E83E8C;"></i>
+  <span class="text-slate-800 dark:text-white">Get Clinic Directions</span>
+</a>
+
     </div>
 
   </div>
 
 </section>
-
 
 <!-- =========================================================
      2. WHO WE ARE
@@ -551,7 +575,7 @@
                     border-slate-100 dark:border-white/10">
 
           <img
-            src="../assets/images/about-clinic-story.jpg"
+            src="../assets/images/pexels-bakytzhan-baurzhanov-854600-9951388.jpg"
             alt="DentaCare Clinic Story & Consultation"
             class="w-full h-[420px] object-cover">
 
@@ -662,8 +686,7 @@
           </h3>
 
           <p class="text-slate-600 dark:text-slate-300 leading-7">
-            Every treatment is designed around your comfort,
-            confidence and individual needs.
+            Every treatment is designed around your comfort, confidence, and individual needs. We create a stress-free, welcoming environment to ensure complete peace of mind during your visit.
           </p>
         </div>
 
@@ -697,8 +720,7 @@
           </h3>
 
           <p class="text-slate-600 dark:text-slate-300 leading-7">
-            Our skilled dental professionals deliver
-            precise and personalized treatment.
+            Our skilled dental professionals deliver precise and personalized treatment. Backed by years of specialized clinical experience, our doctors prioritize excellence and optimal oral health.
           </p>
         </div>
 
@@ -732,8 +754,7 @@
           </h3>
 
           <p class="text-slate-600 dark:text-slate-300 leading-7">
-            We use modern dental technology to improve
-            diagnosis, treatment and patient experience.
+            We use modern dental technology to improve diagnosis, treatment, and patient experience. From 3D imaging to painless laser tools, we stay ahead with state-of-the-art dental care.
           </p>
         </div>
 
@@ -744,7 +765,6 @@
   </div>
 
 </section>
-
 
 <!-- =========================================================
      4. WHY CHOOSE US
@@ -1207,97 +1227,69 @@
     </div>
 
 
-    <div class="grid md:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
 
-      <div class="relative text-center">
-
+      <div class="premium-card relative text-center bg-white dark:bg-white/5 rounded-2xl p-6 border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-pink/30 transition-all duration-300">
         <div class="w-16 h-16 mx-auto rounded-2xl
                     bg-gradient-to-br from-pink to-purple
                     text-white flex items-center justify-center
-                    text-xl font-extrabold">
-
+                    text-xl font-extrabold shadow-lg">
           01
-
         </div>
-
-        <h3 class="font-bold text-lg text-navy
-                   dark:text-white mt-5">
+        <h3 class="font-bold text-lg text-navy dark:text-white mt-5">
           Consultation
         </h3>
-
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
-          Understand your dental needs.
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+          We listen and fully understand your dental needs and goals.
         </p>
-
       </div>
 
 
-      <div class="relative text-center">
-
+      <div class="premium-card relative text-center bg-white dark:bg-white/5 rounded-2xl p-6 border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-purple/30 transition-all duration-300">
         <div class="w-16 h-16 mx-auto rounded-2xl
                     bg-gradient-to-br from-pink to-purple
                     text-white flex items-center justify-center
-                    text-xl font-extrabold">
-
+                    text-xl font-extrabold shadow-lg">
           02
-
         </div>
-
-        <h3 class="font-bold text-lg text-navy
-                   dark:text-white mt-5">
+        <h3 class="font-bold text-lg text-navy dark:text-white mt-5">
           Diagnosis
         </h3>
-
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
-          Use modern tools for accurate diagnosis.
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+          Use modern 3D imaging tools for accurate, detailed diagnosis.
         </p>
-
       </div>
 
 
-      <div class="relative text-center">
-
+      <div class="premium-card relative text-center bg-white dark:bg-white/5 rounded-2xl p-6 border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-pink/30 transition-all duration-300">
         <div class="w-16 h-16 mx-auto rounded-2xl
                     bg-gradient-to-br from-pink to-purple
                     text-white flex items-center justify-center
-                    text-xl font-extrabold">
-
+                    text-xl font-extrabold shadow-lg">
           03
-
         </div>
-
-        <h3 class="font-bold text-lg text-navy
-                   dark:text-white mt-5">
+        <h3 class="font-bold text-lg text-navy dark:text-white mt-5">
           Treatment
         </h3>
-
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
-          Receive personalized dental care.
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+          Receive personalized, gentle and painless dental care.
         </p>
-
       </div>
 
 
-      <div class="relative text-center">
-
+      <div class="premium-card relative text-center bg-white dark:bg-white/5 rounded-2xl p-6 border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-purple/30 transition-all duration-300">
         <div class="w-16 h-16 mx-auto rounded-2xl
                     bg-gradient-to-br from-pink to-purple
                     text-white flex items-center justify-center
-                    text-xl font-extrabold">
-
+                    text-xl font-extrabold shadow-lg">
           04
-
         </div>
-
-        <h3 class="font-bold text-lg text-navy
-                   dark:text-white mt-5">
+        <h3 class="font-bold text-lg text-navy dark:text-white mt-5">
           Follow-Up
         </h3>
-
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
-          Continue your journey toward better oral health.
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+          Continue your journey toward better long-term oral health.
         </p>
-
       </div>
 
     </div>
@@ -1442,74 +1434,89 @@
 
 
 <!-- =========================================================
-     9. PATIENT PROMISE
+     9. PATIENT PROMISE (End-to-End Full Width)
 ========================================================= -->
+<section class="py-12 lg:py-16 bg-white dark:bg-[#0b1026] text-navy dark:text-white">
 
-<section class="py-12 lg:py-16
-                bg-gradient-to-br from-navy
-                via-[#171f49] to-purple
-                text-white">
+  <!-- Container expanded to full width with side spacing -->
+  <div class="w-full px-4 sm:px-8 lg:px-12">
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="max-w-4xl mx-auto text-center">
+    <div class="max-w-full mx-auto text-center">
 
       <span class="text-pink font-bold text-sm uppercase tracking-widest">
         Our Promise
       </span>
 
-      <h2 class="text-3xl md:text-4xl
-                 font-extrabold mt-4 mb-6">
-
+      <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-6">
         Your Smile Is Always
         <span class="text-pink">Our Priority</span>
-
       </h2>
 
-      <p class="text-slate-200 leading-8 max-w-2xl mx-auto">
-
-        We are committed to creating a welcoming
-        dental experience where every patient feels
-        informed, comfortable and confident.
-
+      <p class="text-slate-600 dark:text-slate-300 leading-8 max-w-2xl mx-auto">
+        We are committed to creating a welcoming dental experience where every patient feels informed, comfortable and confident.
       </p>
 
+      <!-- Grid set to span end-to-end across large screens -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
 
-      <div class="grid sm:grid-cols-3 gap-5 mt-10">
-
-        <div class="bg-white/10 border border-white/10
-                    rounded-2xl p-6">
-
-          <i class="fa-solid fa-user-shield text-2xl text-pink"></i>
-
-          <h3 class="font-bold mt-4">
-            Patient First
-          </h3>
-
+        <!-- Card 1 -->
+        <div class="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 text-left flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-pink/10 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-user-shield text-xl text-pink"></i>
+            </div>
+            <h3 class="font-bold text-lg text-navy dark:text-white">
+              Patient First
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+              Your safety, comfort, and individual health goals always come first in every decision we make.
+            </p>
+          </div>
         </div>
 
-
-        <div class="bg-white/10 border border-white/10
-                    rounded-2xl p-6">
-
-          <i class="fa-solid fa-tooth text-2xl text-pink"></i>
-
-          <h3 class="font-bold mt-4">
-            Quality Dentistry
-          </h3>
-
+        <!-- Card 2 -->
+        <div class="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 text-left flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-pink/10 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-tooth text-xl text-pink"></i>
+            </div>
+            <h3 class="font-bold text-lg text-navy dark:text-white">
+              Quality Dentistry
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+              Utilizing advanced materials and clinical precision to deliver lasting, durable, and healthy results.
+            </p>
+          </div>
         </div>
 
+        <!-- Card 3 -->
+        <div class="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 text-left flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-pink/10 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-face-smile text-xl text-pink"></i>
+            </div>
+            <h3 class="font-bold text-lg text-navy dark:text-white">
+              Confident Smiles
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+              Transforming how you look and feel with bright, natural-looking smiles that boost your self-esteem.
+            </p>
+          </div>
+        </div>
 
-        <div class="bg-white/10 border border-white/10
-                    rounded-2xl p-6">
-
-          <i class="fa-solid fa-face-smile text-2xl text-pink"></i>
-
-          <h3 class="font-bold mt-4">
-            Confident Smiles
-          </h3>
-
+        <!-- Card 4 -->
+        <div class="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 text-left flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-pink/10 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-microchip text-xl text-pink"></i>
+            </div>
+            <h3 class="font-bold text-lg text-navy dark:text-white">
+              Advanced Technology
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+              Equipped with state-of-the-art digital scanners and painless tools for accurate, modern treatments.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -1519,68 +1526,11 @@
   </div>
 
 </section>
-
-
-<!-- =========================================================
-     10. FINAL CTA
-========================================================= -->
-
-<section class="py-12 lg:py-16 bg-white
-                dark:bg-[#0b1026]">
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="rounded-3xl
-                bg-gradient-to-r from-pink to-purple
-                p-8 md:p-12 lg:p-14
-                text-white
-                flex flex-col lg:flex-row
-                items-center justify-between
-                gap-8">
-
-      <div>
-
-        <p class="font-semibold text-white/80 mb-2">
-          Ready for a healthier smile?
-        </p>
-
-        <h2 class="text-3xl md:text-4xl
-                   font-extrabold">
-
-          Start Your Dental Journey Today
-
-        </h2>
-
-      </div>
-
-
-      <a href="appointment.html"
-         class="inline-flex items-center gap-2
-                px-7 py-4 rounded-xl
-                bg-white text-navy
-                font-extrabold
-                hover:-translate-y-1
-                hover:shadow-xl
-                transition-all duration-300
-                shrink-0">
-
-        Book Appointment
-
-        <i class="fa-solid fa-arrow-right"></i>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
 
 <!-- =========================================================
      10. CERTIFIED CLINICAL EXCELLENCE & STERILIZATION
 ========================================================= -->
-<section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-900/40">
+<section class="py-12 lg:py-16 bg-slate-50 dark:bg-[#0b1026]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-14">
       <span class="text-pink uppercase text-xs font-bold tracking-[.18em]">
@@ -1595,48 +1545,66 @@
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-pink/10 text-pink flex items-center justify-center text-2xl mb-6">
-          <i class="fa-solid fa-certificate"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">NABH & ISO Compliance</h3>
-        <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
-          Our clinic operates in strict adherence to international healthcare quality management standards, audited annually for clinical precision and patient safety.
-        </p>
-        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-pink flex items-center gap-2">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>Verified Quality Management</span>
-        </div>
+  <!-- Card 1: NABH & ISO Compliance -->
+  <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+    <div>
+      <!-- Image 1: Professional Healthcare / Compliance Quality -->
+      <div class="w-full h-44 rounded-2xl overflow-hidden mb-6 bg-slate-100 dark:bg-white/5 relative">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="NABH and ISO Compliance Standards" class="w-full h-full object-cover">
       </div>
 
-      <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-purple/10 text-purple flex items-center justify-center text-2xl mb-6">
-          <i class="fa-solid fa-pump-medical"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">6-Tier Bio-Safety Protocol</h3>
-        <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
-          From ultrasonic bath scrubbing to vacuum autoclaving and sterile blister-packaging opened right in front of you, contamination risks are reduced to absolute zero.
-        </p>
-        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-purple flex items-center gap-2">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>100% Autoclaved Handpieces</span>
-        </div>
-      </div>
-
-      <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-2xl mb-6">
-          <i class="fa-solid fa-wind"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">Hospital Air Filtration</h3>
-        <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
-          Advanced medical HEPA filters cycle the clinic operatory air 12 times per hour, trapping aerosols and microscopic allergens for clean, fresh breathing.
-        </p>
-        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-emerald-500 flex items-center gap-2">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>Continuous HEPA 14 Air Exchange</span>
-        </div>
-      </div>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">NABH & ISO Compliance</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+        Our clinic operates in strict adherence to international healthcare quality management standards, audited annually for clinical precision and patient safety.
+      </p>
     </div>
+
+    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-pink flex items-center gap-2">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>Verified Quality Management</span>
+    </div>
+  </div>
+
+  <!-- Card 2: 6-Tier Bio-Safety Protocol -->
+  <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+    <div>
+      <!-- Image 2: Dental Sterilization & Medical Safety -->
+      <div class="w-full h-44 rounded-2xl overflow-hidden mb-6 bg-slate-100 dark:bg-white/5 relative">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="6-Tier Bio-Safety and Sterilization Protocol" class="w-full h-full object-cover">
+      </div>
+
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">6-Tier Bio-Safety Protocol</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+        From ultrasonic bath scrubbing to vacuum autoclaving and sterile blister-packaging opened right in front of you, contamination risks are reduced to absolute zero.
+      </p>
+    </div>
+
+    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-purple flex items-center gap-2">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>100% Autoclaved Handpieces</span>
+    </div>
+  </div>
+
+  <!-- Card 3: Hospital Air Filtration -->
+  <div class="p-8 rounded-3xl bg-white dark:bg-[#111A3A] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+    <div>
+      <!-- Image 3: Modern Advanced Clinic Facility / Clean Air -->
+      <div class="w-full h-44 rounded-2xl overflow-hidden mb-6 bg-slate-100 dark:bg-white/5 relative">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Hospital Grade Air Filtration Systems" class="w-full h-full object-cover">
+      </div>
+
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading">Hospital Air Filtration</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+        Advanced medical HEPA filters cycle the clinic operatory air 12 times per hour, trapping aerosols and microscopic allergens for clean, fresh breathing.
+      </p>
+    </div>
+
+    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-emerald-500 flex items-center gap-2">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>Continuous HEPA 14 Air Exchange</span>
+    </div>
+  </div>
+</div>
   </div>
 </section>
 
@@ -1707,36 +1675,37 @@
 </section>
 
 <!-- =========================================================
-     12. FINAL CALL TO ACTION
+     12. FINAL CTA (Standardized with Rounded Button)
 ========================================================= -->
-<section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-900/30">
+<section class="py-12 lg:py-16 bg-white dark:bg-[#0b1026]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="rounded-3xl bg-[#111A3A] px-7 py-14 lg:px-16 text-center relative overflow-hidden shadow-2xl">
-      <div class="absolute -right-20 -top-20 w-80 h-80 bg-pink/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-purple/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-navy via-purple to-pink dark:from-[#0a0f24] dark:via-[#131b42] dark:to-[#1c123d] dark:border dark:border-purple-500/30 px-7 py-14 lg:px-16 text-center shadow-2xl">
+      <div class="absolute w-72 h-72 rounded-full bg-pink/20 blur-3xl -top-32 -left-20"></div>
+      <div class="absolute w-72 h-72 rounded-full bg-purple/20 blur-3xl -bottom-32 -right-20"></div>
 
       <div class="relative z-10 max-w-3xl mx-auto">
-        <span class="text-pink uppercase text-xs font-bold tracking-[.18em]">
-          Start Your Smile Journey
-        </span>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-bold uppercase tracking-wider mb-4 text-white">
+          <i class="fa-solid fa-star text-pink"></i>
+          <span class="text-white">Your Dental Health Partner</span>
+        </div>
 
-        <h2 class="text-3xl lg:text-5xl font-bold text-white mt-4 font-heading leading-tight">
-          Ready For A Healthier, <span class="gradient-text">More Confident Smile?</span>
+        <h2 class="text-3xl md:text-5xl font-black font-heading leading-tight text-white mt-2">
+          Ready For A Healthier, <span class="text-pink">Brighter Smile?</span>
         </h2>
 
-        <p class="text-white/80 max-w-2xl mx-auto mt-5 text-base sm:text-lg leading-relaxed">
-          Join thousands of delighted patients in Ramanathapuram. Schedule your comprehensive consultation with our dental team today.
+        <p class="mt-4 text-white/90 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          Visit our advanced dental clinic in Ramanathapuram for gentle, high-quality care that puts your comfort first.
         </p>
 
         <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a href="appointment.html" class="btn-book-rounded !py-4 !px-8 !text-base shadow-xl">
+          <a href="appointment.html" class="btn-book-rounded !py-4 !px-8 !text-base shadow-2xl">
             <i class="fa-regular fa-calendar-check"></i>
-            <span>Book Your Appointment</span>
+            <span>Book Your Consultation Now</span>
           </a>
 
-          <a href="tel:+919876543210" class="px-7 py-3.5 rounded-full font-bold bg-white text-navy hover:bg-slate-100 transition inline-flex items-center gap-2 text-sm shadow-md">
+          <a href="tel:+919876543210" class="px-7 py-3.5 rounded-full font-bold bg-white text-navy hover:bg-slate-100 transition inline-flex items-center gap-2 text-sm">
             <i class="fa-solid fa-phone text-pink"></i>
-            <span>Call Desk: +91 98765 43210</span>
+            <span>Emergency Line: +91 98765 43210</span>
           </a>
         </div>
       </div>
@@ -1771,8 +1740,8 @@
           World-class oral healthcare combining painless precision, 3D diagnostics, and comfortable modern suites in Ramanathapuram.
         </p>
 
-        <!-- GITHUB & LINKEDIN PROFILES (LEFT COLUMN) -->
-        <div class="flex items-center gap-3 mt-6">
+        <!-- SOCIAL PROFILES (LEFT COLUMN) -->
+        <div class="flex items-center flex-wrap gap-3 mt-6">
           <a href="https://github.com/Munish146"
              target="_blank"
              rel="noopener noreferrer"
@@ -1790,6 +1759,33 @@
              aria-label="LinkedIn Profile">
             <i class="fa-brands fa-linkedin-in text-lg"></i>
           </a>
+
+          <a href="https://twitter.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn"
+             title="Twitter / X"
+             aria-label="Twitter Profile">
+            <i class="fa-brands fa-x-twitter text-lg"></i>
+          </a>
+
+          <a href="https://instagram.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn"
+             title="Instagram"
+             aria-label="Instagram Profile">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+
+          <a href="https://youtube.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn"
+             title="YouTube"
+             aria-label="YouTube Channel">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
         </div>
       </div>
 
@@ -1797,8 +1793,7 @@
       <div>
         <h3 class="font-bold text-base text-slate-900 dark:text-white font-heading">Quick Links</h3>
         <div class="space-y-2.5 mt-4 text-sm text-slate-600 dark:text-slate-400">
-          <a href="index.html" class="block hover:text-pink transition">Home 1</a>
-          <a href="home2.html" class="block hover:text-pink transition">Home 2</a>
+          <a href="index.html" class="block hover:text-pink transition">Home</a>
           <a href="about.html" class="block hover:text-pink transition">About Us</a>
           <a href="services.html" class="block hover:text-pink transition">Services & Treatments</a>
           <a href="doctors.html" class="block hover:text-pink transition">Our Specialist Doctors</a>
